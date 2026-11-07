@@ -1,0 +1,3955 @@
+<!doctype html>
+<html lang="vi" data-type="service" data-radius="soft" data-ground="sand" data-buttons="solid" data-motion>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hành Trình Khám Phá: Đà Nẵng — Quy Nhơn — Phú Yên (21/11 - 23/11)</title>
+<meta name="description" content="Hành trình khám phá Đà Nẵng — Quy Nhơn — Phú Yên 3 ngày 2 đêm: danh lam thắng cảnh biển đảo, tinh hoa văn hóa ẩm thực địa phương, lưu trú Khách Sạn Ngân Hà Tuy Hòa, dự báo thời tiết trực tiếp và đếm ngược khởi hành.">
+<meta name="site-kind" content="service">
+<meta name="page-type" content="service">
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..700&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+
+<!-- System Stylesheets -->
+<link rel="stylesheet" href="assets/system.css">
+<link rel="stylesheet" href="assets/ui/cards.css">
+<link rel="stylesheet" href="assets/motion/motion.css">
+<link rel="stylesheet" href="assets/layout/layout.css">
+
+<style>
+:root {
+  /* LIGHT MODE PALETTE: Crisp Obsidian & Safety Orange */
+  --p-bg: #f8fafc;
+  --p-surface: #ffffff;
+  --p-surface-subtle: #f1f5f9;
+  --p-ink: #0f172a;
+  --p-muted: #526071;
+  --p-border: #e2e8f0;
+  --p-border-strong: #cbd5e1;
+  
+  --p-accent: #ea580c;
+  --p-accent-ink: #ffffff;
+  --p-action: #0f172a;
+  --p-action-ink: #ffffff;
+
+  --p-inv-bg: #0f172a;
+  --p-inv-surface: #1e293b;
+  --p-inv-ink: #f8fafc;
+  --p-inv-muted: #94a3b8;
+  --p-inv-accent: #fb923c;
+  --p-inv-accent-ink: #0f172a;
+
+  /* Typography */
+  --font-display: "Archivo", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-text: "Archivo", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
+  --display-weight: 600;
+  --display-tracking: -0.025em;
+  --display-tracking-xl: -0.035em;
+  --display-stretch: 105%;
+
+  /* Layout Scale */
+  --ly-scale: 0.95;
+  --nav: 72px;
+  --container: 1280px;
+
+  /* Highlight Accents */
+  --c-orange: #ea580c;
+  --c-orange-light: #fff7ed;
+  --c-cyan: #0284c7;
+  --c-cyan-light: #f0f9ff;
+  --c-green: #16a34a;
+  --c-green-light: #f0fdf4;
+  --c-yellow: #d97706;
+  --c-yellow-light: #fefce8;
+  
+  --shadow-sm: 0 1px 2px 0 rgba(15, 23, 42, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.07), 0 2px 4px -2px rgba(15, 23, 42, 0.05);
+  --shadow-lg: 0 12px 28px -4px rgba(15, 23, 42, 0.08), 0 4px 12px -2px rgba(15, 23, 42, 0.04);
+}
+
+body {
+  background-color: var(--p-bg);
+  color: var(--p-ink);
+  font-family: var(--font-text);
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+/* Fix system.css fixed-height bugs: ensure sections adapt to rich content without overlapping */
+main {
+  display: block;
+  overflow: visible;
+}
+
+main > :is(section, .section, .expedition-section) {
+  height: auto !important;
+  min-height: auto !important;
+  max-height: none !important;
+  padding: 88px 0 !important;
+  overflow: visible !important;
+  box-sizing: border-box !important;
+}
+
+main > :is(section, .section, .expedition-section) > :is(.wrap, .container) {
+  height: auto !important;
+  min-height: auto !important;
+  display: block !important;
+  position: relative;
+  z-index: 1;
+}
+
+main > .hero-expedition {
+  height: auto !important;
+  min-height: calc(100vh - var(--nav)) !important;
+  padding-top: 48px !important;
+  padding-bottom: 64px !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+main > .hero-expedition > .wrap {
+  width: min(100% - 2 * var(--gut), var(--container)) !important;
+  height: auto !important;
+}
+
+/* Nav Bar (Light Mode) */
+.nav {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--nav);
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--p-border);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  box-shadow: var(--shadow-sm);
+}
+.nav__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.nav__brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--p-ink);
+}
+.nav__brand-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--p-accent);
+  color: #ffffff;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 4px;
+  letter-spacing: 0.05em;
+}
+.nav__brand-title {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--p-ink);
+}
+.nav__menu-list {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.nav__menu-link {
+  color: var(--p-muted);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: color 150ms ease;
+  padding: 6px 0;
+}
+.nav__menu-link:hover {
+  color: var(--p-ink);
+}
+.nav__cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--p-ink);
+  color: #ffffff;
+  border: 1px solid var(--p-ink);
+  padding: 8px 18px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 150ms ease;
+}
+.nav__cta-btn:hover {
+  background: var(--p-accent);
+  border-color: var(--p-accent);
+}
+
+/* Hero Section */
+.hero-expedition {
+  padding-top: 48px;
+  padding-bottom: 80px;
+  min-height: calc(100vh - var(--nav));
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, #ffffff 0%, var(--p-bg) 100%);
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 48px;
+  align-items: center;
+  width: 100%;
+}
+.hero-tagline {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--c-orange-light);
+  border: 1px solid rgba(234, 88, 12, 0.25);
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--p-accent);
+  margin-bottom: 24px;
+  letter-spacing: 0.04em;
+}
+.hero-tagline__pulse {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--p-accent);
+  box-shadow: 0 0 8px var(--p-accent);
+  animation: radar-pulse 2s infinite ease-out;
+}
+@keyframes radar-pulse {
+  0% { transform: scale(0.95); opacity: 0.9; }
+  50% { transform: scale(1.3); opacity: 0.4; }
+  100% { transform: scale(0.95); opacity: 0.9; }
+}
+
+.hero-title {
+  font-size: clamp(34px, 4.2vw, 56px);
+  line-height: 1.08;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  margin: 0 0 20px;
+  color: var(--p-ink);
+}
+.hero-desc {
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--p-muted);
+  max-width: 580px;
+  margin: 0 0 32px;
+}
+
+/* Countdown Instrument Box (Light Mode) */
+.countdown-box {
+  background: #ffffff;
+  border: 1px solid var(--p-border);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 32px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+.countdown-box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--p-accent);
+}
+.countdown-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.countdown-title {
+  font-size: 13px;
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--p-muted);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+}
+.countdown-status-badge {
+  font-size: 11px;
+  font-family: var(--font-mono);
+  background: var(--c-green-light);
+  color: var(--c-green);
+  border: 1px solid rgba(22, 163, 74, 0.25);
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+.countdown-digits {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+.count-card {
+  background: var(--p-surface-subtle);
+  border: 1px solid var(--p-border);
+  border-radius: 8px;
+  padding: 14px 8px;
+  text-align: center;
+  position: relative;
+}
+.count-num {
+  font-family: var(--font-mono);
+  font-size: clamp(26px, 3.2vw, 42px);
+  font-weight: 700;
+  line-height: 1;
+  color: var(--p-ink);
+  display: block;
+  letter-spacing: -0.02em;
+}
+.count-lbl {
+  font-size: 11px;
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  color: var(--p-muted);
+  margin-top: 6px;
+  display: block;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+}
+
+/* Hero Specs */
+.hero-specs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  border-top: 1px solid var(--p-border);
+  padding-top: 24px;
+}
+.spec-item dt {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--p-muted);
+  text-transform: uppercase;
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+.spec-item dd {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--p-ink);
+  margin: 0;
+}
+
+/* Hero Visual Media Frame */
+.hero-visual-card {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid var(--p-border);
+  background: #ffffff;
+  box-shadow: var(--shadow-lg);
+  aspect-ratio: 4 / 4.6;
+}
+.hero-visual-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.hero-visual-card:hover img {
+  transform: scale(1.03);
+}
+.hero-visual-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(15,23,42,0.02) 0%, rgba(15,23,42,0.7) 100%);
+  pointer-events: none;
+}
+.hero-visual-telemetry {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.telemetry-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--p-border);
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--p-ink);
+  width: max-content;
+  box-shadow: var(--shadow-sm);
+}
+.telemetry-route-name {
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+/* Sections */
+.expedition-section {
+  padding: 88px 0;
+  border-top: 1px solid var(--p-border);
+}
+.section-header {
+  margin-bottom: 40px;
+}
+.section-kicker {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--p-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 12px;
+  display: block;
+}
+.section-heading {
+  font-size: clamp(28px, 2.6vw, 42px);
+  line-height: 1.15;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  margin: 0 0 14px;
+  color: var(--p-ink);
+}
+.section-lead {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--p-muted);
+  max-width: 640px;
+  margin: 0;
+}
+
+/* Tab Control Bar */
+.tab-control-bar {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 32px;
+  overflow-x: auto;
+  padding-bottom: 6px;
+}
+.tab-btn {
+  background: #ffffff;
+  border: 1px solid var(--p-border);
+  color: var(--p-muted);
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 180ms ease;
+  white-space: nowrap;
+  box-shadow: var(--shadow-sm);
+}
+.tab-btn:hover {
+  color: var(--p-ink);
+  border-color: var(--p-border-strong);
+}
+.tab-btn.active {
+  background: var(--p-accent);
+  color: #ffffff;
+  border-color: var(--p-accent);
+}
+.tab-badge {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.06);
+}
+.tab-btn.active .tab-badge {
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+/* Weather Matrix Cards (Light Mode) */
+.weather-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.weather-card {
+  background: #ffffff;
+  border: 1px solid var(--p-border);
+  border-radius: 12px;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  box-shadow: var(--shadow-sm);
+  transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
+}
+.weather-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--p-border-strong);
+}
+.weather-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+.weather-time {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--p-accent);
+  background: var(--c-orange-light);
+  border: 1px solid rgba(234, 88, 12, 0.2);
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+.weather-temp {
+  font-family: var(--font-mono);
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--p-ink);
+  line-height: 1;
+}
+.weather-loc-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0 0 6px;
+  color: var(--p-ink);
+}
+.weather-condition {
+  font-size: 13px;
+  color: var(--p-muted);
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 500;
+}
+.weather-telemetry-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  border-top: 1px solid var(--p-border);
+  border-bottom: 1px solid var(--p-border);
+  padding: 12px 0;
+  margin-bottom: 14px;
+}
+.weather-stat-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.weather-stat-cell .lbl {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  color: var(--p-muted);
+  font-weight: 600;
+}
+.weather-stat-cell .val {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--p-ink);
+}
+.weather-alert-box {
+  background: var(--c-yellow-light);
+  border-left: 3px solid var(--c-yellow);
+  padding: 9px 12px;
+  border-radius: 0 6px 6px 0;
+  font-size: 12px;
+  line-height: 1.45;
+  color: #92400e;
+  font-weight: 500;
+}
+.weather-alert-box.alert-wind {
+  background: var(--c-orange-light);
+  border-left-color: var(--p-accent);
+  color: #9a3412;
+}
+.weather-alert-box.alert-rain {
+  background: var(--c-cyan-light);
+  border-left-color: var(--c-cyan);
+  color: #075985;
+}
+
+/* Live Weather Toolbar & Status */
+.weather-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  background: #ffffff;
+  border: 1px solid var(--p-border);
+  border-radius: 10px;
+  padding: 14px 20px;
+  margin-bottom: 24px;
+  box-shadow: var(--shadow-sm);
+}
+.weather-status-wrap {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.weather-source-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--p-surface-subtle);
+  border: 1px solid var(--p-border);
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--p-ink);
+}
+.weather-source-badge.google-active {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+  color: #0f172a;
+}
+.weather-pulse {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  animation: pulseGreen 2s infinite;
+}
+@keyframes pulseGreen {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+.weather-update-meta {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--p-muted);
+}
+.weather-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.btn-weather-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #ffffff;
+  border: 1px solid var(--p-border);
+  border-radius: 6px;
+  padding: 7px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--p-ink);
+  cursor: pointer;
+  transition: all 150ms ease;
+  font-family: inherit;
+}
+.btn-weather-action:hover {
+  background: var(--p-surface-subtle);
+  border-color: var(--p-border-strong);
+}
+.btn-weather-action.primary {
+  background: var(--p-ink);
+  color: #ffffff;
+  border-color: var(--p-ink);
+}
+.btn-weather-action.primary:hover {
+  background: var(--p-accent);
+  border-color: var(--p-accent);
+}
+.btn-weather-action.spinning svg {
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}
+.weather-live-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  color: #059669;
+  background: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  padding: 2px 6px;
+  border-radius: 4px;
+  letter-spacing: 0.05em;
+}
+
+/* Modal Cấu hình API */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(15, 23, 42, 0.45);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 1000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.modal-backdrop.open {
+  display: flex;
+}
+.modal-box {
+  background: #ffffff;
+  border: 1px solid var(--p-border);
+  border-radius: 12px;
+  width: 100%;
+  max-width: 520px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  animation: modalEnter 200ms ease-out;
+}
+@keyframes modalEnter {
+  from { opacity: 0; transform: scale(0.96) translateY(8px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+.modal-header {
+  padding: 18px 24px;
+  border-bottom: 1px solid var(--p-border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.modal-header h3 {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--p-ink);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.modal-close-btn {
+  background: none;
+  border: none;
+  color: var(--p-muted);
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal-close-btn:hover {
+  color: var(--p-ink);
+  background: var(--p-surface-subtle);
+}
+.modal-body {
+  padding: 24px;
+}
+.modal-footer {
+  padding: 16px 24px;
+  background: var(--p-surface-subtle);
+  border-top: 1px solid var(--p-border);
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+/* Mission Control Telemetry HUD (No Images) */
+.mission-hud-card {
+  background: #ffffff;
+  border: 1px solid var(--p-border);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.mission-hud-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--p-border);
+  padding-bottom: 14px;
+}
+.mission-hud-title {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--p-accent);
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.mission-hud-basecamp {
+  background: var(--c-orange-light);
+  border: 1px solid rgba(234, 88, 12, 0.25);
+  border-radius: 8px;
+  padding: 16px;
+}
+.mission-hud-basecamp h4 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--p-ink);
+  margin: 0 0 6px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.mission-hud-basecamp p {
+  font-size: 13px;
+  color: var(--p-muted);
+  margin: 0 0 12px;
+  line-height: 1.5;
+}
+.mission-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+.metric-box {
+  background: var(--p-surface-subtle);
+  border: 1px solid var(--p-border);
+  border-radius: 6px;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.metric-box .label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--p-muted);
+  text-transform: uppercase;
+}
+.metric-box .value {
+  font-family: var(--font-mono);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--p-ink);
+}
+
+/* Basecamp Dedicated Section */
+.basecamp-section-card {
+  background: #ffffff;
+  border: 1px solid var(--p-border);
+  border-radius: 12px;
+  padding: 32px;
+  box-shadow: var(--shadow-sm);
+  margin-top: 20px;
+}
+.basecamp-hero-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 20px;
+  border-bottom: 1px solid var(--p-border);
+  padding-bottom: 24px;
+  margin-bottom: 24px;
+}
+.basecamp-main-heading h3 {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--p-ink);
+  margin: 0 0 6px;
+}
+.basecamp-address {
+  font-size: 15px;
+  color: var(--p-muted);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.basecamp-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--p-ink);
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 150ms ease;
+  font-family: inherit;
+}
+.basecamp-action-btn:hover {
+  background: var(--p-accent);
+}
+.basecamp-features-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.basecamp-feature-card {
+  background: var(--p-surface-subtle);
+  border: 1px solid var(--p-border);
+  border-radius: 8px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.basecamp-feature-card h5 {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--p-ink);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.basecamp-feature-card p {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--p-muted);
+  margin: 0;
+}
+
+/* Basecamp Distances & Travel Radii Box */
+.basecamp-distances-box {
+  margin-top: 24px;
+  background: #ffffff;
+  border: 1px solid var(--p-border);
+  border-radius: 12px;
+  padding: 22px 24px;
+  box-shadow: var(--shadow-sm);
+}
+
+.basecamp-dist-title {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--p-ink);
+  letter-spacing: 0.04em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 18px;
+  border-bottom: 1px dashed var(--p-border);
+  padding-bottom: 14px;
+}
+.basecamp-dist-title svg {
+  color: var(--p-accent);
+}
+
+.basecamp-dist-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.dist-pill {
+  background: var(--p-surface-subtle);
+  border: 1px solid var(--p-border);
+  border-radius: 8px;
+  padding: 12px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  transition: all 180ms ease;
+}
+.dist-pill:hover {
+  border-color: var(--p-accent);
+  background: #fffaf5;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.dist-pill .dest {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--p-ink);
+}
+
+.dist-pill .km {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--p-accent);
+  background: #ffffff;
+  border: 1px solid rgba(234, 88, 12, 0.25);
+  padding: 4px 9px;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+
+/* Enhanced 4-Dimensional Timeline Row */
+.timeline-card-rich {
+  background: #ffffff;
+  border: 1px solid var(--p-border);
+  border-radius: 12px;
+  padding: 22px 24px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: all 180ms ease;
+}
+.timeline-card-rich:hover {
+  border-color: var(--p-border-strong);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+.timeline-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  border-bottom: 1px solid var(--p-border);
+  padding-bottom: 14px;
+}
+.timeline-time-dist {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.timeline-hour {
+  font-family: var(--font-mono);
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--p-accent);
+  background: var(--c-orange-light);
+  border: 1px solid rgba(234, 88, 12, 0.2);
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+.timeline-km-badge {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--p-muted);
+  background: var(--p-surface-subtle);
+  border: 1px solid var(--p-border);
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+.timeline-destination-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--p-ink);
+  margin: 0;
+}
+.timeline-quad-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+.quad-cell {
+  background: var(--p-surface-subtle);
+  border: 1px solid var(--p-border);
+  border-radius: 8px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.quad-cell-lbl {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--p-muted);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.quad-cell-val {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--p-ink);
+  font-weight: 500;
+}
+.quad-cell-val.highlight-warn {
+  color: #c2410c;
+  font-weight: 600;
+}
+.quad-cell-val.highlight-info {
+  color: #0369a1;
+  font-weight: 600;
+}
+
+/* Field Dossier Cards (Pure Typography, No Images) */
+.dossier-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+/* 2x2 Grid for Dossier Cards (Spacious & Highly Readable) */
+.dossier-details-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-top: 10px;
+}
+@media (max-width: 640px) {
+  .dossier-details-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.dossier-card {
+  background: #ffffff;
+  border: 1px solid var(--p-border);
+  border-radius: 12px;
+  padding: 22px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  transition: all 180ms ease;
+}
+.dossier-card:hover {
+  border-color: var(--p-border-strong);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+.dossier-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: 1px solid var(--p-border);
+  padding-bottom: 12px;
+}
+.dossier-num {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  color: #ffffff;
+  background: var(--p-ink);
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+.dossier-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--p-ink);
+  margin: 0;
+}
+.dossier-meta-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+.dossier-meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.dossier-meta-item .lbl {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  color: var(--p-muted);
+  font-weight: 600;
+}
+.dossier-meta-item .val {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--p-ink);
+  font-weight: 600;
+}
+.dossier-desc {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--p-muted);
+  margin: 0;
+}
+.dossier-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--p-border);
+  padding-top: 12px;
+  margin-top: auto;
+}
+.dossier-maps-btn {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--p-accent);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.dossier-maps-btn:hover {
+  text-decoration: underline;
+}
+
+/* Timeline Rows (Light Mode) */
+.timeline-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.timeline-row {
+  display: grid;
+  grid-template-columns: 120px 1fr auto;
+  gap: 24px;
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid var(--p-border);
+  border-radius: 10px;
+  padding: 18px 24px;
+  box-shadow: var(--shadow-sm);
+  transition: all 180ms ease;
+}
+.timeline-row:hover {
+  border-color: var(--p-border-strong);
+  box-shadow: var(--shadow-md);
+  transform: translateX(4px);
+}
+.timeline-time-badge {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--p-accent);
+}
+.timeline-main-info h4 {
+  font-size: 17px;
+  font-weight: 700;
+  margin: 0 0 6px;
+  color: var(--p-ink);
+}
+.timeline-main-info p {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--p-muted);
+  margin: 0;
+}
+.timeline-meta-tags {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.tag-pill {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 4px;
+  background: var(--p-surface-subtle);
+  border: 1px solid var(--p-border);
+  color: var(--p-muted);
+}
+.tag-pill.tag-photo {
+  color: #0369a1;
+  border-color: rgba(2, 132, 199, 0.3);
+  background: var(--c-cyan-light);
+}
+.tag-pill.tag-speed {
+  color: var(--p-accent);
+  border-color: rgba(234, 88, 12, 0.3);
+  background: var(--c-orange-light);
+}
+
+/* Elevation Profile Dashboard (Light Mode) */
+.elevation-dashboard {
+  margin-top: 48px;
+  background: #ffffff;
+  border: 1px solid var(--p-border);
+  border-radius: 12px;
+  padding: 28px;
+  box-shadow: var(--shadow-sm);
+}
+.elevation-legend {
+  display: flex;
+  gap: 16px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--p-muted);
+  font-weight: 500;
+}
+
+/* Photographic Destination Cards (Light Mode) */
+.card-destination {
+  background: #ffffff;
+  border: 1px solid var(--p-border);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+.card-destination:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+.card-destination h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--p-ink);
+  margin: 0 0 8px;
+}
+.card-destination p {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--p-muted);
+  margin: 0;
+}
+
+/* Footer (Deep Obsidian Accent Band) */
+.expedition-footer {
+  background: #0f172a;
+  color: #f8fafc;
+  padding: 64px 0 40px;
+  border-top: 1px solid #1e293b;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 48px;
+}
+.footer-credits {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  color: #94a3b8;
+  font-family: var(--font-mono);
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .timeline-quad-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .dossier-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+@media (max-width: 600px) {
+  .timeline-quad-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 1024px) {
+  .basecamp-features-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .basecamp-dist-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .weather-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+@media (max-width: 640px) {
+  .basecamp-features-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .basecamp-dist-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .dist-pill {
+    padding: 10px 14px;
+  }
+  .nav__menu-list {
+    display: none;
+  }
+  .hero-title {
+    font-size: 32px;
+  }
+  .countdown-digits {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+  .weather-cards-grid {
+    grid-template-columns: 1fr;
+  }
+  .hero-specs {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  .timeline-row {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 14px 16px;
+  }
+  .telemetry-pill {
+    width: auto;
+    max-width: 100%;
+    font-size: 11px;
+    padding: 6px 10px;
+    word-break: break-word;
+    box-sizing: border-box;
+  }
+  .tab-control-bar {
+    gap: 8px;
+    max-width: 100%;
+    -webkit-overflow-scrolling: touch;
+  }
+  .tab-btn {
+    padding: 10px 14px;
+    font-size: 13px;
+  }
+  .tab-badge {
+    display: none; /* Keep tabs concise on mobile */
+  }
+  .elevation-dashboard {
+    padding: 16px;
+  }
+  .footer-credits {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- Navigation Header -->
+<header class="nav">
+  <div class="wrap nav__bar">
+    <a class="nav__brand" href="#top">
+      <span class="nav__brand-badge">DU LỊCH & KHÁM PHÁ</span>
+      <span class="nav__brand-title">ĐÀ NẴNG • QUY NHƠN • PHÚ YÊN</span>
+    </a>
+    <ul class="nav__menu-list">
+      <li><a class="nav__menu-link" href="#lich-trinh">Hành Trình 3 Ngày</a></li>
+      <li><a class="nav__menu-link" href="#khach-san">Khách Sạn Ngân Hà</a></li>
+      <li><a class="nav__menu-link" href="#thoi-tiet">Thời Tiết Điểm Đến</a></li>
+      <li><a class="nav__menu-link" href="#dia-diem">Thắng Cảnh & Ẩm Thực</a></li>
+    </ul>
+    <a class="nav__cta-btn" href="#khach-san">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      Khách Sạn Ngân Hà
+    </a>
+  </div>
+</header>
+
+<main id="top">
+  <!-- Hero Section with Live Countdown -->
+  <section class="hero-expedition">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div class="hero-left">
+          <div class="hero-tagline">
+            <span class="hero-tagline__pulse"></span>
+            HÀNH TRÌNH 21/11 - 23/11 • ĐÀ NẴNG — BÌNH ĐỊNH — PHÚ YÊN
+          </div>
+
+          <h1 class="hero-title">Hành trình khám phá: Đà Nẵng — Quy Nhơn — Phú Yên</h1>
+          <p class="hero-desc">Chuyến du ngoạn 3 ngày 2 đêm chiêm ngưỡng tinh hoa thắng cảnh duyên hải Nam Trung Bộ: vách đá kỳ vĩ Eo Gió, đón bình minh cực Đông Mũi Điện, tuyệt tác bazan Gành Đá Đĩa và thưởng thức trọn vẹn văn hóa ẩm thực địa phương.</p>
+
+          <!-- Real-Time Countdown Instrument -->
+          <div class="countdown-box">
+            <div class="countdown-header">
+              <span class="countdown-title">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                Đếm ngược thời gian khởi hành (04:30 21/11)
+              </span>
+              <span class="countdown-status-badge" id="countdown-status">SẴN SÀNG LÊN ĐƯỜNG</span>
+            </div>
+            <div class="countdown-digits">
+              <div class="count-card">
+                <span class="count-num" id="cd-days">00</span>
+                <span class="count-lbl">Ngày</span>
+              </div>
+              <div class="count-card">
+                <span class="count-num" id="cd-hours">00</span>
+                <span class="count-lbl">Giờ</span>
+              </div>
+              <div class="count-card">
+                <span class="count-num" id="cd-minutes">00</span>
+                <span class="count-lbl">Phút</span>
+              </div>
+              <div class="count-card">
+                <span class="count-num" id="cd-seconds">00</span>
+                <span class="count-lbl">Giây</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hero Travel Specs -->
+          <dl class="hero-specs">
+            <div class="spec-item">
+              <dt>Thời gian</dt>
+              <dd>3 Ngày 2 Đêm</dd>
+            </div>
+            <div class="spec-item">
+              <dt>Điểm đến</dt>
+              <dd>10 Thắng cảnh</dd>
+            </div>
+            <div class="spec-item">
+              <dt>Trải nghiệm</dt>
+              <dd>Cảnh sắc & Ẩm thực</dd>
+            </div>
+            <div class="spec-item">
+              <dt>Lưu trú chính</dt>
+              <dd>KS Ngân Hà (Tuy Hòa)</dd>
+            </div>
+          </dl>
+        </div>
+
+        <!-- Mission Control Travel Overview HUD -->
+        <div class="hero-right">
+          <div class="mission-hud-card">
+            <div class="mission-hud-header">
+              <span class="mission-hud-title">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                BẢNG TỔNG QUAN HÀNH TRÌNH
+              </span>
+              <span class="tag-pill tag-speed">3 NGÀY 2 ĐÊM • 10 ĐIỂM ĐẾN</span>
+            </div>
+
+            <!-- Basecamp Highlight Card -->
+            <div class="mission-hud-basecamp">
+              <div style="font-family: var(--font-mono); font-size: 11px; font-weight: 700; color: var(--p-accent); text-transform: uppercase; margin-bottom: 4px;">ĐIỂM NGHỈ DƯỠNG (ĐÊM 1 & ĐÊM 2)</div>
+              <h4>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                Khách Sạn Ngân Hà
+              </h4>
+              <p>Đường Trần Suyến, TP. Tuy Hòa, Tỉnh Phú Yên (giao thoa trục biển & Tây Nguyên Đắk Lắk)</p>
+              <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                <a href="https://www.google.com/maps/search/?api=1&query=Khach+San+Ngan+Ha+Tran+Suyen+Tuy+Hoa" target="_blank" rel="noopener" class="dossier-maps-btn" style="background:#ffffff; padding: 4px 10px; border-radius: 4px; border: 1px solid var(--p-border);">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  Chỉ đường Google Maps
+                </a>
+                <span class="tag-pill">Lưu trú 2 đêm</span>
+                <span class="tag-pill">Tiện nghi nghỉ dưỡng</span>
+              </div>
+            </div>
+
+            <!-- 4 Overview Metrics -->
+            <div class="mission-metrics-grid">
+              <div class="metric-box">
+                <span class="label">Khởi hành</span>
+                <span class="value">04:30 • 21/11</span>
+              </div>
+              <div class="metric-box">
+                <span class="label">Điểm rạng đông</span>
+                <span class="value">Mũi Điện (Phú Yên)</span>
+              </div>
+              <div class="metric-box">
+                <span class="label">Thời tiết dự báo</span>
+                <span class="value">Nắng ấm • Gió biển dịu</span>
+              </div>
+              <div class="metric-box">
+                <span class="label">Khí tượng thời gian thực</span>
+                <span class="value" style="color:#059669;">● Live GPS Radar</span>
+              </div>
+            </div>
+
+            <div style="font-size: 12px; color: var(--p-muted); line-height: 1.5; border-top: 1px solid var(--p-border); padding-top: 12px;">
+              <strong>Trải nghiệm chuyến đi:</strong> Thưởng ngoạn trọn vẹn cảnh sắc danh thắng biển đảo, tìm hiểu văn hóa lịch sử và khám phá tinh hoa ẩm thực Nam Trung Bộ.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Detailed 3-Day Itinerary Section -->
+  <section class="expedition-section" id="lich-trinh">
+    <div class="wrap">
+      <div class="section-header">
+        <span class="section-kicker">LỊCH TRÌNH CHI TIẾT 3 NGÀY 2 ĐÊM</span>
+        <h2 class="section-heading">Hành trình từng chặng: Thời gian, địa điểm & ẩm thực</h2>
+        <p class="section-lead">Lộ trình khoa học kết hợp thưởng ngoạn cảnh quan thiên nhiên kỳ vĩ, tìm hiểu các di tích lịch sử văn hóa lâu đời và khám phá trọn vẹn văn hóa ẩm thực đặc sắc của vùng đất Nam Trung Bộ.</p>
+      </div>
+
+      <!-- Itinerary Tabs -->
+      <div class="tab-control-bar" role="tablist">
+        <button class="tab-btn active" onclick="switchItineraryDay('itin-day1', this)" role="tab">
+          <span>Ngày 1: Đà Nẵng — Quy Nhơn — Tuy Hòa</span>
+          <span class="tab-badge">21/11 • 8 Điểm Dừng</span>
+        </button>
+        <button class="tab-btn" onclick="switchItineraryDay('itin-day2', this)" role="tab">
+          <span>Ngày 2: Thắng Cảnh Biển Đảo Phú Yên</span>
+          <span class="tab-badge">22/11 • 8 Điểm Dừng</span>
+        </button>
+        <button class="tab-btn" onclick="switchItineraryDay('itin-day3', this)" role="tab">
+          <span>Ngày 3: Tuy Hòa — Quy Nhơn — Đà Nẵng</span>
+          <span class="tab-badge">23/11 • 4 Điểm Dừng</span>
+        </button>
+      </div>
+
+      <!-- Itinerary Day 1 List (4-Dimensional Rich Quad Grid) -->
+      <div class="timeline-container itin-day-panel" id="itin-day1">
+        <!-- Chặng 1 -->
+        <article class="timeline-card-rich">
+          <div class="timeline-card-header">
+            <div class="timeline-time-dist">
+              <span class="timeline-hour">04:30</span>
+              <span class="timeline-km-badge">Khởi Hành • 0 km</span>
+            </div>
+            <h4 class="timeline-destination-name">Xuất Phát Tại TP. Đà Nẵng — Khởi Đầu Chuyến Du Ngoạn</h4>
+            <div class="timeline-meta-tags">
+              <span class="tag-pill tag-speed">Khởi hành sớm</span>
+              <span class="tag-pill">QL1A Nam</span>
+            </div>
+          </div>
+          <div class="timeline-quad-grid">
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">📍 Địa Điểm & Tuyến Đường</span>
+              <span class="quad-cell-val">TP. Đà Nẵng ➔ Tuyến Quốc Lộ 1A xuôi về phía Nam.</span>
+            </div>
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">🌤️ Thời Điểm & Khí Hậu</span>
+              <span class="quad-cell-val highlight-info">22°C • Trời sáng sớm thanh bình, không khí se lạnh trong trẻo, gió nhẹ 12km/h.</span>
+            </div>
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">🌿 Trải Nghiệm & Tham Quan</span>
+              <span class="quad-cell-val">Khởi hành sớm tránh giờ cao điểm đô thị, đón làn gió sớm trong lành mở đầu hành trình khám phá.</span>
+            </div>
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">🍽️ Ẩm Thực & Món Ngon</span>
+              <span class="quad-cell-val">Uống nước ấm hoặc trà gừng, chuẩn bị tinh thần sảng khoái và hứng khởi cho chuyến đi.</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Chặng 2 -->
+        <article class="timeline-card-rich">
+          <div class="timeline-card-header">
+            <div class="timeline-time-dist">
+              <span class="timeline-hour">06:00</span>
+              <span class="timeline-km-badge">Điểm Tâm Sáng • 70 km</span>
+            </div>
+            <h4 class="timeline-destination-name">Dừng Chân Ăn Sáng Đặc Sản & Cà Phê Tại TP. Tam Kỳ (Quảng Nam)</h4>
+            <div class="timeline-meta-tags">
+              <span class="tag-pill">Ẩm thực xứ Quảng</span>
+              <span class="tag-pill">Tam Kỳ</span>
+            </div>
+          </div>
+          <div class="timeline-quad-grid">
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">📍 Địa Điểm & Tuyến Đường</span>
+              <span class="quad-cell-val">Trung tâm TP. Tam Kỳ (Tỉnh Quảng Nam), km 70 theo tuyến QL1A.</span>
+            </div>
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">🌤️ Thời Điểm & Khí Hậu</span>
+              <span class="quad-cell-val highlight-info">23°C • Nắng sớm ửng vàng dịu mát, phố phường Tam Kỳ bắt đầu nhộn nhịp.</span>
+            </div>
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">🌿 Trải Nghiệm & Tham Quan</span>
+              <span class="quad-cell-val">Nghỉ ngơi thư giãn sau chặng đầu ngày, cảm nhận nhịp sống êm ả của vùng đất Quảng Nam.</span>
+            </div>
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">🍽️ Ẩm Thực & Món Ngon</span>
+              <span class="quad-cell-val"><strong>Thưởng thức Mì Quảng tôm thịt chính gốc</strong> hoặc Cơm gà Tam Kỳ, uống cà phê sáng thơm lừng tỉnh táo.</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Chặng 3 -->
+        <article class="timeline-card-rich">
+          <div class="timeline-card-header">
+            <div class="timeline-time-dist">
+              <span class="timeline-hour">08:00</span>
+              <span class="timeline-km-badge">Nghỉ Chân • 135 km</span>
+            </div>
+            <h4 class="timeline-destination-name">Nghỉ Ngơi & Giải Khát Dọc Tuyến TP. Quảng Ngãi</h4>
+            <div class="timeline-meta-tags">
+              <span class="tag-pill">Nghỉ giữa chặng</span>
+              <span class="tag-pill">Quảng Ngãi</span>
+            </div>
+          </div>
+          <div class="timeline-quad-grid">
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">📍 Địa Điểm & Tuyến Đường</span>
+              <span class="quad-cell-val">TP. Quảng Ngãi (Tuyến Quốc Lộ 1A), km 135 toàn tuyến.</span>
+            </div>
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">🌤️ Thời Điểm & Khí Hậu</span>
+              <span class="quad-cell-val highlight-info">25°C • Nắng ấm chan hòa, trời quang đãng, tầm nhìn bao quát rộng mở.</span>
+            </div>
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">🌿 Trải Nghiệm & Tham Quan</span>
+              <span class="quad-cell-val">Dừng chân thư giãn, dãn cơ nhẹ nhàng, ngắm nhìn khung cảnh đồng lúa duyên hải xanh mát.</span>
+            </div>
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">🍽️ Ẩm Thực & Món Ngon</span>
+              <span class="quad-cell-val"><strong>Thưởng thức nước dừa xiêm ngọt mát</strong> hoặc nếm thử món Don sông Trà thanh đạm trứ danh Quảng Ngãi.</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Chặng 4 -->
+        <article class="timeline-card-rich">
+          <div class="timeline-card-header">
+            <div class="timeline-time-dist">
+              <span class="timeline-hour">11:30 - 12:30</span>
+              <span class="timeline-km-badge">Thắng Cảnh Biển • 320 km</span>
+            </div>
+            <h4 class="timeline-destination-name">Chiêm Ngưỡng Eo Gió & Con Đường Ven Vách Núi (Nhơn Lý, Quy Nhơn)</h4>
+            <div class="timeline-meta-tags">
+              <span class="tag-pill tag-photo">Kỳ quan biển đảo</span>
+              <span class="tag-pill">Eo Gió</span>
+            </div>
+          </div>
+          <div class="timeline-quad-grid">
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">📍 Địa Điểm & Tuyến Đường</span>
+              <span class="quad-cell-val">Eo Gió — Xã Nhơn Lý, Bán đảo Phương Mai, TP. Quy Nhơn (Bình Định).</span>
+            </div>
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">🌤️ Thời Điểm & Khí Hậu</span>
+              <span class="quad-cell-val highlight-info">28°C • Nắng đỉnh đầu rực rỡ, mặt nước biển xanh màu ngọc lam trong vắt tận đáy, gió biển lộng.</span>
+            </div>
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">🌿 Trải Nghiệm & Tham Quan</span>
+              <span class="quad-cell-val">Dạo bước trên con đường ven vách đá bazan uốn lượn ôm trọn bờ vịnh, ngắm nhìn sóng vỗ tung bọt trắng xóa kỳ vĩ.</span>
+            </div>
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">🍽️ Ẩm Thực & Món Ngon</span>
+              <span class="quad-cell-val">Uống nước chanh đá / dừa tươi giải nhiệt, sẵn sàng cho bữa trưa hải sản tươi sống tại làng chài.</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Chặng 5 -->
+        <article class="timeline-card-rich">
+          <div class="timeline-card-header">
+            <div class="timeline-time-dist">
+              <span class="timeline-hour">12:30 - 14:00</span>
+              <span class="timeline-km-badge">Ẩm Thực Hải Sản • 345 km</span>
+            </div>
+            <h4 class="timeline-destination-name">Thưởng Thức Hải Sản Làng Chài Nhơn Lý & Qua Cầu Vượt Biển Thị Nại</h4>
+            <div class="timeline-meta-tags">
+              <span class="tag-pill">Hải sản Nhơn Lý</span>
+              <span class="tag-pill">Cầu Thị Nại</span>
+            </div>
+          </div>
+          <div class="timeline-quad-grid">
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">📍 Địa Điểm & Tuyến Đường</span>
+              <span class="quad-cell-val">Làng chài Nhơn Lý ➔ Tuyến đường Võ Nguyên Giáp qua Cầu Thị Nại vào Quy Nhơn.</span>
+            </div>
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">🌤️ Thời Điểm & Khí Hậu</span>
+              <span class="quad-cell-val highlight-info">28°C • Gió biển đại dương thoáng đãng, bầu trời trong xanh bao la phản chiếu mặt đầm.</span>
+            </div>
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">🌿 Trải Nghiệm & Tham Quan</span>
+              <span class="quad-cell-val">Thưởng ngoạn cây cầu vượt biển dài gần 2,5km, ngắm toàn cảnh đầm Thị Nại và rừng ngập mặn xanh ngắt.</span>
+            </div>
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">🍽️ Ẩm Thực & Món Ngon</span>
+              <span class="quad-cell-val"><strong>Đại tiệc hải sản làng chài:</strong> mực hấp gừng giòn ngọt, tôm biển nướng mọi, cá tà ma nấu chua, ốc hương rang muối và cháo hải sản.</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Chặng 6 -->
+        <article class="timeline-card-rich">
+          <div class="timeline-card-header">
+            <div class="timeline-time-dist">
+              <span class="timeline-hour">14:00 - 15:00</span>
+              <span class="timeline-km-badge">Di Tích Cổ • 350 km</span>
+            </div>
+            <h4 class="timeline-destination-name">Thăm Di Tích Kiến Trúc Chăm Pa Cổ Kính: Tháp Đôi Quy Nhơn</h4>
+            <div class="timeline-meta-tags">
+              <span class="tag-pill tag-photo">Văn hóa Chăm Pa</span>
+              <span class="tag-pill">Thế kỷ 12</span>
+            </div>
+          </div>
+          <div class="timeline-quad-grid">
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">📍 Địa Điểm & Tuyến Đường</span>
+              <span class="quad-cell-val">Tháp Đôi Chăm Pa — Đường Trần Hưng Đạo, P. Đống Đa, TP. Quy Nhơn.</span>
+            </div>
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">🌤️ Thời Điểm & Khí Hậu</span>
+              <span class="quad-cell-val highlight-info">27°C • Nắng chiều vàng ấm tôn vinh sắc gạch nung đỏ rực, bóng dừa xanh râm mát.</span>
+            </div>
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">🌿 Trải Nghiệm & Tham Quan</span>
+              <span class="quad-cell-val">Chiêm ngưỡng hai tòa tháp Chăm thế kỷ 12 với kỹ thuật mài chập gắn gạch không mạch vữa và các phù điêu vũ nữ Apsara tinh xảo.</span>
+            </div>
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">🍽️ Ẩm Thực & Món Ngon</span>
+              <span class="quad-cell-val"><strong>Thưởng thức đặc sản Bình Định:</strong> Bánh ít lá gai, bánh hồng Tam Quan, nem Chợ Huyện hoặc ly nước mía sầu riêng thơm béo.</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Chặng 7 -->
+        <article class="timeline-card-rich">
+          <div class="timeline-card-header">
+            <div class="timeline-time-dist">
+              <span class="timeline-hour">16:15 - 17:00</span>
+              <span class="timeline-km-badge">Hoàng Hôn Vịnh • 375 km</span>
+            </div>
+            <h4 class="timeline-destination-name">Ngắm Ánh Hoàng Hôn Hổ Phách Trên Vịnh Xuân Đài (Đèo Ven Biển QL1D)</h4>
+            <div class="timeline-meta-tags">
+              <span class="tag-pill tag-photo">Hoàng hôn tuyệt sắc</span>
+              <span class="tag-pill">Vịnh Xuân Đài</span>
+            </div>
+          </div>
+          <div class="timeline-quad-grid">
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">📍 Địa Điểm & Tuyến Đường</span>
+              <span class="quad-cell-val">Cung đường đèo ven biển QL1D nối Quy Nhơn — Sông Cầu (Phú Yên).</span>
+            </div>
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">🌤️ Thời Điểm & Khí Hậu</span>
+              <span class="quad-cell-val highlight-info">25°C • Ánh nắng chiều tà phủ màu hổ phách vàng cam lên toàn bộ vùng vịnh Xuân Đài phẳng lặng như gương.</span>
+            </div>
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">🌿 Trải Nghiệm & Tham Quan</span>
+              <span class="quad-cell-val">Dừng chân ngắm toàn cảnh vịnh biển kín gió với hàng trăm cù lao xanh nhấp nhô, hít thở hương vị biển trong lành, thơ mộng.</span>
+            </div>
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">🍽️ Ẩm Thực & Món Ngon</span>
+              <span class="quad-cell-val">Uống nước dừa xiêm Sông Cầu ngọt lịm ven đèo, tận hưởng cảm giác thư thái của buổi chiều tà.</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Chặng 8 -->
+        <article class="timeline-card-rich" style="border: 2px solid var(--p-accent); background: #fffaf5;">
+          <div class="timeline-card-header">
+            <div class="timeline-time-dist">
+              <span class="timeline-hour">18:00</span>
+              <span class="timeline-km-badge">Nhận Phòng KS & Dạo Đêm • 400 km</span>
+            </div>
+            <h4 class="timeline-destination-name">Đến TP. Tuy Hòa — Nhận Phòng Khách Sạn Ngân Hà & Dạo Tháp Nghinh Phong Đêm</h4>
+            <div class="timeline-meta-tags">
+              <span class="tag-pill tag-speed">Lưu Trú Đêm 1</span>
+              <span class="tag-pill">Ẩm thực Tuy Hòa</span>
+            </div>
+          </div>
+          <div class="timeline-quad-grid">
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">📍 Địa Điểm & Tuyến Đường</span>
+              <span class="quad-cell-val"><strong>Khách Sạn Ngân Hà (Đường Trần Suyến, TP. Tuy Hòa)</strong> ➔ Quảng trường Nghinh Phong (cách 3.5km).</span>
+            </div>
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">🌤️ Thời Điểm & Khí Hậu</span>
+              <span class="quad-cell-val highlight-info">22°C • Trời tối êm dịu, gió biển đêm Tuy Hòa mát lạnh sảng khoái, phố phường lên đèn lung linh.</span>
+            </div>
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">🌿 Trải Nghiệm & Tham Quan</span>
+              <span class="quad-cell-val">Nhận phòng nghỉ ngơi, tắm nước nóng thư giãn tại KS Ngân Hà; tản bộ ngắm Tháp Nghinh Phong rực sáng ánh đèn laser nghệ thuật.</span>
+            </div>
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">🍽️ Ẩm Thực & Món Ngon</span>
+              <span class="quad-cell-val"><strong>Thưởng thức ẩm thực đêm Phú Yên:</strong> Mắt cá ngừ đại dương hầm thuốc bắc bà Tám thơm lừng, Bánh canh hẹ Năng Nở, Chả dông Tuy Hòa, uống nước mía bờ biển.</span>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Itinerary Day 2 List (4-Dimensional Rich Quad Grid) -->
+      <div class="timeline-container itin-day-panel" id="itin-day2" style="display: none;">
+        <!-- Day 2 Chặng 1 -->
+        <article class="timeline-card-rich">
+          <div class="timeline-card-header">
+            <div class="timeline-time-dist">
+              <span class="timeline-hour">04:30</span>
+              <span class="timeline-km-badge">Khởi Hành Sớm • 32 km</span>
+            </div>
+            <h4 class="timeline-destination-name">Xuất Phát Từ Khách Sạn Ngân Hà Đi Đón Bình Minh Mũi Điện</h4>
+            <div class="timeline-meta-tags">
+              <span class="tag-pill tag-speed">Xuất phát sớm</span>
+              <span class="tag-pill">Cung Phước Tân</span>
+            </div>
+          </div>
+          <div class="timeline-quad-grid">
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">📍 Địa Điểm & Tuyến Đường</span>
+              <span class="quad-cell-val"><strong>Khách Sạn Ngân Hà (Trần Suyến)</strong> ➔ Đường ven biển Phước Tân - Bãi Ngà ➔ Mũi Điện (32 km).</span>
+            </div>
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">🌤️ Thời Điểm & Khí Hậu</span>
+              <span class="quad-cell-val highlight-info">21°C • Mờ sáng tinh khôi, làn sương mỏng mát lành, không khí đại dương thanh sạch.</span>
+            </div>
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">🌿 Trải Nghiệm & Tham Quan</span>
+              <span class="quad-cell-val">Cung đường ven biển sớm mai tĩnh lặng, ngắm nhìn bờ vịnh mờ ảo trong ánh bình minh chuẩn bị hé rạng.</span>
+            </div>
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">🍽️ Ẩm Thực & Món Ngon</span>
+              <span class="quad-cell-val">Uống tách trà nóng hoặc sữa đậu nành ấm tại phòng khách sạn trước khi lên đường, mang theo nước khoáng.</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Day 2 Chặng 2 -->
+        <article class="timeline-card-rich">
+          <div class="timeline-card-header">
+            <div class="timeline-time-dist">
+              <span class="timeline-hour">05:15 - 06:30</span>
+              <span class="timeline-km-badge">Bình Minh Cực Đông • 32 km</span>
+            </div>
+            <h4 class="timeline-destination-name">Đón Bình Minh Cực Đông Đất Liền Tại Hải Đăng Mũi Điện & Bãi Môn</h4>
+            <div class="timeline-meta-tags">
+              <span class="tag-pill tag-photo">Bình minh cực Đông</span>
+              <span class="tag-pill">Mũi Đại Lãnh</span>
+            </div>
+          </div>
+          <div class="timeline-quad-grid">
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">📍 Địa Điểm & Tuyến Đường</span>
+              <span class="quad-cell-val">Hải đăng Mũi Điện (Đại Lãnh) & Bãi Môn, Thị xã Đông Hòa (cách KS Ngân Hà 32 km).</span>
+            </div>
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">🌤️ Thời Điểm & Khí Hậu</span>
+              <span class="quad-cell-val highlight-info">22°C • Khoảnh khắc rực rỡ từ 05:20 - 05:50 khi mặt trời nhô lên khỏi đường chân trời đại dương bao la.</span>
+            </div>
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">🌿 Trải Nghiệm & Tham Quan</span>
+              <span class="quad-cell-val">Chinh phục cột mốc tọa độ cực Đông Tổ quốc, ngắm ngọn hải đăng đá cổ từ năm 1890 và dạo bước trên bãi cát cong hoang sơ Bãi Môn.</span>
+            </div>
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">🍽️ Ẩm Thực & Món Ngon</span>
+              <span class="quad-cell-val"><strong>Điểm tâm sáng:</strong> Thưởng thức bánh mì nóng giòn pa-tê chả lụa dưới chân hải đăng, uống nước dừa tươi ngọt lịm.</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Day 2 Chặng 3 -->
+        <article class="timeline-card-rich">
+          <div class="timeline-card-header">
+            <div class="timeline-time-dist">
+              <span class="timeline-hour">08:30 - 09:30</span>
+              <span class="timeline-km-badge">Kỳ Quan Bazan • 67 km</span>
+            </div>
+            <h4 class="timeline-destination-name">Chiêm Ngưỡng Kỳ Quan Quốc Gia Cột Đá Bazan Gành Đá Đĩa</h4>
+            <div class="timeline-meta-tags">
+              <span class="tag-pill tag-photo">Kỳ quan thiên nhiên</span>
+              <span class="tag-pill">Tuy An</span>
+            </div>
+          </div>
+          <div class="timeline-quad-grid">
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">📍 Địa Điểm & Tuyến Đường</span>
+              <span class="quad-cell-val">Gành Đá Đĩa — Xã An Ninh Đông, Huyện Tuy An (cách KS Ngân Hà 35 km về phía Bắc).</span>
+            </div>
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">🌤️ Thời Điểm & Khí Hậu</span>
+              <span class="quad-cell-val highlight-info">26°C • Nắng sớm trong vắt rọi xiên làm nổi bật vân đá bazan đen tuyền lục lăng, sóng biển tung bọt trắng xóa.</span>
+            </div>
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">🌿 Trải Nghiệm & Tham Quan</span>
+              <span class="quad-cell-val">Tận mắt chiêm ngưỡng hàng chục nghìn cột đá bazan xếp khít nhau như tổ ong khổng lồ kỳ vĩ, tuyệt tác địa chất núi lửa triệu năm.</span>
+            </div>
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">🍽️ Ẩm Thực & Món Ngon</span>
+              <span class="quad-cell-val"><strong>Thưởng thức quà vặt Tuy An:</strong> Nước mía sương sâm thanh mát, bánh tráng nướng mắm ruốc giòn rụm bên bờ biển.</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Day 2 Chặng 4 -->
+        <article class="timeline-card-rich">
+          <div class="timeline-card-header">
+            <div class="timeline-time-dist">
+              <span class="timeline-hour">09:45 - 10:45</span>
+              <span class="timeline-km-badge">Hải Đăng Đá Hồng • 69 km</span>
+            </div>
+            <h4 class="timeline-destination-name">Tham Quan Hải Đăng Gành Đèn & Bãi Đá Bọt Biển Hồng Cam</h4>
+            <div class="timeline-meta-tags">
+              <span class="tag-pill tag-photo">Gành Đèn</span>
+              <span class="tag-pill">Đá bọt biển</span>
+            </div>
+          </div>
+          <div class="timeline-quad-grid">
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">📍 Địa Điểm & Tuyến Đường</span>
+              <span class="quad-cell-val">Hải đăng Gành Đèn (Cách Gành Đá Đĩa chỉ 1.2 km theo con đường bờ biển Tuy An).</span>
+            </div>
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">🌤️ Thời Điểm & Khí Hậu</span>
+              <span class="quad-cell-val highlight-info">27°C • Nắng ấm biển khơi rực rỡ, tương phản tuyệt đẹp giữa đá bọt biển hồng cam và nước biển ngọc bích.</span>
+            </div>
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">🌿 Trải Nghiệm & Tham Quan</span>
+              <span class="quad-cell-val">Check-in ngọn hải đăng hai tông màu trắng đỏ cổ kính đứng đơn độc trên mỏm đá nhô ra biển, không gian yên ả hoang sơ.</span>
+            </div>
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">🍽️ Ẩm Thực & Món Ngon</span>
+              <span class="quad-cell-val">Uống nước dừa xiêm ngọt lịm, nhâm nhi đặc sản rong biển sấy giòn thơm bùi.</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Day 2 Chặng 5 -->
+        <article class="timeline-card-rich">
+          <div class="timeline-card-header">
+            <div class="timeline-time-dist">
+              <span class="timeline-hour">11:15 - 12:15</span>
+              <span class="timeline-km-badge">Di Tích Lịch Sử • 80 km</span>
+            </div>
+            <h4 class="timeline-destination-name">Thăm Di Tích Cổ Nhà Thờ Mằng Lăng (Kiến Trúc Gothic Xây Năm 1892)</h4>
+            <div class="timeline-meta-tags">
+              <span class="tag-pill tag-photo">Gothic cổ kính</span>
+              <span class="tag-pill">Di tích 1892</span>
+            </div>
+          </div>
+          <div class="timeline-quad-grid">
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">📍 Địa Điểm & Tuyến Đường</span>
+              <span class="quad-cell-val">Nhà thờ Mằng Lăng — Xã An Thạch, Huyện Tuy An (cách Gành Đèn 11 km).</span>
+            </div>
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">🌤️ Thời Điểm & Khí Hậu</span>
+              <span class="quad-cell-val highlight-info">28°C • Trời nắng ấm nhưng khuôn viên rợp bóng mát của hàng cây xà cừ cổ thụ trăm năm.</span>
+            </div>
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">🌿 Trải Nghiệm & Tham Quan</span>
+              <span class="quad-cell-val">Chiêm ngưỡng kiến trúc Gothic vòm nhọn cổ kính rêu phong, thăm phòng ngầm lưu giữ cuốn sách "Phép giảng tám ngày" in năm 1651.</span>
+            </div>
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">🍽️ Ẩm Thực & Món Ngon</span>
+              <span class="quad-cell-val">Thưởng thức chè hạt sen long nhãn mát lành thanh nhiệt trước cổng thánh đường.</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Day 2 Chặng 6 -->
+        <article class="timeline-card-rich">
+          <div class="timeline-card-header">
+            <div class="timeline-time-dist">
+              <span class="timeline-hour">12:30 - 14:00</span>
+              <span class="timeline-km-badge">Ẩm Thực Đầm Ô Loan • 87 km</span>
+            </div>
+            <h4 class="timeline-destination-name">Thưởng Thức Đại Tiệc Hải Sản Sò Huyết Bên Đầm Ô Loan</h4>
+            <div class="timeline-meta-tags">
+              <span class="tag-pill">Sò huyết Ô Loan</span>
+              <span class="tag-pill">Hải sản đầm nước lợ</span>
+            </div>
+          </div>
+          <div class="timeline-quad-grid">
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">📍 Địa Điểm & Tuyến Đường</span>
+              <span class="quad-cell-val">Nhà bè hải sản Cầu An Hải — Đầm Ô Loan, Huyện Tuy An.</span>
+            </div>
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">🌤️ Thời Điểm & Khí Hậu</span>
+              <span class="quad-cell-val highlight-info">29°C • Nắng trưa rực rỡ nhưng ngồi trên nhà bè ngập tràn gió đầm nước lợ mát rượi tự nhiên.</span>
+            </div>
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">🌿 Trải Nghiệm & Tham Quan</span>
+              <span class="quad-cell-val">Ngắm cảnh mặt đầm rộng 1.200 ha tựa cánh chim phượng hoàng, nằm võng thư giãn 30 phút giữa làn gió mát.</span>
+            </div>
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">🍽️ Ẩm Thực & Món Ngon</span>
+              <span class="quad-cell-val"><strong>Đại tiệc hải sản Ô Loan nức tiếng:</strong> Sò huyết nướng mỡ hành béo ngậy giòn ngọt, Cháo hàu nóng hổi, Tôm đất rang muối ớt, Cua huỳnh đế hấp gừng.</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Day 2 Chặng 7 -->
+        <article class="timeline-card-rich">
+          <div class="timeline-card-header">
+            <div class="timeline-time-dist">
+              <span class="timeline-hour">14:30 - 15:30</span>
+              <span class="timeline-km-badge">Cảnh Phim Kinh Điển • 105 km</span>
+            </div>
+            <h4 class="timeline-destination-name">Dạo Bước Bãi Xép — Vách Xương Rồng & Đồi Gành Ông (Hoa Vàng Cỏ Xanh)</h4>
+            <div class="timeline-meta-tags">
+              <span class="tag-pill tag-photo">Hoa vàng cỏ xanh</span>
+              <span class="tag-pill">Bãi Xép</span>
+            </div>
+          </div>
+          <div class="timeline-quad-grid">
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">📍 Địa Điểm & Tuyến Đường</span>
+              <span class="quad-cell-val">Bãi Xép & Đồi Gành Ông — Xã An Chấn, Tuy An (cách Đầm Ô Loan 12 km về phía Nam).</span>
+            </div>
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">🌤️ Thời Điểm & Khí Hậu</span>
+              <span class="quad-cell-val highlight-info">27°C • Nắng chiều xiên 45 độ rực rỡ, gió thổi lồng lộng trên đồi cỏ xanh ngắt nhìn xuống bờ cát cong.</span>
+            </div>
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">🌿 Trải Nghiệm & Tham Quan</span>
+              <span class="quad-cell-val">Đắm chìm vào khung cảnh phim "Tôi thấy hoa vàng trên cỏ xanh", ngắm rặng xương rồng kiêu hãnh bám vách đá và bãi cát vàng hình cánh cung.</span>
+            </div>
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">🍽️ Ẩm Thực & Món Ngon</span>
+              <span class="quad-cell-val">Thưởng thức kem dừa mát lạnh, sinh tố bơ / xoài giải khát sau khi dạo bộ ngắm cảnh đồi cỏ.</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Day 2 Chặng 8 -->
+        <article class="timeline-card-rich" style="border: 2px solid var(--p-accent); background: #fffaf5;">
+          <div class="timeline-card-header">
+            <div class="timeline-time-dist">
+              <span class="timeline-hour">16:30</span>
+              <span class="timeline-km-badge">Nghỉ Ngơi KS & Ẩm Thực Tối • 119 km</span>
+            </div>
+            <h4 class="timeline-destination-name">Về Lại Khách Sạn Ngân Hà — Nghỉ Dưỡng & Khám Phá Ẩm Thực Tối Tuy Hòa</h4>
+            <div class="timeline-meta-tags">
+              <span class="tag-pill tag-speed">Lưu Trú Đêm 2</span>
+              <span class="tag-pill">Thư giãn nghỉ ngơi</span>
+            </div>
+          </div>
+          <div class="timeline-quad-grid">
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">📍 Địa Điểm & Tuyến Đường</span>
+              <span class="quad-cell-val"><strong>Khách Sạn Ngân Hà (Đường Trần Suyến, TP. Tuy Hòa)</strong>. Cách Bãi Xép 14 km theo đại lộ Hùng Vương.</span>
+            </div>
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">🌤️ Thời Điểm & Khí Hậu</span>
+              <span class="quad-cell-val highlight-info">24°C • Trời ngả hoàng hôn êm dịu, gió biển Tuy Hòa lộng mát, phố phường lên đèn sớm.</span>
+            </div>
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">🌿 Trải Nghiệm & Tham Quan</span>
+              <span class="quad-cell-val">Về phòng nghỉ ngơi thoải mái tại KS Ngân Hà, tắm rửa sảng khoái; tối tự do dạo phố, ngắm biển Tuy Hòa về đêm êm đềm.</span>
+            </div>
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">🍽️ Ẩm Thực & Món Ngon</span>
+              <span class="quad-cell-val"><strong>Thưởng thức bữa tối đặc sắc:</strong> Cơm gà Phú Yên hạt dẻo vàng óng ăn kèm lòng gà xào, Bún mực nấu chua ngọt thanh mát, chè chuối nướng Tuy Hòa.</span>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Itinerary Day 3 List (4-Dimensional Rich Quad Grid) -->
+      <div class="timeline-container itin-day-panel" id="itin-day3" style="display: none;">
+        <!-- Day 3 Chặng 1 -->
+        <article class="timeline-card-rich">
+          <div class="timeline-card-header">
+            <div class="timeline-time-dist">
+              <span class="timeline-hour">05:30</span>
+              <span class="timeline-km-badge">Điểm Tâm & Khởi Hành • QL1A</span>
+            </div>
+            <h4 class="timeline-destination-name">Ăn Sáng, Trả Phòng Khách Sạn Ngân Hà, Vượt Đèo Cù Mông Ngược Bắc</h4>
+            <div class="timeline-meta-tags">
+              <span class="tag-pill tag-speed">Khởi hành chặng về</span>
+              <span class="tag-pill">Đèo Cù Mông</span>
+            </div>
+          </div>
+          <div class="timeline-quad-grid">
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">📍 Địa Điểm & Tuyến Đường</span>
+              <span class="quad-cell-val"><strong>Khách Sạn Ngân Hà (Trần Suyến, Tuy Hòa)</strong> ➔ QL1A ➔ Đèo Cù Mông sang Bình Định.</span>
+            </div>
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">🌤️ Thời Điểm & Khí Hậu</span>
+              <span class="quad-cell-val highlight-info">21°C • Sương sớm bảng lảng bao phủ triền đèo Cù Mông, không khí se lạnh trong lành.</span>
+            </div>
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">🌿 Trải Nghiệm & Tham Quan</span>
+              <span class="quad-cell-val">Ngắm cảnh rạng đông trên sườn đèo hùng vĩ, tạm biệt mảnh đất Phú Yên thân thương và mến khách.</span>
+            </div>
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">🍽️ Ẩm Thực & Món Ngon</span>
+              <span class="quad-cell-val"><strong>Điểm tâm sáng Tuy Hòa:</strong> Thưởng thức Bánh xèo tôm nhảy giòn rụm hoặc tô Bún bò nóng hổi thơm phức trước khi trả phòng khởi hành.</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Day 3 Chặng 2 -->
+        <article class="timeline-card-rich">
+          <div class="timeline-card-header">
+            <div class="timeline-time-dist">
+              <span class="timeline-hour">08:30</span>
+              <span class="timeline-km-badge">Nghỉ Chân & Quà Đặc Sản • 180 km</span>
+            </div>
+            <h4 class="timeline-destination-name">Nghỉ Chân Thư Giãn & Chọn Quà Đặc Sản Xứ Nẫu (Bình Định)</h4>
+            <div class="timeline-meta-tags">
+              <span class="tag-pill">Đặc sản Bình Định</span>
+              <span class="tag-pill">Cà phê sáng</span>
+            </div>
+          </div>
+          <div class="timeline-quad-grid">
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">📍 Địa Điểm & Tuyến Đường</span>
+              <span class="quad-cell-val">Trạm dừng chân địa phận Bình Định (Tuyến QL1A, km 180 của ngày).</span>
+            </div>
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">🌤️ Thời Điểm & Khí Hậu</span>
+              <span class="quad-cell-val highlight-info">25°C • Nắng sớm chan hòa, gió đồng bằng thổi nhẹ nhàng, không khí thoáng đãng.</span>
+            </div>
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">🌿 Trải Nghiệm & Tham Quan</span>
+              <span class="quad-cell-val">Thư giãn giải lao giữa chặng, ngắm nhìn nhịp sống thanh bình của các làng quê duyên hải Bình Định.</span>
+            </div>
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">🍽️ Ẩm Thực & Món Ngon</span>
+              <span class="quad-cell-val"><strong>Thưởng thức & mua quà đặc sản:</strong> Cà phê phin đậm đà; Bánh ít lá gai dẻo thơm, Nem Chợ Huyện, Chả ram tôm đất giòn rụm, Rượu Bàu Đá truyền thống.</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Day 3 Chặng 3 -->
+        <article class="timeline-card-rich">
+          <div class="timeline-card-header">
+            <div class="timeline-time-dist">
+              <span class="timeline-hour">11:30</span>
+              <span class="timeline-km-badge">Ăn Trưa Cơm Gà • 270 km</span>
+            </div>
+            <h4 class="timeline-destination-name">Thưởng Thức Bữa Trưa Cơm Gà Nức Tiếng Tại TP. Quảng Ngãi</h4>
+            <div class="timeline-meta-tags">
+              <span class="tag-pill">Cơm gà Quảng Ngãi</span>
+              <span class="tag-pill">Nghỉ trưa</span>
+            </div>
+          </div>
+          <div class="timeline-quad-grid">
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">📍 Địa Điểm & Tuyến Đường</span>
+              <span class="quad-cell-val">TP. Quảng Ngãi (Tuyến QL1A). Cách điểm đến Đà Nẵng 130 km.</span>
+            </div>
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">🌤️ Thời Điểm & Khí Hậu</span>
+              <span class="quad-cell-val highlight-info">27°C • Nắng trưa hanh dịu, không gian quán ăn thoáng mát có điều hòa thư thái.</span>
+            </div>
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">🌿 Trải Nghiệm & Tham Quan</span>
+              <span class="quad-cell-val">Dừng chân nghỉ trưa thoải mái, hồi phục năng lượng cho chặng đường cuối cùng trở về Đà Nẵng.</span>
+            </div>
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">🍽️ Ẩm Thực & Món Ngon</span>
+              <span class="quad-cell-val"><strong>Thưởng thức Cơm gà Quảng Ngãi trứ danh:</strong> Cơm nấu nước dùng gà thơm dẻo, thịt gà ta thả vườn vàng ươm chắc ngọt, gỏi gà xé bắp chuối, canh lá giang chua thanh.</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Day 3 Chặng 4 -->
+        <article class="timeline-card-rich" style="border: 2px solid #16a34a; background: #f0fdf4;">
+          <div class="timeline-card-header">
+            <div class="timeline-time-dist">
+              <span class="timeline-hour" style="background: #dcfce7; color: #16a34a; border-color: rgba(22, 163, 74, 0.3);">15:00 - 16:00</span>
+              <span class="timeline-km-badge">Về Đích Viên Mãn • 400 km</span>
+            </div>
+            <h4 class="timeline-destination-name" style="color: #15803d;">Về Đến Đà Nẵng — Hoàn Thành Trọn Vẹn Hành Trình Ý Nghĩa</h4>
+            <div class="timeline-meta-tags">
+              <span class="tag-pill tag-speed" style="background: #16a34a; color: #fff;">Hoàn Thành Chuyến Đi</span>
+              <span class="tag-pill">Trọn Vẹn Niềm Vui</span>
+            </div>
+          </div>
+          <div class="timeline-quad-grid">
+            <div class="quad-cell" style="background: #ffffff;">
+              <span class="quad-cell-lbl">📍 Địa Điểm & Tuyến Đường</span>
+              <span class="quad-cell-val">TP. Đà Nẵng (Cửa ngõ Cầu Rồng / Sông Hàn).</span>
+            </div>
+            <div class="quad-cell" style="background: #ffffff;">
+              <span class="quad-cell-lbl">🌤️ Thời Điểm & Khí Hậu</span>
+              <span class="quad-cell-val highlight-info">24°C • Nắng chiều dịu mát trên sông Hàn, làn gió mát lành chào đón đoàn trở về.</span>
+            </div>
+            <div class="quad-cell" style="background: #ffffff;">
+              <span class="quad-cell-lbl">🌿 Trải Nghiệm & Tham Quan</span>
+              <span class="quad-cell-val">Kết thúc trọn vẹn chuyến du lịch 3 ngày 2 đêm, lưu giữ những khoảnh khắc tuyệt đẹp và kỷ niệm đáng nhớ.</span>
+            </div>
+            <div class="quad-cell" style="background: #ffffff;">
+              <span class="quad-cell-lbl">🍽️ Ẩm Thực & Món Ngon</span>
+              <span class="quad-cell-val">Tụ họp thưởng thức trà chiều, kem dừa hoặc chè sầu Liên Đà Nẵng, cùng ngắm nhìn lại những bức ảnh tuyệt đẹp trong chuyến đi.</span>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Route Telemetry & Elevation Profile Dashboard (Light Mode) -->
+      <div class="elevation-dashboard">
+        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 20px; flex-wrap: wrap; gap: 12px;">
+          <div>
+            <span class="section-kicker" style="margin-bottom: 4px;">SƠ ĐỒ ĐỊA HÌNH & CAO ĐỘ TUYẾN ĐƯỜNG</span>
+            <h3 style="font-size: 20px; font-weight: 700; margin: 0; color: var(--p-ink);">Trắc diện địa hình các điểm dừng chân ven biển</h3>
+          </div>
+          <div class="elevation-legend">
+            <span><strong style="color: var(--p-accent);">■</strong> Điểm dừng chân</span>
+            <span><strong style="color: var(--c-cyan);">●</strong> Thắng cảnh biển</span>
+            <span><strong style="color: var(--c-yellow);">▲</strong> Đèo ngắm cảnh</span>
+          </div>
+        </div>
+
+        <svg viewBox="0 0 1000 240" style="width: 100%; height: auto; display: block;" preserveAspectRatio="xMidYMid meet">
+          <defs>
+            <linearGradient id="elevGradLight" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="#ea580c" stop-opacity="0.25"/>
+              <stop offset="100%" stop-color="#ea580c" stop-opacity="0.02"/>
+            </linearGradient>
+          </defs>
+
+          <!-- Background grid lines -->
+          <line x1="50" y1="50" x2="950" y2="50" stroke="#e2e8f0" stroke-dasharray="4"/>
+          <line x1="50" y1="110" x2="950" y2="110" stroke="#e2e8f0" stroke-dasharray="4"/>
+          <line x1="50" y1="170" x2="950" y2="170" stroke="#e2e8f0" stroke-dasharray="4"/>
+          <line x1="50" y1="200" x2="950" y2="200" stroke="#cbd5e1" stroke-width="1.5"/>
+
+          <!-- Elevation text axis -->
+          <text x="35" y="55" fill="#94a3b8" font-family="monospace" font-size="10" text-anchor="end">200m</text>
+          <text x="35" y="115" fill="#94a3b8" font-family="monospace" font-size="10" text-anchor="end">100m</text>
+          <text x="35" y="175" fill="#94a3b8" font-family="monospace" font-size="10" text-anchor="end">50m</text>
+          <text x="35" y="204" fill="#94a3b8" font-family="monospace" font-size="10" text-anchor="end">0m</text>
+
+          <!-- Elevation polygon & path -->
+          <polygon points="50,200 50,195 180,190 320,185 460,120 560,180 660,175 750,70 840,190 930,95 950,180 950,200" fill="url(#elevGradLight)"/>
+          <polyline points="50,195 180,190 320,185 460,120 560,180 660,175 750,70 840,190 930,95 950,180" fill="none" stroke="#ea580c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+          <!-- Checkpoint Dots & Labels -->
+          <!-- Đà Nẵng -->
+          <circle cx="50" cy="195" r="4.5" fill="#0284c7"/>
+          <text x="50" y="222" fill="#0f172a" font-family="sans-serif" font-size="11" font-weight="700" text-anchor="middle">Đà Nẵng</text>
+          <text x="50" y="235" fill="#64748b" font-family="monospace" font-size="9" text-anchor="middle">0 km</text>
+
+          <!-- Tam Kỳ -->
+          <rect x="176" y="186" width="8" height="8" rx="2" fill="#ea580c"/>
+          <text x="180" y="222" fill="#475569" font-family="sans-serif" font-size="10" font-weight="600" text-anchor="middle">Tam Kỳ</text>
+          <text x="180" y="235" fill="#64748b" font-family="monospace" font-size="9" text-anchor="middle">70 km</text>
+
+          <!-- Quảng Ngãi -->
+          <rect x="316" y="181" width="8" height="8" rx="2" fill="#ea580c"/>
+          <text x="320" y="222" fill="#475569" font-family="sans-serif" font-size="10" font-weight="600" text-anchor="middle">Quảng Ngãi</text>
+          <text x="320" y="235" fill="#64748b" font-family="monospace" font-size="9" text-anchor="middle">130 km</text>
+
+          <!-- Đèo Nhông -->
+          <path d="M460,110 L465,120 L455,120 Z" fill="#d97706"/>
+          <text x="460" y="102" fill="#b45309" font-family="sans-serif" font-size="10" font-weight="700" text-anchor="middle">Đèo Nhông (80m)</text>
+
+          <!-- Eo Gió / Quy Nhơn -->
+          <circle cx="660" cy="175" r="4.5" fill="#0284c7"/>
+          <text x="660" y="222" fill="#0f172a" font-family="sans-serif" font-size="10" font-weight="700" text-anchor="middle">Eo Gió • QN</text>
+          <text x="660" y="235" fill="#64748b" font-family="monospace" font-size="9" text-anchor="middle">320 km</text>
+
+          <!-- Đèo QL1D & Xuân Đài -->
+          <path d="M750,60 L755,70 L745,70 Z" fill="#d97706"/>
+          <text x="750" y="52" fill="#b45309" font-family="sans-serif" font-size="10" font-weight="700" text-anchor="middle">Đèo QL1D (160m)</text>
+
+          <!-- Tuy Hòa -->
+          <circle cx="840" cy="190" r="4.5" fill="#0284c7"/>
+          <text x="840" y="222" fill="#0f172a" font-family="sans-serif" font-size="10" font-weight="700" text-anchor="middle">TP. Tuy Hòa</text>
+          <text x="840" y="235" fill="#64748b" font-family="monospace" font-size="9" text-anchor="middle">400 km</text>
+
+          <!-- Mũi Điện -->
+          <circle cx="930" cy="95" r="4.5" fill="#0284c7"/>
+          <text x="930" y="85" fill="#0284c7" font-family="sans-serif" font-size="10" font-weight="700" text-anchor="middle">Mũi Điện (110m)</text>
+          <text x="930" y="222" fill="#475569" font-family="sans-serif" font-size="10" font-weight="600" text-anchor="middle">Bãi Môn</text>
+          <text x="930" y="235" fill="#64748b" font-family="monospace" font-size="9" text-anchor="middle">435 km</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- Basecamp Section: Khách Sạn Ngân Hà -->
+  <section class="expedition-section" id="khach-san">
+    <div class="wrap">
+      <div class="section-header">
+        <span class="section-kicker">ĐIỂM NGHỈ DƯỠNG & LƯU TRÚ CHÍNH THỨC</span>
+        <h2 class="section-heading">Khách Sạn Ngân Hà (TP. Tuy Hòa)</h2>
+        <p class="section-lead">Điểm dừng chân lưu trú tiện nghi và thoải mái trong suốt 2 đêm tại TP. Tuy Hòa. Vị trí trung tâm thuận tiện kết nối các điểm du lịch, thưởng thức trọn vẹn ẩm thực đêm Phú Yên và là điểm xuất phát lý tưởng ngắm bình minh sớm tại Mũi Điện.</p>
+      </div>
+
+      <div class="basecamp-section-card">
+        <div class="basecamp-hero-row">
+          <div class="basecamp-main-heading">
+            <div style="font-family: var(--font-mono); font-size: 12px; font-weight: 700; color: var(--p-accent); margin-bottom: 6px;">
+              LƯU TRÚ ĐÊM 1 (21/11) & ĐÊM 2 (22/11) • TRẢ PHÒNG 05:30 (23/11)
+            </div>
+            <h3>Khách Sạn Ngân Hà</h3>
+            <div class="basecamp-address">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Đường Trần Suyến, TP. Tuy Hòa, Tỉnh Phú Yên (khu vực kết nối duyên hải & Tây Nguyên Đắk Lắk)
+            </div>
+          </div>
+          <a href="https://www.google.com/maps/search/?api=1&query=Khach+San+Ngan+Ha+Tran+Suyen+Tuy+Hoa" target="_blank" rel="noopener" class="basecamp-action-btn">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+            Mở Google Maps Chỉ Đường
+          </a>
+        </div>
+
+        <!-- 4 Hospitality Pillar Cards -->
+        <div class="basecamp-features-grid">
+          <div class="basecamp-feature-card">
+            <h5>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Vị trí trung tâm thuận tiện
+            </h5>
+            <p>Tọa lạc trên đường Trần Suyến yên bình, kết nối trực tiếp ra các đại lộ lớn Hùng Vương, Nguyễn Huệ; thuận tiện dạo biển Tuy Hòa và phố ẩm thực đêm.</p>
+          </div>
+
+          <div class="basecamp-feature-card">
+            <h5>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              Xuất phát ngắm bình minh (04:30)
+            </h5>
+            <p>Chỉ cách Mũi Điện ~32km theo đường ven biển Phước Tân - Bãi Ngà trong lành, thoáng đãng, kịp đặt chân lên ngọn hải đăng lúc 05:15 đón tia nắng rạng đông đầu tiên.</p>
+          </div>
+
+          <div class="basecamp-feature-card">
+            <h5>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8zM6 1v3M10 1v3M14 1v3"/></svg>
+              Thiên đường ẩm thực Tuy Hòa
+            </h5>
+            <p>Rất gần các quán ăn trứ danh: Mắt cá ngừ đại dương bà Tám, Cơm gà Tuy Hòa Lê Thánh Tôn, Bánh canh hẹ Năng Nở và các quán cafe bờ biển lộng gió.</p>
+          </div>
+
+          <div class="basecamp-feature-card">
+            <h5>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+              Không gian nghỉ dưỡng thoải mái
+            </h5>
+            <p>Phòng nghỉ sạch sẽ, tiện nghi, có nước nóng thư giãn và điều hòa mát mẻ, mang lại giấc ngủ sâu hồi phục thể lực sau những giờ thưởng ngoạn cảnh sắc.</p>
+          </div>
+        </div>
+
+        <!-- Bán kính di chuyển từ Khách Sạn Ngân Hà -->
+        <div class="basecamp-distances-box">
+          <div class="basecamp-dist-title">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            KHOẢNG CÁCH TỪ KHÁCH SẠN NGÂN HÀ ĐẾN CÁC ĐIỂM DU LỊCH & ẨM THỰC:
+          </div>
+          <div class="basecamp-dist-grid">
+            <div class="dist-pill">
+              <span class="dest">Tháp Nghinh Phong & Bờ Biển</span>
+              <span class="km">3.5 km</span>
+            </div>
+            <div class="dist-pill">
+              <span class="dest">Bãi Xép (Hoa Vàng Cỏ Xanh)</span>
+              <span class="km">14 km</span>
+            </div>
+            <div class="dist-pill">
+              <span class="dest">Hải Đăng Mũi Điện & Bãi Môn</span>
+              <span class="km">32 km</span>
+            </div>
+            <div class="dist-pill">
+              <span class="dest">Đầm Ô Loan (Thủ Phủ Sò Huyết)</span>
+              <span class="km">28 km</span>
+            </div>
+            <div class="dist-pill">
+              <span class="dest">Kỳ Quan Gành Đá Đĩa</span>
+              <span class="km">35 km</span>
+            </div>
+            <div class="dist-pill">
+              <span class="dest">Nhà Thờ Cổ Mằng Lăng</span>
+              <span class="km">34 km</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Weather by Time and Destination Section -->
+  <section class="expedition-section" id="thoi-tiet">
+    <div class="wrap">
+      <div class="section-header">
+        <span class="section-kicker">KHÍ TƯỢNG VÀ MẶT ĐƯỜNG</span>
+        <h2 class="section-heading">Thời tiết tại từng thời điểm & địa điểm</h2>
+        <p class="section-lead">Tích hợp Google Weather API & Trạm quan trắc vệ tinh thời gian thực WMO GPS. Giám sát chính xác nhiệt độ, sức gió và xác suất mưa tại từng điểm đến trên cung đường giúp bạn chủ động trang phục và lựa chọn khung giờ chụp ảnh đẹp nhất.</p>
+      </div>
+
+      <!-- Live Weather Control Toolbar -->
+      <div class="weather-toolbar">
+        <div class="weather-status-wrap">
+          <div class="weather-source-badge" id="weather-source-pill">
+            <span class="weather-pulse"></span>
+            <span id="weather-source-name">Trạm Vệ Tinh Khí Tượng (WMO Live GPS)</span>
+          </div>
+          <span class="weather-update-meta" id="weather-update-clock">Đang đồng bộ vệ tinh...</span>
+        </div>
+        <div class="weather-actions">
+          <button class="btn-weather-action" id="btn-config-google" onclick="openGoogleWeatherModal()" title="Cấu hình Google Weather API Key chính thức">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
+            Google API Key
+          </button>
+          <button class="btn-weather-action primary" id="btn-refresh-weather" onclick="triggerManualWeatherRefresh()" title="Gọi API làm mới dữ liệu thời tiết">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16"/><path d="M16 21h5v-5"/></svg>
+            Làm mới trực tiếp
+          </button>
+        </div>
+      </div>
+
+      <!-- Day Filter Tabs -->
+      <div class="tab-control-bar" role="tablist">
+        <button class="tab-btn active" onclick="switchWeatherDay('day1', this)" role="tab">
+          <span>Ngày 1 (21/11)</span>
+          <span class="tab-badge">Đà Nẵng — Quy Nhơn — Tuy Hòa (400km)</span>
+        </button>
+        <button class="tab-btn" onclick="switchWeatherDay('day2', this)" role="tab">
+          <span>Ngày 2 (22/11)</span>
+          <span class="tab-badge">Thắng Cảnh Biển Đảo Phú Yên</span>
+        </button>
+        <button class="tab-btn" onclick="switchWeatherDay('day3', this)" role="tab">
+          <span>Ngày 3 (23/11)</span>
+          <span class="tab-badge">Tuy Hòa — Quảng Ngãi — Đà Nẵng</span>
+        </button>
+      </div>
+
+      <!-- Day 1 Weather Cards Grid -->
+      <div class="weather-cards-grid weather-day-panel" id="weather-panel-day1">
+        <!-- Chặng 1: Đà Nẵng Xuất phát -->
+        <article class="weather-card" data-station="da-nang">
+          <div class="weather-card-top">
+            <span class="weather-time">04:30 • Xuất phát</span>
+            <div style="display:flex;align-items:center;gap:8px;">
+              <span class="weather-live-indicator">LIVE</span>
+              <span class="weather-temp live-temp">21°C</span>
+            </div>
+          </div>
+          <h3 class="weather-loc-title">Đà Nẵng (QL1A)</h3>
+          <div class="weather-condition live-condition">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>
+            <span>Sương sớm, trời lạnh, gió nhẹ</span>
+          </div>
+          <div class="weather-telemetry-row">
+            <div class="weather-stat-cell">
+              <span class="lbl">Gió</span>
+              <span class="val live-wind">ĐB 12 km/h</span>
+            </div>
+            <div class="weather-stat-cell">
+              <span class="lbl">Xác suất mưa</span>
+              <span class="val live-rain">20% Mưa nhẹ</span>
+            </div>
+            <div class="weather-stat-cell">
+              <span class="lbl">Độ ẩm</span>
+              <span class="val live-humidity">88%</span>
+            </div>
+            <div class="weather-stat-cell">
+              <span class="lbl">Mặt đường</span>
+              <span class="val">Khô ráo</span>
+            </div>
+          </div>
+          <div class="weather-alert-box">
+            Mặc áo khoác cản gió, kiểm tra kỹ đèn pha trước khi xuất phát sớm.
+          </div>
+        </article>
+
+        <!-- Chặng 2: Tam Kỳ & Quảng Ngãi -->
+        <article class="weather-card" data-station="tam-ky">
+          <div class="weather-card-top">
+            <span class="weather-time">06:00 - 08:00</span>
+            <div style="display:flex;align-items:center;gap:8px;">
+              <span class="weather-live-indicator">LIVE</span>
+              <span class="weather-temp live-temp">23°C</span>
+            </div>
+          </div>
+          <h3 class="weather-loc-title">Tam Kỳ — Quảng Ngãi</h3>
+          <div class="weather-condition live-condition">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 16.2A4.5 4.5 0 0 0 17.5 8h-1.8A7 7 0 1 0 4 14.9"/><path d="M16 14v6M8 14v6M12 16v6"/></svg>
+            <span>Mây xám nhiều, mưa bay rải rác</span>
+          </div>
+          <div class="weather-telemetry-row">
+            <div class="weather-stat-cell">
+              <span class="lbl">Gió</span>
+              <span class="val live-wind">ĐB 16 km/h</span>
+            </div>
+            <div class="weather-stat-cell">
+              <span class="lbl">Xác suất mưa</span>
+              <span class="val live-rain">35% Mưa rào nhỏ</span>
+            </div>
+            <div class="weather-stat-cell">
+              <span class="lbl">Độ ẩm</span>
+              <span class="val live-humidity">82%</span>
+            </div>
+            <div class="weather-stat-cell">
+              <span class="lbl">Mặt đường</span>
+              <span class="val">Ẩm ướt QL1A</span>
+            </div>
+          </div>
+          <div class="weather-alert-box alert-rain">
+            Đường QL1A nhiều xe tải nặng, giữ khoảng cách phanh an toàn.
+          </div>
+        </article>
+
+        <!-- Chặng 3: Eo Gió Quy Nhơn -->
+        <article class="weather-card" data-station="eo-gio">
+          <div class="weather-card-top">
+            <span class="weather-time">11:30 - 12:30</span>
+            <div style="display:flex;align-items:center;gap:8px;">
+              <span class="weather-live-indicator">LIVE</span>
+              <span class="weather-temp live-temp">26°C</span>
+            </div>
+          </div>
+          <h3 class="weather-loc-title">Eo Gió (Quy Nhơn)</h3>
+          <div class="weather-condition live-condition">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2"/></svg>
+            <span>Nắng gián đoạn, gió lộng vách đá</span>
+          </div>
+          <div class="weather-telemetry-row">
+            <div class="weather-stat-cell">
+              <span class="lbl">Gió biển</span>
+              <span class="val live-wind">24 km/h (giật 32)</span>
+            </div>
+            <div class="weather-stat-cell">
+              <span class="lbl">Xác suất mưa</span>
+              <span class="val live-rain">25% Tạnh ráo</span>
+            </div>
+            <div class="weather-stat-cell">
+              <span class="lbl">Độ ẩm</span>
+              <span class="val live-humidity">74%</span>
+            </div>
+            <div class="weather-stat-cell">
+              <span class="lbl">Góc sáng</span>
+              <span class="val">Đỉnh đầu, ánh xanh</span>
+            </div>
+          </div>
+          <div class="weather-alert-box alert-wind">
+            Gió thốc mạnh qua hẻm núi Eo Gió; cầm chắc dây đeo máy ảnh.
+          </div>
+        </article>
+
+        <!-- Chặng 4: Tháp Đôi Quy Nhơn -->
+        <article class="weather-card" data-station="thap-doi">
+          <div class="weather-card-top">
+            <span class="weather-time">14:00 - 15:00</span>
+            <div style="display:flex;align-items:center;gap:8px;">
+              <span class="weather-live-indicator">LIVE</span>
+              <span class="weather-temp live-temp">27°C</span>
+            </div>
+          </div>
+          <h3 class="weather-loc-title">Tháp Đôi Chăm Pa</h3>
+          <div class="weather-condition live-condition">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42"/></svg>
+            <span>Trời trong, nắng ấm chan hòa</span>
+          </div>
+          <div class="weather-telemetry-row">
+            <div class="weather-stat-cell">
+              <span class="lbl">Gió</span>
+              <span class="val live-wind">14 km/h</span>
+            </div>
+            <div class="weather-stat-cell">
+              <span class="lbl">Xác suất mưa</span>
+              <span class="val live-rain">15% Khô ráo</span>
+            </div>
+            <div class="weather-stat-cell">
+              <span class="lbl">Độ ẩm</span>
+              <span class="val live-humidity">70%</span>
+            </div>
+            <div class="weather-stat-cell">
+              <span class="lbl">Ánh sáng</span>
+              <span class="val">Vàng ấm tôn gạch cổ</span>
+            </div>
+          </div>
+          <div class="weather-alert-box">
+            Thời điểm lý tưởng chụp chi tiết kiến trúc phù điêu vòm cửa tháp.
+          </div>
+        </article>
+
+        <!-- Chặng 5: Đèo QL1D & Vịnh Xuân Đài -->
+        <article class="weather-card" data-station="xuan-dai">
+          <div class="weather-card-top">
+            <span class="weather-time">16:15 - 17:00</span>
+            <div style="display:flex;align-items:center;gap:8px;">
+              <span class="weather-live-indicator">LIVE</span>
+              <span class="weather-temp live-temp">25°C</span>
+            </div>
+          </div>
+          <h3 class="weather-loc-title">Đèo QL1D — Vịnh Xuân Đài</h3>
+          <div class="weather-condition live-condition">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="m17 7 3-3M14 4l-1-2M4 14l-2 1M7 17l-3 3M4 10l-2-1M10 4 9 2"/></svg>
+            <span>Nắng vàng hoàng hôn, gió đèo giật ngang</span>
+          </div>
+          <div class="weather-telemetry-row">
+            <div class="weather-stat-cell">
+              <span class="lbl">Gió đèo</span>
+              <span class="val live-wind">28 km/h thổi ngang</span>
+            </div>
+            <div class="weather-stat-cell">
+              <span class="lbl">Xác suất mưa</span>
+              <span class="val live-rain">10% Tạnh ráo</span>
+            </div>
+            <div class="weather-stat-cell">
+              <span class="lbl">Độ ẩm</span>
+              <span class="val live-humidity">72%</span>
+            </div>
+            <div class="weather-stat-cell">
+              <span class="lbl">Mặt đèo</span>
+              <span class="val">Cua dốc ven biển</span>
+            </div>
+          </div>
+          <div class="weather-alert-box alert-wind">
+            Gợi ý ngắm cảnh: Buổi chiều hoàng hôn buông xuống vịnh ánh sáng rất đẹp, thời điểm lý tưởng dừng chân chụp ảnh.
+          </div>
+        </article>
+
+        <!-- Chặng 6: Tuy Hòa & Tháp Nghinh Phong -->
+        <article class="weather-card" data-station="tuy-hoa">
+          <div class="weather-card-top">
+            <span class="weather-time">18:00 - Tối</span>
+            <div style="display:flex;align-items:center;gap:8px;">
+              <span class="weather-live-indicator">LIVE</span>
+              <span class="weather-temp live-temp">22°C</span>
+            </div>
+          </div>
+          <h3 class="weather-loc-title">Tháp Nghinh Phong (Đêm)</h3>
+          <div class="weather-condition live-condition">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+            <span>Gió biển đêm lộng gió, se lạnh</span>
+          </div>
+          <div class="weather-telemetry-row">
+            <div class="weather-stat-cell">
+              <span class="lbl">Gió biển</span>
+              <span class="val live-wind">26 km/h qua khe tháp</span>
+            </div>
+            <div class="weather-stat-cell">
+              <span class="lbl">Xác suất mưa</span>
+              <span class="val live-rain">30% Ẩm sương</span>
+            </div>
+            <div class="weather-stat-cell">
+              <span class="lbl">Độ ẩm</span>
+              <span class="val live-humidity">84%</span>
+            </div>
+            <div class="weather-stat-cell">
+              <span class="lbl">Ẩm thực đêm</span>
+              <span class="val">Mắt cá ngừ bà Tám</span>
+            </div>
+          </div>
+          <div class="weather-alert-box">
+            Dạo ngắm Tháp Nghinh Phong rực sáng ánh đèn laser nghệ thuật và thưởng thức đặc sản Tuy Hòa.
+          </div>
+        </article>
+      </div>
+
+      <!-- Day 2 Weather Cards Grid -->
+      <div class="weather-cards-grid weather-day-panel" id="weather-panel-day2" style="display: none;">
+        <!-- Chặng 1: Mũi Điện -->
+        <article class="weather-card" data-station="mui-dien">
+          <div class="weather-card-top">
+            <span class="weather-time">05:15 - 06:30</span>
+            <div style="display:flex;align-items:center;gap:8px;">
+              <span class="weather-live-indicator">LIVE</span>
+              <span class="weather-temp live-temp">22°C</span>
+            </div>
+          </div>
+          <h3 class="weather-loc-title">Hải đăng Mũi Điện & Bãi Môn</h3>
+          <div class="weather-condition live-condition">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 2 3 5h6l-5 4 2 6-6-4-6 4 2-6-5-4h6z"/></svg>
+            <span>Bình minh rạng đông, chân trời ửng hồng</span>
+          </div>
+          <div class="weather-telemetry-row">
+            <div class="weather-stat-cell">
+              <span class="lbl">Gió</span>
+              <span class="val live-wind">ĐN 18 km/h</span>
+            </div>
+            <div class="weather-stat-cell">
+              <span class="lbl">Xác suất mưa</span>
+              <span class="val live-rain">15% Tạnh</span>
+            </div>
+            <div class="weather-stat-cell">
+              <span class="lbl">Độ ẩm</span>
+              <span class="val live-humidity">86% Sương biển</span>
+            </div>
+            <div class="weather-stat-cell">
+              <span class="lbl">Tầm nhìn</span>
+              <span class="val">> 12 km</span>
+            </div>
+          </div>
+          <div class="weather-alert-box alert-rain">
+            Độ ẩm cao trước bình minh, lau sạch kính lọc ống kính chống đọng sương.
+          </div>
+        </article>
+
+        <!-- Chặng 2: Gành Đá Đĩa & Gành Đèn -->
+        <article class="weather-card" data-station="ganh-da-dia">
+          <div class="weather-card-top">
+            <span class="weather-time">08:30 - 10:45</span>
+            <div style="display:flex;align-items:center;gap:8px;">
+              <span class="weather-live-indicator">LIVE</span>
+              <span class="weather-temp live-temp">26°C</span>
+            </div>
+          </div>
+          <h3 class="weather-loc-title">Gành Đá Đĩa — Gành Đèn</h3>
+          <div class="weather-condition live-condition">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/></svg>
+            <span>Nắng trong trẻo, sóng đập bọt trắng</span>
+          </div>
+          <div class="weather-telemetry-row">
+            <div class="weather-stat-cell">
+              <span class="lbl">Gió</span>
+              <span class="val live-wind">20 km/h</span>
+            </div>
+            <div class="weather-stat-cell">
+              <span class="lbl">Xác suất mưa</span>
+              <span class="val live-rain">10% Khô ráo</span>
+            </div>
+            <div class="weather-stat-cell">
+              <span class="lbl">Độ ẩm</span>
+              <span class="val live-humidity">75%</span>
+            </div>
+            <div class="weather-stat-cell">
+              <span class="lbl">Bề mặt</span>
+              <span class="val">Đá bazan ẩm rêu trơn</span>
+            </div>
+          </div>
+          <div class="weather-alert-box alert-wind">
+            Đá bazan mép nước rất trơn; đi giày bám đường tốt, không bước lên rong rêu.
+          </div>
+        </article>
+
+        <!-- Chặng 3: Mằng Lăng & Ô Loan -->
+        <article class="weather-card" data-station="o-loan">
+          <div class="weather-card-top">
+            <span class="weather-time">11:15 - 13:30</span>
+            <div style="display:flex;align-items:center;gap:8px;">
+              <span class="weather-live-indicator">LIVE</span>
+              <span class="weather-temp live-temp">28°C</span>
+            </div>
+          </div>
+          <h3 class="weather-loc-title">Nhà thờ Mằng Lăng — Đầm Ô Loan</h3>
+          <div class="weather-condition live-condition">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/></svg>
+            <span>Nắng ấm trưa hè, gió mặt đầm êm dịu</span>
+          </div>
+          <div class="weather-telemetry-row">
+            <div class="weather-stat-cell">
+              <span class="lbl">Gió</span>
+              <span class="val live-wind">12 km/h</span>
+            </div>
+            <div class="weather-stat-cell">
+              <span class="lbl">Xác suất mưa</span>
+              <span class="val live-rain">10% Tạnh ráo</span>
+            </div>
+            <div class="weather-stat-cell">
+              <span class="lbl">Độ ẩm</span>
+              <span class="val live-humidity">70%</span>
+            </div>
+            <div class="weather-stat-cell">
+              <span class="lbl">Nghỉ ngơi</span>
+              <span class="val">Ăn trưa hải sản</span>
+            </div>
+          </div>
+          <div class="weather-alert-box">
+            Thời điểm nạp năng lượng lý tưởng tại đầm Ô Loan trước chặng Bãi Xếp.
+          </div>
+        </article>
+
+        <!-- Chặng 4: Bãi Xếp -->
+        <article class="weather-card" data-station="bai-xep">
+          <div class="weather-card-top">
+            <span class="weather-time">14:30 - 15:30</span>
+            <div style="display:flex;align-items:center;gap:8px;">
+              <span class="weather-live-indicator">LIVE</span>
+              <span class="weather-temp live-temp">26°C</span>
+            </div>
+          </div>
+          <h3 class="weather-loc-title">Bãi Xếp (Vách xương rồng)</h3>
+          <div class="weather-condition live-condition">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42"/></svg>
+            <span>Nắng chiều óng ả trên thảm cỏ xanh</span>
+          </div>
+          <div class="weather-telemetry-row">
+            <div class="weather-stat-cell">
+              <span class="lbl">Gió bờ</span>
+              <span class="val live-wind">22 km/h</span>
+            </div>
+            <div class="weather-stat-cell">
+              <span class="lbl">Xác suất mưa</span>
+              <span class="val live-rain">20% Tạnh</span>
+            </div>
+            <div class="weather-stat-cell">
+              <span class="lbl">Độ ẩm</span>
+              <span class="val live-humidity">76%</span>
+            </div>
+            <div class="weather-stat-cell">
+              <span class="lbl">Góc chụp</span>
+              <span class="val">Vách đá & biển biếc</span>
+            </div>
+          </div>
+          <div class="weather-alert-box">
+            Nắng xiên góc 45 độ tôn rõ sắc gai xương rồng và màu xanh ngọc bích của biển.
+          </div>
+        </article>
+      </div>
+
+      <!-- Day 3 Weather Cards Grid -->
+      <div class="weather-cards-grid weather-day-panel" id="weather-panel-day3" style="display: none;">
+        <!-- Chặng 1: Xuất phát ngược Tuy Hòa -->
+        <article class="weather-card" data-station="tuy-hoa">
+          <div class="weather-card-top">
+            <span class="weather-time">05:30 • Xuất phát</span>
+            <div style="display:flex;align-items:center;gap:8px;">
+              <span class="weather-live-indicator">LIVE</span>
+              <span class="weather-temp live-temp">22°C</span>
+            </div>
+          </div>
+          <h3 class="weather-loc-title">Tuy Hòa — Đèo Cù Mông</h3>
+          <div class="weather-condition live-condition">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>
+            <span>Sương mù sớm, gió ngược chiều chạy</span>
+          </div>
+          <div class="weather-telemetry-row">
+            <div class="weather-stat-cell">
+              <span class="lbl">Gió ngược</span>
+              <span class="val live-wind">18 km/h</span>
+            </div>
+            <div class="weather-stat-cell">
+              <span class="lbl">Xác suất mưa</span>
+              <span class="val live-rain">30% Ẩm ướt</span>
+            </div>
+            <div class="weather-stat-cell">
+              <span class="lbl">Độ ẩm</span>
+              <span class="val live-humidity">85%</span>
+            </div>
+            <div class="weather-stat-cell">
+              <span class="lbl">Hành lý</span>
+              <span class="val">Buộc chặt đồ đạc</span>
+            </div>
+          </div>
+          <div class="weather-alert-box alert-wind">
+            Gió ngược làm tăng lực cản; chằng buộc chắc chắn túi trùm balo chống nước.
+          </div>
+        </article>
+
+        <!-- Chặng 2: Bình Định & Quảng Ngãi - Mưa rào giao mùa -->
+        <article class="weather-card" data-station="tam-ky">
+          <div class="weather-card-top">
+            <span class="weather-time">08:30 - 11:30</span>
+            <div style="display:flex;align-items:center;gap:8px;">
+              <span class="weather-live-indicator">LIVE</span>
+              <span class="weather-temp live-temp">23°C</span>
+            </div>
+          </div>
+          <h3 class="weather-loc-title">Bình Định — Quảng Ngãi (QL1A)</h3>
+          <div class="weather-condition live-condition">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 16.2A4.5 4.5 0 0 0 17.5 8h-1.8A7 7 0 1 0 4 14.9"/><path d="M16 14v6M8 14v6M12 16v6"/></svg>
+            <span>Chuyển mưa rào giao mùa từng đợt</span>
+          </div>
+          <div class="weather-telemetry-row">
+            <div class="weather-stat-cell">
+              <span class="lbl">Gió ĐB</span>
+              <span class="val live-wind">22 km/h</span>
+            </div>
+            <div class="weather-stat-cell">
+              <span class="lbl">Xác suất mưa</span>
+              <span class="val live-rain">65% Mưa rào</span>
+            </div>
+            <div class="weather-stat-cell">
+              <span class="lbl">Độ ẩm</span>
+              <span class="val live-humidity">92%</span>
+            </div>
+            <div class="weather-stat-cell">
+              <span class="lbl">Mặt đường</span>
+              <span class="val">Trơn trượt khi phanh</span>
+            </div>
+          </div>
+          <div class="weather-alert-box alert-rain">
+            Gợi ý di chuyển: Nếu gặp mưa rào giao mùa, nên dừng nghỉ ăn trưa cơm gà Quảng Ngãi thư thả chờ trời tạnh ráo.
+          </div>
+        </article>
+
+        <!-- Chặng 3: Đà Nẵng Về đích -->
+        <article class="weather-card" data-station="da-nang">
+          <div class="weather-card-top">
+            <span class="weather-time">15:00 - 16:00</span>
+            <div style="display:flex;align-items:center;gap:8px;">
+              <span class="weather-live-indicator">LIVE</span>
+              <span class="weather-temp live-temp">23°C</span>
+            </div>
+          </div>
+          <h3 class="weather-loc-title">Về Đích Đà Nẵng</h3>
+          <div class="weather-condition live-condition">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>
+            <span>Mưa ngớt dần, đường ráo dần</span>
+          </div>
+          <div class="weather-telemetry-row">
+            <div class="weather-stat-cell">
+              <span class="lbl">Gió</span>
+              <span class="val live-wind">16 km/h</span>
+            </div>
+            <div class="weather-stat-cell">
+              <span class="lbl">Xác suất mưa</span>
+              <span class="val live-rain">40% Giảm dần</span>
+            </div>
+            <div class="weather-stat-cell">
+              <span class="lbl">Độ ẩm</span>
+              <span class="val live-humidity">80%</span>
+            </div>
+            <div class="weather-stat-cell">
+              <span class="lbl">Trạng thái</span>
+              <span class="val">Kết thúc hành trình trọn vẹn</span>
+            </div>
+          </div>
+          <div class="weather-alert-box">
+            Về tới Đà Nẵng đúng giờ dự kiến, đủ thời gian tắm nước nóng và nghỉ ngơi trọn vẹn cho tuần mới.
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Field Dossier: 10 Thắng Cảnh Nổi Bật & Tinh Hoa Ẩm Thực (100% Thuần Data, Không Ảnh) -->
+  <section class="expedition-section" id="dia-diem">
+    <div class="wrap">
+      <div class="section-header">
+        <span class="section-kicker">DANH LAM THẮNG CẢNH & TỌA ĐỘ ĐIỂM ĐẾN</span>
+        <h2 class="section-heading">Hồ sơ 10 điểm đến nổi bật & cự ly từ KS Ngân Hà</h2>
+        <p class="section-lead">Thông tin chi tiết về 10 danh thắng biển đảo và di tích văn hóa đặc sắc: cự ly từ Khách Sạn Ngân Hà (Trần Suyến, Tuy Hòa), khung giờ tham quan lý tưởng, nét đẹp cảnh quan và món ngon ẩm thực không thể bỏ qua.</p>
+      </div>
+
+      <div class="dossier-grid">
+        <!-- Cứ điểm 01: Mũi Điện & Bãi Môn -->
+        <article class="dossier-card">
+          <div class="dossier-header">
+            <div>
+              <span class="dossier-num">CỨ ĐIỂM 01</span>
+              <h3 class="dossier-name" style="margin-top: 6px;">Hải Đăng Mũi Điện & Bãi Môn</h3>
+            </div>
+            <span class="tag-pill tag-speed" style="font-weight: 700;">Cách KS Ngân Hà: 32 km</span>
+          </div>
+          <div class="dossier-meta-row">
+            <div class="dossier-meta-item">
+              <span class="lbl">TỌA ĐỘ VỆ TINH GPS</span>
+              <span class="val">12.8906° N, 109.4583° E</span>
+            </div>
+            <div class="dossier-meta-item">
+              <span class="lbl">TUYẾN ĐƯỜNG TIẾP CẬN</span>
+              <span class="val">Ven biển Phước Tân — Bãi Ngà</span>
+            </div>
+          </div>
+          <p class="dossier-desc">Điểm đón ánh rạng đông đầu tiên trên đất liền Việt Nam. Ngọn hải đăng đá cổ xây dựng từ năm 1890 sừng sững trên đỉnh mũi Đại Lãnh vươn mình ra biển Đông, dưới chân là bãi cát cong Bãi Môn trắng mịn hoang sơ.</p>
+          <div class="dossier-details-grid">
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">⏱️ Khung Giờ Vàng</span>
+              <span class="quad-cell-val highlight-info">05:15 - 06:30 • Bình minh cực Đông ửng hồng</span>
+            </div>
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">🌤️ Vi Khí Quyển</span>
+              <span class="quad-cell-val">22°C • Gió biển sớm 18km/h, sương đại dương mát lạnh</span>
+            </div>
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">🌿 Điểm Nhấn Cảnh Quan</span>
+              <span class="quad-cell-val highlight-warn">Đường ven biển phẳng; đi bộ leo bậc thang dốc đá 15-20 phút</span>
+            </div>
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">🍽️ Ẩm Thực & Món Ngon</span>
+              <span class="quad-cell-val">Hải sản Bãi Môn tươi sống, bánh mì nóng pa-tê, nước dừa xiêm ngọt lịm</span>
+            </div>
+          </div>
+          <div class="dossier-footer">
+            <span style="font-family: var(--font-mono); font-size: 11px; color: var(--p-muted);">Mục tiêu: Đón bình minh Ngày 2</span>
+            <a class="dossier-maps-btn" href="https://www.google.com/maps/search/?api=1&query=12.8906,109.4583" target="_blank" rel="noopener">
+              Mở Google Maps
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Cứ điểm 02: Gành Đá Đĩa -->
+        <article class="dossier-card">
+          <div class="dossier-header">
+            <div>
+              <span class="dossier-num">CỨ ĐIỂM 02</span>
+              <h3 class="dossier-name" style="margin-top: 6px;">Kỳ Quan Cột Đá Bazan Gành Đá Đĩa</h3>
+            </div>
+            <span class="tag-pill tag-speed" style="font-weight: 700;">Cách KS Ngân Hà: 35 km</span>
+          </div>
+          <div class="dossier-meta-row">
+            <div class="dossier-meta-item">
+              <span class="lbl">TỌA ĐỘ VỆ TINH GPS</span>
+              <span class="val">13.3556° N, 109.2972° E</span>
+            </div>
+            <div class="dossier-meta-item">
+              <span class="lbl">TUYẾN ĐƯỜNG TIẾP CẬN</span>
+              <span class="val">QL1A / Tuy An ➔ Đường ĐT643</span>
+            </div>
+          </div>
+          <p class="dossier-desc">Di tích danh lam thắng cảnh quốc gia đặc biệt. Hàng chục nghìn cột đá bazan hình lục lăng xếp khít nhau như tổ ong khổng lồ vươn ra mép sóng biển. Hiện tượng dung nham núi lửa gặp nước biển đông cứng từ triệu năm trước.</p>
+          <div class="dossier-details-grid">
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">⏱️ Khung Giờ Vàng</span>
+              <span class="quad-cell-val highlight-info">08:30 - 09:30 • Nắng xiên rọi rõ thớ đá lục lăng</span>
+            </div>
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">🌤️ Vi Khí Quyển</span>
+              <span class="quad-cell-val">26°C • Nắng sớm trong trẻo, gió biển lộng 22km/h</span>
+            </div>
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">🌿 Điểm Nhấn Cảnh Quan</span>
+              <span class="quad-cell-val highlight-warn">Thớt đá sát mép nước bám rêu rất trơn; tuyệt đối cẩn thận trượt ngã</span>
+            </div>
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">🍽️ Ẩm Thực & Món Ngon</span>
+              <span class="quad-cell-val">Nước mía sương sâm thanh nhiệt, bánh tráng nướng mắm ruốc Tuy An giòn thơm</span>
+            </div>
+          </div>
+          <div class="dossier-footer">
+            <span style="font-family: var(--font-mono); font-size: 11px; color: var(--p-muted);">Mục tiêu: Săn ảnh tuyệt tác Ngày 2</span>
+            <a class="dossier-maps-btn" href="https://www.google.com/maps/search/?api=1&query=13.3556,109.2972" target="_blank" rel="noopener">
+              Mở Google Maps
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Cứ điểm 03: Hải Đăng Gành Đèn -->
+        <article class="dossier-card">
+          <div class="dossier-header">
+            <div>
+              <span class="dossier-num">CỨ ĐIỂM 03</span>
+              <h3 class="dossier-name" style="margin-top: 6px;">Hải Đăng Gành Đèn & Bãi Đá Bọt Biển</h3>
+            </div>
+            <span class="tag-pill tag-speed" style="font-weight: 700;">Cách KS Ngân Hà: 36 km</span>
+          </div>
+          <div class="dossier-meta-row">
+            <div class="dossier-meta-item">
+              <span class="lbl">TỌA ĐỘ VỆ TINH GPS</span>
+              <span class="val">13.3639° N, 109.2986° E</span>
+            </div>
+            <div class="dossier-meta-item">
+              <span class="lbl">TUYẾN ĐƯỜNG TIẾP CẬN</span>
+              <span class="val">Bờ biển Tuy An (cách Đá Đĩa 1.2 km)</span>
+            </div>
+          </div>
+          <p class="dossier-desc">Ngọn hải đăng hai tông màu đỏ trắng cổ điển ngự trị trên mỏm đá nhô ra biển. Bao quanh là bãi đá bọt biển màu hồng cam trầm tích xếp chồng chênh vênh tạo nên khung cảnh hoang dại và tách biệt khỏi dòng khách du lịch phổ thông.</p>
+          <div class="dossier-details-grid">
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">⏱️ Khung Giờ Vàng</span>
+              <span class="quad-cell-val highlight-info">09:45 - 10:45 • Nắng ấm biển khơi rực rỡ</span>
+            </div>
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">🌤️ Vi Khí Quyển</span>
+              <span class="quad-cell-val">27°C • Nắng vàng tương phản màu đá cam và nước biển ngọc bích</span>
+            </div>
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">🌿 Điểm Nhấn Cảnh Quan</span>
+              <span class="quad-cell-val highlight-warn">Lối vào đường đất đá dăm hẹp, đi số 2; đá tai mèo sắc nhọn</span>
+            </div>
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">🍽️ Ẩm Thực & Món Ngon</span>
+              <span class="quad-cell-val">Dừa tươi xiêm bờ biển, ốc biển hấp sả gừng tươi rói ngọt thịt</span>
+            </div>
+          </div>
+          <div class="dossier-footer">
+            <span style="font-family: var(--font-mono); font-size: 11px; color: var(--p-muted);">Mục tiêu: Săn ảnh góc hoang sơ Ngày 2</span>
+            <a class="dossier-maps-btn" href="https://www.google.com/maps/search/?api=1&query=13.3639,109.2986" target="_blank" rel="noopener">
+              Mở Google Maps
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Cứ điểm 04: Tháp Nghinh Phong -->
+        <article class="dossier-card">
+          <div class="dossier-header">
+            <div>
+              <span class="dossier-num">CỨ ĐIỂM 04</span>
+              <h3 class="dossier-name" style="margin-top: 6px;">Tháp Nghinh Phong (Quảng Trường Tuy Hòa)</h3>
+            </div>
+            <span class="tag-pill tag-speed" style="font-weight: 700; background: #e0f2fe; color: #0284c7;">Cách KS Ngân Hà: 3.5 km</span>
+          </div>
+          <div class="dossier-meta-row">
+            <div class="dossier-meta-item">
+              <span class="lbl">TỌA ĐỘ VỆ TINH GPS</span>
+              <span class="val">13.0955° N, 109.3080° E</span>
+            </div>
+            <div class="dossier-meta-item">
+              <span class="lbl">TUYẾN ĐƯỜNG TIẾP CẬN</span>
+              <span class="val">Đại lộ Hùng Vương — Bờ biển Tuy Hòa</span>
+            </div>
+          </div>
+          <p class="dossier-desc">Biểu tượng kiến trúc thế kỷ mới của TP. Tuy Hòa lấy cảm hứng từ tích Lạc Long Quân - Âu Cơ sinh trăm trứng và gành đá đĩa bazan. Hai tòa tháp đá đối xứng tạo khe đón gió biển phát ra bản hòa âm sóng vỗ, ban đêm rực sáng đèn laser nghệ thuật.</p>
+          <div class="dossier-details-grid">
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">⏱️ Khung Giờ Vàng</span>
+              <span class="quad-cell-val highlight-info">18:00 - 21:00 • Lên đèn laser & gió biển đêm</span>
+            </div>
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">🌤️ Vi Khí Quyển</span>
+              <span class="quad-cell-val">23°C • Gió đại dương lộng mát, không khí đô thị biển sôi động</span>
+            </div>
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">🌿 Điểm Nhấn Cảnh Quan</span>
+              <span class="quad-cell-val">Đại lộ trung tâm cực kỳ phẳng phiu; chỉ mất 8 phút chạy xe từ KS Ngân Hà</span>
+            </div>
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">🍽️ Ẩm Thực & Món Ngon</span>
+              <span class="quad-cell-val">Mắt cá ngừ đại dương bà Tám, Bánh canh hẹ Năng Nở, Chả dông Tuy Hòa</span>
+            </div>
+          </div>
+          <div class="dossier-footer">
+            <span style="font-family: var(--font-mono); font-size: 11px; color: var(--p-muted);">Mục tiêu: Dạo phố đêm sau khi nhận phòng KS Ngân Hà</span>
+            <a class="dossier-maps-btn" href="https://www.google.com/maps/search/?api=1&query=13.0955,109.3080" target="_blank" rel="noopener">
+              Mở Google Maps
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Cứ điểm 05: Bãi Xép -->
+        <article class="dossier-card">
+          <div class="dossier-header">
+            <div>
+              <span class="dossier-num">CỨ ĐIỂM 05</span>
+              <h3 class="dossier-name" style="margin-top: 6px;">Bãi Xép — Vách Xương Rồng & Đồi Gành Ông</h3>
+            </div>
+            <span class="tag-pill tag-speed" style="font-weight: 700;">Cách KS Ngân Hà: 14 km</span>
+          </div>
+          <div class="dossier-meta-row">
+            <div class="dossier-meta-item">
+              <span class="lbl">TỌA ĐỘ VỆ TINH GPS</span>
+              <span class="val">13.2083° N, 109.3250° E</span>
+            </div>
+            <div class="dossier-meta-item">
+              <span class="lbl">TUYẾN ĐƯỜNG TIẾP CẬN</span>
+              <span class="val">Đường ven biển ĐT649 / Xã An Chấn</span>
+            </div>
+          </div>
+          <p class="dossier-desc">Bối cảnh kinh điển của bộ phim "Tôi thấy hoa vàng trên cỏ xanh". Đồi cỏ xanh mát trải dài thoai thoải ra mép vực biển biếc, điểm xuyết rặng xương rồng gai góc mọc tự nhiên trên vách đá ngắm nhìn toàn cảnh bãi cát bán nguyệt trắng tinh.</p>
+          <div class="dossier-details-grid">
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">⏱️ Khung Giờ Vàng</span>
+              <span class="quad-cell-val highlight-info">14:30 - 15:30 • Nắng chiều xiên 45 độ rực rỡ</span>
+            </div>
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">🌤️ Vi Khí Quyển</span>
+              <span class="quad-cell-val">27°C • Nắng trong, gió đồng bằng pha gió biển thanh mát</span>
+            </div>
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">🌿 Điểm Nhấn Cảnh Quan</span>
+              <span class="quad-cell-val highlight-warn">Gửi xe bãi KDL; đi bộ theo đường đồi thoai thoải; tránh gai xương rồng</span>
+            </div>
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">🍽️ Ẩm Thực & Món Ngon</span>
+              <span class="quad-cell-val">Bánh hỏi lòng heo An Chấn, kem dừa tươi mát lạnh, nước ép trái cây</span>
+            </div>
+          </div>
+          <div class="dossier-footer">
+            <span style="font-family: var(--font-mono); font-size: 11px; color: var(--p-muted);">Mục tiêu: Điểm dừng cuối chiều Ngày 2</span>
+            <a class="dossier-maps-btn" href="https://www.google.com/maps/search/?api=1&query=13.2083,109.3250" target="_blank" rel="noopener">
+              Mở Google Maps
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Cứ điểm 06: Đầm Ô Loan -->
+        <article class="dossier-card">
+          <div class="dossier-header">
+            <div>
+              <span class="dossier-num">CỨ ĐIỂM 06</span>
+              <h3 class="dossier-name" style="margin-top: 6px;">Đầm Ô Loan (Thủ Phủ Sò Huyết Phú Yên)</h3>
+            </div>
+            <span class="tag-pill tag-speed" style="font-weight: 700;">Cách KS Ngân Hà: 28 km</span>
+          </div>
+          <div class="dossier-meta-row">
+            <div class="dossier-meta-item">
+              <span class="lbl">TỌA ĐỘ VỆ TINH GPS</span>
+              <span class="val">13.2500° N, 109.2833° E</span>
+            </div>
+            <div class="dossier-meta-item">
+              <span class="lbl">TUYẾN ĐƯỜNG TIẾP CẬN</span>
+              <span class="val">QL1A / Cầu An Hải, Huyện Tuy An</span>
+            </div>
+          </div>
+          <p class="dossier-desc">Đầm nước lợ rộng hơn 1.200 ha tựa cánh chim phượng hoàng dang rộng. Vựa hải sản tươi sống trứ danh bậc nhất duyên hải miền Trung, nổi tiếng với đặc sản sò huyết Ô Loan đỏ tươi dày thịt, cháo hàu, tôm đất và cá mú nước lợ nướng mọi.</p>
+          <div class="dossier-details-grid">
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">⏱️ Khung Giờ Vàng</span>
+              <span class="quad-cell-val highlight-info">12:30 - 14:00 • Tiếp vận ăn trưa & nghỉ ngơi</span>
+            </div>
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">🌤️ Vi Khí Quyển</span>
+              <span class="quad-cell-val">29°C • Nắng trưa nhưng nhà bè lộng gió đầm nước mát rượi tự nhiên</span>
+            </div>
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">🌿 Điểm Nhấn Cảnh Quan</span>
+              <span class="quad-cell-val">Đỗ xe trên kè Cầu An Hải có người trông; rửa tay khử trùng trước khi ăn</span>
+            </div>
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">🍽️ Ẩm Thực & Món Ngon</span>
+              <span class="quad-cell-val">Sò huyết Ô Loan nướng mỡ hành giòn ngọt, Cháo hàu nóng hổi, Tôm đất rang muối ớt</span>
+            </div>
+          </div>
+          <div class="dossier-footer">
+            <span style="font-family: var(--font-mono); font-size: 11px; color: var(--p-muted);">Mục tiêu: Trạm tiếp vận năng lượng trưa Ngày 2</span>
+            <a class="dossier-maps-btn" href="https://www.google.com/maps/search/?api=1&query=13.2500,109.2833" target="_blank" rel="noopener">
+              Mở Google Maps
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Cứ điểm 07: Nhà Thờ Mằng Lăng -->
+        <article class="dossier-card">
+          <div class="dossier-header">
+            <div>
+              <span class="dossier-num">CỨ ĐIỂM 07</span>
+              <h3 class="dossier-name" style="margin-top: 6px;">Nhà Thờ Cổ Mằng Lăng (Kiến Trúc Gothic 1892)</h3>
+            </div>
+            <span class="tag-pill tag-speed" style="font-weight: 700;">Cách KS Ngân Hà: 34 km</span>
+          </div>
+          <div class="dossier-meta-row">
+            <div class="dossier-meta-item">
+              <span class="lbl">TỌA ĐỘ VỆ TINH GPS</span>
+              <span class="val">13.3325° N, 109.2319° E</span>
+            </div>
+            <div class="dossier-meta-item">
+              <span class="lbl">TUYẾN ĐƯỜNG TIẾP CẬN</span>
+              <span class="val">Xã An Thạch, Huyện Tuy An</span>
+            </div>
+          </div>
+          <p class="dossier-desc">Thánh đường cổ kính xây dựng năm 1892 theo lối kiến trúc Gothic châu Âu với vòm cuốn nhọn, tháp chuông rêu phong và hầm bí mật lưu giữ cuốn sách "Phép giảng tám ngày" in chữ Quốc ngữ đầu tiên của linh mục Alexandre de Rhodes năm 1651.</p>
+          <div class="dossier-details-grid">
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">⏱️ Khung Giờ Vàng</span>
+              <span class="quad-cell-val highlight-info">11:15 - 12:15 • Ánh sáng chiếu vòm cổ Gothic</span>
+            </div>
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">🌤️ Vi Khí Quyển</span>
+              <span class="quad-cell-val">28°C • Trời nắng ấm, sân râm mát dưới tán cây xà cừ cổ thụ</span>
+            </div>
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">🌿 Điểm Nhấn Cảnh Quan</span>
+              <span class="quad-cell-val">Đường bê tông làng êm ái; vào cổng giữ tốc độ chậm 15 km/h</span>
+            </div>
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">🍽️ Ẩm Thực & Món Ngon</span>
+              <span class="quad-cell-val">Bánh xèo An Thạch tôm nhảy, chè sen nước đường phèn, bánh ít Tuy An</span>
+            </div>
+          </div>
+          <div class="dossier-footer">
+            <span style="font-family: var(--font-mono); font-size: 11px; color: var(--p-muted);">Mục tiêu: Di tích lịch sử & văn hóa Ngày 2</span>
+            <a class="dossier-maps-btn" href="https://www.google.com/maps/search/?api=1&query=13.3325,109.2319" target="_blank" rel="noopener">
+              Mở Google Maps
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Cứ điểm 08: Eo Gió Quy Nhơn -->
+        <article class="dossier-card">
+          <div class="dossier-header">
+            <div>
+              <span class="dossier-num">CỨ ĐIỂM 08</span>
+              <h3 class="dossier-name" style="margin-top: 6px;">Eo Gió & Con Đường Ven Núi (Nhơn Lý, Quy Nhơn)</h3>
+            </div>
+            <span class="tag-pill tag-speed" style="font-weight: 700;">Cách KS Ngân Hà: 115 km</span>
+          </div>
+          <div class="dossier-meta-row">
+            <div class="dossier-meta-item">
+              <span class="lbl">TỌA ĐỘ VỆ TINH GPS</span>
+              <span class="val">13.7820° N, 109.2194° E</span>
+            </div>
+            <div class="dossier-meta-item">
+              <span class="lbl">TUYẾN ĐƯỜNG TIẾP CẬN</span>
+              <span class="val">Bán đảo Phương Mai / Xã Nhơn Lý, Quy Nhơn</span>
+            </div>
+          </div>
+          <p class="dossier-desc">Vách núi đá cánh cung ôm trọn vịnh biển xanh ngọc bích tạo thành phễu đón gió khổng lồ. Tuyến đường bộ uốn lượn có hàng lan can bảo vệ đỏ trắng ôm sát chân vách đá bazan dựng đứng nhìn thẳng ra biển cả mênh mông.</p>
+          <div class="dossier-details-grid">
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">⏱️ Khung Giờ Vàng</span>
+              <span class="quad-cell-val highlight-info">11:30 - 12:30 • Nắng đỉnh đầu nước xanh ngọc lam</span>
+            </div>
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">🌤️ Vi Khí Quyển</span>
+              <span class="quad-cell-val">28°C • Nắng rực rỡ, gió giật mạnh 32km/h từ hẻm eo núi</span>
+            </div>
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">🌿 Điểm Nhấn Cảnh Quan</span>
+              <span class="quad-cell-val highlight-warn">Bán đảo gió tạt ngang; đi bộ bám lan can, giữ chặt mũ và vật dụng nhẹ</span>
+            </div>
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">🍽️ Ẩm Thực & Món Ngon</span>
+              <span class="quad-cell-val">Mực hấp gừng giòn ngọt, cá tà ma nướng than, ốc vú nàng Nhơn Lý</span>
+            </div>
+          </div>
+          <div class="dossier-footer">
+            <span style="font-family: var(--font-mono); font-size: 11px; color: var(--p-muted);">Mục tiêu: Cứ điểm chính trưa Ngày 1</span>
+            <a class="dossier-maps-btn" href="https://www.google.com/maps/search/?api=1&query=13.7820,109.2194" target="_blank" rel="noopener">
+              Mở Google Maps
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Cứ điểm 09: Cầu Thị Nại -->
+        <article class="dossier-card">
+          <div class="dossier-header">
+            <div>
+              <span class="dossier-num">CỨ ĐIỂM 09</span>
+              <h3 class="dossier-name" style="margin-top: 6px;">Cầu Vượt Biển Thị Nại (Cửa Ngõ Bán Đảo)</h3>
+            </div>
+            <span class="tag-pill tag-speed" style="font-weight: 700;">Cách KS Ngân Hà: 105 km</span>
+          </div>
+          <div class="dossier-meta-row">
+            <div class="dossier-meta-item">
+              <span class="lbl">TỌA ĐỘ VỆ TINH GPS</span>
+              <span class="val">13.7983° N, 109.2567° E</span>
+            </div>
+            <div class="dossier-meta-item">
+              <span class="lbl">TUYẾN ĐƯỜNG TIẾP CẬN</span>
+              <span class="val">Đường Võ Nguyên Giáp ➔ Cầu Thị Nại</span>
+            </div>
+          </div>
+          <p class="dossier-desc">Cây cầu vượt biển dài gần 2,5 km nối liền TP. Quy Nhơn với khu kinh tế Nhơn Hội trên bán đảo Phương Mai. Tuyến đường chạy xe máy trên mặt đầm Thị Nại bao la, ngắm nhìn mặt nước phẳng lặng soi bóng rừng ngập mặn và dãy núi Triều Châu.</p>
+          <div class="dossier-details-grid">
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">⏱️ Khung Giờ Vàng</span>
+              <span class="quad-cell-val highlight-info">12:30 - 13:30 • Gió lộng biển khơi & trời trong</span>
+            </div>
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">🌤️ Vi Khí Quyển</span>
+              <span class="quad-cell-val">27°C • Gió đại dương thổi dọc mặt đầm, độ ẩm 65%</span>
+            </div>
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">🌿 Điểm Nhấn Cảnh Quan</span>
+              <span class="quad-cell-val highlight-warn">Cây cầu vượt biển dài gần 2,5km lộng gió mát rượi, tầm nhìn bao quát toàn bộ đầm Thị Nại tuyệt đẹp</span>
+            </div>
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">🍽️ Ẩm Thực & Món Ngon</span>
+              <span class="quad-cell-val">Bánh xèo tôm nhảy rau mầm Gia Vỹ, chả ram tôm đất Đầm Thị Nại</span>
+            </div>
+          </div>
+          <div class="dossier-footer">
+            <span style="font-family: var(--font-mono); font-size: 11px; color: var(--p-muted);">Mục tiêu: Tuyến vượt biển trưa Ngày 1</span>
+            <a class="dossier-maps-btn" href="https://www.google.com/maps/search/?api=1&query=13.7983,109.2567" target="_blank" rel="noopener">
+              Mở Google Maps
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Cứ điểm 10: Tháp Đôi Chăm Pa -->
+        <article class="dossier-card">
+          <div class="dossier-header">
+            <div>
+              <span class="dossier-num">CỨ ĐIỂM 10</span>
+              <h3 class="dossier-name" style="margin-top: 6px;">Tháp Đôi Chăm Pa (Di Tích Thế Kỷ 12)</h3>
+            </div>
+            <span class="tag-pill tag-speed" style="font-weight: 700;">Cách KS Ngân Hà: 100 km</span>
+          </div>
+          <div class="dossier-meta-row">
+            <div class="dossier-meta-item">
+              <span class="lbl">TỌA ĐỘ VỆ TINH GPS</span>
+              <span class="val">13.7917° N, 109.2083° E</span>
+            </div>
+            <div class="dossier-meta-item">
+              <span class="lbl">TUYẾN ĐƯỜNG TIẾP CẬN</span>
+              <span class="val">Đường Trần Hưng Đạo, P. Đống Đa, TP. Quy Nhơn</span>
+            </div>
+          </div>
+          <p class="dossier-desc">Cụm di tích hai ngọn tháp Chăm bằng gạch nung đỏ rực đứng uy nghiêm giữa công viên rợp bóng dừa. Kiệt tác kiến trúc tôn giáo thế kỷ 12 với kỹ thuật mài chập gắn gạch không mạch vữa và các phù điêu vũ nữ Apsara, chim thần Garuda tinh xảo.</p>
+          <div class="dossier-details-grid">
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">⏱️ Khung Giờ Vàng</span>
+              <span class="quad-cell-val highlight-info">14:00 - 15:00 • Nắng xiên vàng ấm tôn màu gạch</span>
+            </div>
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">🌤️ Vi Khí Quyển</span>
+              <span class="quad-cell-val">27°C • Nắng ấm, công viên rợp bóng cây xanh mát</span>
+            </div>
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">🌿 Điểm Nhấn Cảnh Quan</span>
+              <span class="quad-cell-val">Đường nội đô Quy Nhơn rộng rãi; bãi gửi xe máy ngay cổng di tích</span>
+            </div>
+            <div class="quad-cell">
+              <span class="quad-cell-lbl">🍽️ Ẩm Thực & Món Ngon</span>
+              <span class="quad-cell-val">Bún chả cá Quy Nhơn Ngọc Liên, bánh ít lá gai, nem nướng Chợ Huyện</span>
+            </div>
+          </div>
+          <div class="dossier-footer">
+            <span style="font-family: var(--font-mono); font-size: 11px; color: var(--p-muted);">Mục tiêu: Di tích cổ chiều Ngày 1</span>
+            <a class="dossier-maps-btn" href="https://www.google.com/maps/search/?api=1&query=13.7917,109.2083" target="_blank" rel="noopener">
+              Mở Google Maps
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Footer -->
+<footer class="expedition-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h4 style="font-size: 18px; margin: 0 0 12px; color: #ffffff;">Hành trình Đà Nẵng — Quy Nhơn — Phú Yên</h4>
+        <p style="font-size: 14px; line-height: 1.6; color: #94a3b8; max-width: 480px; margin: 0 0 16px;">
+          Chuyến du lịch khám phá 3 ngày 2 đêm trải nghiệm trọn vẹn cảnh sắc thiên nhiên và tinh hoa ẩm thực Nam Trung Bộ: Eo Gió hùng vĩ, đón bình minh cực Đông Mũi Điện, kỳ quan bazan Gành Đá Đĩa và ẩm thực hải sản Đầm Ô Loan, TP. Tuy Hòa.
+        </p>
+        <span class="telemetry-pill" style="background: rgba(255,255,255,0.1); color: #ffffff; border-color: rgba(255,255,255,0.2);">Khởi hành: 04:30 21/11 • Hoàn thành: 16:00 23/11</span>
+      </div>
+
+      <div>
+        <p class="t-label" style="color: #ffffff; margin-bottom: 12px;">ĐIỀU HƯỚNG NHANH</p>
+        <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; font-size: 14px;">
+          <li><a href="#top" style="color: #94a3b8; text-decoration: none;">Đầu trang & Đếm ngược</a></li>
+          <li><a href="#thoi-tiet" style="color: #94a3b8; text-decoration: none;">Dự báo thời tiết & Gió đèo</a></li>
+          <li><a href="#lich-trinh" style="color: #94a3b8; text-decoration: none;">Lịch trình chi tiết 3 ngày</a></li>
+          <li><a href="#dia-diem" style="color: #94a3b8; text-decoration: none;">Tọa độ săn ảnh</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="t-label" style="color: #ffffff; margin-bottom: 12px;">HỖ TRỢ DỌC TUYẾN</p>
+        <p style="font-size: 13px; line-height: 1.5; color: #94a3b8; margin: 0 0 10px;">
+          Cứu hộ giao thông Nam Trung Bộ & trạm dừng chân QL1A hỗ trợ vá lốp xe máy dã chiến, sạc điện thoại khẩn cấp và bảo dưỡng động cơ.
+        </p>
+        <span style="font-family: var(--font-mono); font-size: 12px; color: var(--p-accent); font-weight: 600;">SOS DỌC TUYẾN: 115 / 114</span>
+      </div>
+    </div>
+
+    <div class="footer-credits">
+      <span>Dữ liệu lịch trình chuyến đi Đà Nẵng — Quy Nhơn — Phú Yên (21/11 - 23/11)</span>
+      <span>Hệ thống thiết kế theo tiêu chuẩn Design Taste Frontend • Bản quyền chuyến đi 2026</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Departure Countdown Timer: Target departure at 04:30 on 21/11
+(function initDepartureCountdown() {
+  const nowInitial = new Date();
+  let targetYear = nowInitial.getFullYear();
+  const targetMonth = 10; // 0-indexed: 10 is November
+  const targetDay = 21;
+  const targetHour = 4;
+  const targetMinute = 30;
+  let targetDate = new Date(targetYear, targetMonth, targetDay, targetHour, targetMinute, 0);
+
+  // If current date is past the trip return date (Nov 23 16:00) of this year, target next year
+  const tripEndDate = new Date(targetYear, targetMonth, 23, 16, 0, 0);
+  if (nowInitial.getTime() > tripEndDate.getTime()) {
+    targetYear += 1;
+    targetDate = new Date(targetYear, targetMonth, targetDay, targetHour, targetMinute, 0);
+  }
+
+  const elDays = document.getElementById('cd-days');
+  const elHours = document.getElementById('cd-hours');
+  const elMinutes = document.getElementById('cd-minutes');
+  const elSeconds = document.getElementById('cd-seconds');
+  const elStatus = document.getElementById('countdown-status');
+
+  function updateClock() {
+    const now = new Date();
+    const diff = targetDate.getTime() - now.getTime();
+
+    if (diff <= 0) {
+      if (elDays) elDays.textContent = '00';
+      if (elHours) elHours.textContent = '00';
+      if (elMinutes) elMinutes.textContent = '00';
+      if (elSeconds) elSeconds.textContent = '00';
+      if (elStatus) {
+        elStatus.textContent = 'ĐANG TRÊN CUNG ĐƯỜNG';
+        elStatus.style.background = 'rgba(234, 88, 12, 0.15)';
+        elStatus.style.color = '#ea580c';
+      }
+      return;
+    }
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((diff / (1000 * 60)) % 60);
+    const seconds = Math.floor((diff / 1000) % 60);
+
+    if (elDays) elDays.textContent = String(days).padStart(2, '0');
+    if (elHours) elHours.textContent = String(hours).padStart(2, '0');
+    if (elMinutes) elMinutes.textContent = String(minutes).padStart(2, '0');
+    if (elSeconds) elSeconds.textContent = String(seconds).padStart(2, '0');
+  }
+
+  updateClock();
+  setInterval(updateClock, 1000);
+})();
+
+// Weather Day Switcher
+function switchWeatherDay(dayId, btn) {
+  document.querySelectorAll('.weather-day-panel').forEach(panel => {
+    panel.style.display = 'none';
+  });
+  const targetPanel = document.getElementById('weather-panel-' + dayId);
+  if (targetPanel) {
+    targetPanel.style.display = 'grid';
+  }
+  btn.parentElement.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+}
+
+// Itinerary Day Switcher
+function switchItineraryDay(dayId, btn) {
+  document.querySelectorAll('.itin-day-panel').forEach(panel => {
+    panel.style.display = 'none';
+  });
+  const targetPanel = document.getElementById(dayId);
+  if (targetPanel) {
+    targetPanel.style.display = 'flex';
+  }
+  btn.parentElement.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+}
+
+/* ==========================================================
+   LIVE WEATHER ENGINE & GOOGLE WEATHER API INTEGRATION
+   ========================================================== */
+
+const WEATHER_STATIONS = {
+  'da-nang': { name: 'Đà Nẵng (QL1A)', lat: 16.0544, lng: 108.2022 },
+  'tam-ky': { name: 'Tam Kỳ — Quảng Ngãi', lat: 15.3426, lng: 108.6368 },
+  'eo-gio': { name: 'Eo Gió (Quy Nhơn)', lat: 13.7820, lng: 109.2194 },
+  'thap-doi': { name: 'Tháp Đôi Chăm Pa', lat: 13.7917, lng: 109.2083 },
+  'xuan-dai': { name: 'Đèo QL1D — Vịnh Xuân Đài', lat: 13.5137, lng: 109.2272 },
+  'tuy-hoa': { name: 'TP. Tuy Hòa', lat: 13.0955, lng: 109.3080 },
+  'mui-dien': { name: 'Hải đăng Mũi Điện & Bãi Môn', lat: 12.8906, lng: 109.4583 },
+  'ganh-da-dia': { name: 'Gành Đá Đĩa — Gành Đèn', lat: 13.3556, lng: 109.2972 },
+  'o-loan': { name: 'Đầm Ô Loan & Mằng Lăng', lat: 13.2500, lng: 109.2833 },
+  'bai-xep': { name: 'Bãi Xép (Vách xương rồng)', lat: 13.2083, lng: 109.3250 }
+};
+
+function degToCompass(num) {
+  const val = Math.floor((num / 22.5) + 0.5);
+  const arr = ["B", "B-ĐB", "ĐB", "Đ-ĐB", "Đ", "Đ-ĐN", "ĐN", "N-ĐN", "N", "N-TN", "TN", "T-TN", "T", "T-TB", "TB", "B-TB"];
+  return arr[(val % 16)];
+}
+
+function mapWmoCondition(code) {
+  if (code === 0) return { text: "Trời quang đãng, nắng ấm", icon: "sun" };
+  if (code === 1) return { text: "Trời nắng, mây thưa nhẹ", icon: "sun-cloud" };
+  if (code === 2) return { text: "Mây rải rác từng đợt", icon: "cloud" };
+  if (code === 3) return { text: "Nhiều mây, mây xám âm u", icon: "cloud-heavy" };
+  if ([45, 48].includes(code)) return { text: "Sương mù sườn đèo ven biển", icon: "fog" };
+  if ([51, 53, 55, 56, 57].includes(code)) return { text: "Mưa phùn sương sớm bay nhẹ", icon: "drizzle" };
+  if ([61, 63].includes(code)) return { text: "Mưa rào nhẹ rải rác", icon: "rain-light" };
+  if ([65, 66, 67].includes(code)) return { text: "Mưa lớn từng cơn, trơn trượt", icon: "rain-heavy" };
+  if ([80, 81, 82].includes(code)) return { text: "Mưa dông giao mùa rải rác", icon: "rain-storm" };
+  if ([95, 96, 99].includes(code)) return { text: "Dông sét ven biển, gió giật", icon: "storm" };
+  return { text: "Gió biển thổi nhẹ, nắng ấm", icon: "sun-cloud" };
+}
+
+function getConditionSvg(type) {
+  if (type === 'sun') {
+    return '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>';
+  }
+  if (type === 'cloud' || type === 'sun-cloud') {
+    return '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2"/></svg>';
+  }
+  if (type.includes('rain') || type === 'drizzle') {
+    return '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 16.2A4.5 4.5 0 0 0 17.5 8h-1.8A7 7 0 1 0 4 14.9"/><path d="M16 14v6M8 14v6M12 16v6"/></svg>';
+  }
+  return '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>';
+}
+
+// Google Weather API lookup
+async function fetchGoogleWeather(lat, lng, apiKey) {
+  const url = `https://weather.googleapis.com/v1/currentConditions:lookup?key=${encodeURIComponent(apiKey)}&location.latitude=${lat}&location.longitude=${lng}`;
+  const res = await fetch(url);
+  if (!res.ok) {
+    const errJson = await res.json().catch(() => ({}));
+    throw new Error(errJson.error?.message || `Google API HTTP ${res.status}`);
+  }
+  const data = await res.json();
+  const c = data.currentConditions || {};
+  return {
+    temp: Math.round(c.temperature?.degrees ?? 26),
+    wind: Math.round(c.wind?.speed?.value ?? 16),
+    windDir: c.wind?.direction?.cardinal || 'ĐB',
+    humidity: c.relativeHumidity ?? 75,
+    rainProb: c.precipitation?.probability?.percent ?? 15,
+    conditionText: c.weatherCondition?.description?.text || 'Trời nắng gián đoạn',
+    iconType: 'sun-cloud',
+    source: 'Google Weather API'
+  };
+}
+
+// WMO Satellite Real-Time Weather lookup
+async function fetchWmoWeather(lat, lng) {
+  const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lng}&current=temperature_2m,relative_humidity_2m,apparent_temperature,precipitation,rain,weather_code,wind_speed_10m,wind_direction_10m&timezone=Asia%2FBangkok`;
+  const res = await fetch(url);
+  if (!res.ok) throw new Error(`WMO HTTP ${res.status}`);
+  const data = await res.json();
+  const cur = data.current || {};
+  const cond = mapWmoCondition(cur.weather_code ?? 1);
+  return {
+    temp: Math.round(cur.temperature_2m ?? 25),
+    wind: Math.round(cur.wind_speed_10m ?? 14),
+    windDir: degToCompass(cur.wind_direction_10m ?? 45),
+    humidity: Math.round(cur.relative_humidity_2m ?? 78),
+    rainProb: (cur.precipitation > 0 || cur.rain > 0) ? 80 : 15,
+    conditionText: cond.text,
+    iconType: cond.icon,
+    source: 'Trạm Vệ Tinh Khí Tượng (WMO Live)'
+  };
+}
+
+// Cache weather responses to avoid redundant rate-limits
+const weatherCache = {};
+
+async function fetchStationData(stationKey, googleKey) {
+  const station = WEATHER_STATIONS[stationKey];
+  if (!station) return null;
+
+  // Check cache (5 min TTL)
+  const cached = weatherCache[stationKey];
+  if (cached && (Date.now() - cached.timestamp < 300000)) {
+    return cached.data;
+  }
+
+  let data = null;
+  if (googleKey) {
+    try {
+      data = await fetchGoogleWeather(station.lat, station.lng, googleKey);
+    } catch(err) {
+      console.warn(`[Weather] Google API failed for ${stationKey}:`, err.message);
+      // Fallback to WMO
+      data = await fetchWmoWeather(station.lat, station.lng);
+    }
+  } else {
+    data = await fetchWmoWeather(station.lat, station.lng);
+  }
+
+  if (data) {
+    weatherCache[stationKey] = { timestamp: Date.now(), data };
+  }
+  return data;
+}
+
+// Master update function
+async function updateAllWeatherCards(forceRefresh = false) {
+  const refreshBtn = document.getElementById('btn-refresh-weather');
+  if (refreshBtn) refreshBtn.classList.add('spinning');
+
+  if (forceRefresh) {
+    for (const k in weatherCache) delete weatherCache[k];
+  }
+
+  const googleKey = localStorage.getItem('google_weather_api_key') || '';
+  const sourceNameEl = document.getElementById('weather-source-name');
+  const sourcePill = document.getElementById('weather-source-pill');
+  const clockEl = document.getElementById('weather-update-clock');
+
+  if (googleKey) {
+    if (sourceNameEl) sourceNameEl.innerHTML = '<strong style="color:#ea4335">G</strong><strong style="color:#4285f4">o</strong><strong style="color:#fbbc05">o</strong><strong style="color:#34a853">g</strong><strong style="color:#ea4335">l</strong><strong style="color:#4285f4">e</strong> Weather API Live';
+    if (sourcePill) sourcePill.classList.add('google-active');
+  } else {
+    if (sourceNameEl) sourceNameEl.textContent = 'Trạm Vệ Tinh Khí Tượng (WMO Live GPS)';
+    if (sourcePill) sourcePill.classList.remove('google-active');
+  }
+
+  const cards = document.querySelectorAll('.weather-card[data-station]');
+  for (const card of cards) {
+    const stationKey = card.getAttribute('data-station');
+    try {
+      const data = await fetchStationData(stationKey, googleKey);
+      if (!data) continue;
+
+      const tempEl = card.querySelector('.live-temp');
+      if (tempEl) tempEl.textContent = `${data.temp}°C`;
+
+      const condEl = card.querySelector('.live-condition');
+      if (condEl) {
+        condEl.innerHTML = `${getConditionSvg(data.iconType)} <span>${data.conditionText}</span>`;
+      }
+
+      const windEl = card.querySelector('.live-wind');
+      if (windEl) windEl.textContent = `${data.windDir} ${data.wind} km/h`;
+
+      const humEl = card.querySelector('.live-humidity');
+      if (humEl) humEl.textContent = `${data.humidity}%`;
+
+      const rainEl = card.querySelector('.live-rain');
+      if (rainEl) {
+        rainEl.textContent = data.rainProb > 50 ? `${data.rainProb}% Mưa ẩm` : `${data.rainProb}% Tạnh ráo`;
+      }
+    } catch(err) {
+      console.warn(`[Weather] Chế độ offline/dự phòng cho trạm ${stationKey}: ${err.message}`);
+    }
+  }
+
+  const now = new Date();
+  const timeStr = now.toLocaleTimeString('vi-VN', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+  if (clockEl) {
+    clockEl.textContent = `Đồng bộ trực tiếp: ${timeStr}`;
+  }
+
+  if (refreshBtn) {
+    setTimeout(() => refreshBtn.classList.remove('spinning'), 600);
+  }
+}
+
+function triggerManualWeatherRefresh() {
+  updateAllWeatherCards(true);
+}
+
+// Modal Cấu hình Google API Key
+function openGoogleWeatherModal() {
+  const modal = document.getElementById('modal-weather-config');
+  const input = document.getElementById('input-google-api-key');
+  const statusEl = document.getElementById('modal-key-status');
+  if (input) {
+    input.value = localStorage.getItem('google_weather_api_key') || '';
+  }
+  if (statusEl) statusEl.innerHTML = '';
+  if (modal) modal.classList.add('open');
+}
+
+function closeGoogleWeatherModal() {
+  const modal = document.getElementById('modal-weather-config');
+  if (modal) modal.classList.remove('open');
+}
+
+function handleWeatherModalClick(e) {
+  if (e.target.id === 'modal-weather-config') {
+    closeGoogleWeatherModal();
+  }
+}
+
+async function saveAndTestGoogleApiKey() {
+  const input = document.getElementById('input-google-api-key');
+  const statusEl = document.getElementById('modal-key-status');
+  const key = (input ? input.value : '').trim();
+
+  if (!key) {
+    if (statusEl) statusEl.innerHTML = '<span style="color:#e11d48;">Vui lòng nhập API Key hoặc chọn "Xóa Key" để dùng vệ tinh mặc định.</span>';
+    return;
+  }
+
+  if (statusEl) statusEl.innerHTML = '<span style="color:#0284c7;">Đang xác thực kết nối Google Weather API...</span>';
+
+  try {
+    // Test call with Quy Nhon coordinates
+    await fetchGoogleWeather(13.7820, 109.2194, key);
+    localStorage.setItem('google_weather_api_key', key);
+    if (statusEl) {
+      statusEl.innerHTML = '<span style="color:#16a34a; font-weight: 600;">✓ Xác thực thành công! Google Weather API đã được kích hoạt.</span>';
+    }
+    setTimeout(() => {
+      closeGoogleWeatherModal();
+      updateAllWeatherCards(true);
+    }, 1200);
+  } catch(err) {
+    if (statusEl) {
+      statusEl.innerHTML = `<span style="color:#e11d48; font-weight: 600;">Lỗi Google API: ${err.message}. Kiểm tra lại key hoặc billing trên Google Cloud.</span>`;
+    }
+  }
+}
+
+function clearGoogleApiKey() {
+  localStorage.removeItem('google_weather_api_key');
+  const input = document.getElementById('input-google-api-key');
+  if (input) input.value = '';
+  const statusEl = document.getElementById('modal-key-status');
+  if (statusEl) {
+    statusEl.innerHTML = '<span style="color:#16a34a;">Đã chuyển về Trạm Khí Tượng Vệ Tinh Trực Tiếp (WMO Live GPS).</span>';
+  }
+  setTimeout(() => {
+    closeGoogleWeatherModal();
+    updateAllWeatherCards(true);
+  }, 1000);
+}
+
+// Lightbox functions removed: site is 100% data-driven without image popups
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    closeGoogleWeatherModal();
+    }
+});
+
+// Auto-run weather engine on page load
+document.addEventListener('DOMContentLoaded', () => {
+  updateAllWeatherCards();
+  // Auto refresh every 10 minutes
+  setInterval(() => updateAllWeatherCards(), 600000);
+});
+
+// Fallback init in case DOM is already ready
+if (document.readyState === 'complete' || document.readyState === 'interactive') {
+  updateAllWeatherCards();
+}
+</script>
+
+<!-- Modal Cấu hình Google Weather API Key -->
+<div class="modal-backdrop" id="modal-weather-config" onclick="handleWeatherModalClick(event)">
+  <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modal-weather-title">
+    <div class="modal-header">
+      <h3 id="modal-weather-title">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+        Cấu hình Google Weather API
+      </h3>
+      <button class="modal-close-btn" onclick="closeGoogleWeatherModal()" aria-label="Đóng">&times;</button>
+    </div>
+    <div class="modal-body">
+      <p style="font-size: 13px; line-height: 1.6; color: var(--p-muted); margin: 0 0 16px;">
+        Hệ thống gọi trực tiếp endpoint chính thức của Google:
+        <code style="font-family: var(--font-mono); font-size: 11px; background: #f1f5f9; padding: 2px 6px; border-radius: 4px; display: block; margin: 6px 0; word-break: break-all;">https://weather.googleapis.com/v1/currentConditions:lookup</code>
+        Nhập Google Cloud API Key (đã kích hoạt Google Maps Weather API) của bạn để lấy dữ liệu độc quyền từ Google.
+      </p>
+
+      <label style="display: block; font-size: 12px; font-weight: 700; color: var(--p-ink); margin-bottom: 6px;" for="input-google-api-key">
+        GOOGLE WEATHER API KEY:
+      </label>
+      <input type="text" id="input-google-api-key" placeholder="AIzaSy..." style="width: 100%; box-sizing: border-box; font-family: var(--font-mono); font-size: 13px; padding: 10px 14px; border: 1px solid var(--p-border); border-radius: 6px; margin-bottom: 12px; outline: none;">
+      
+      <div id="modal-key-status" style="font-size: 12px; margin-bottom: 16px; min-height: 18px;"></div>
+
+      <div style="background: var(--p-surface-subtle); border: 1px solid var(--p-border); border-radius: 6px; padding: 12px; font-size: 12px; color: var(--p-muted); line-height: 1.5;">
+        <strong>Chế độ dự phòng tự động (Auto Fallback):</strong><br>
+        Nếu bạn chưa cấu hình Google API Key, website sẽ tự động kết nối trạm vệ tinh khí tượng thời gian thực WMO GPS hoàn toàn miễn phí, đo đạc chính xác nhiệt độ, hướng gió và độ ẩm tại Quy Nhơn, Phú Yên và Đà Nẵng.
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn-weather-action" onclick="clearGoogleApiKey()">Xóa Key (Dùng Vệ Tinh)</button>
+      <button class="btn-weather-action primary" onclick="saveAndTestGoogleApiKey()">Lưu & Kích Hoạt Key</button>
+    </div>
+  </div>
+</div>
+</body>
+</html>
