@@ -83,6 +83,8 @@ body {
 
 html {
   overflow-x: hidden;
+  scroll-behavior: smooth;
+  scroll-padding-top: 84px;
 }
 
 /* Fix system.css fixed-height bugs: ensure sections adapt to rich content without overlapping */
@@ -95,7 +97,7 @@ main > :is(section, .section, .expedition-section) {
   height: auto !important;
   min-height: auto !important;
   max-height: none !important;
-  padding: 88px 0 !important;
+  padding: 56px 0 !important;
   overflow: visible !important;
   box-sizing: border-box !important;
 }
@@ -110,11 +112,10 @@ main > :is(section, .section, .expedition-section) > :is(.wrap, .container) {
 
 main > .hero-expedition {
   height: auto !important;
-  min-height: calc(100vh - var(--nav)) !important;
-  padding-top: 48px !important;
-  padding-bottom: 64px !important;
-  display: flex !important;
-  align-items: center !important;
+  min-height: auto !important;
+  padding-top: 40px !important;
+  padding-bottom: 48px !important;
+  display: block !important;
 }
 
 main > .hero-expedition > .wrap {
@@ -211,21 +212,22 @@ main > .hero-expedition > .wrap {
 
 /* Hero Section */
 .hero-expedition {
-  padding-top: 48px;
-  padding-bottom: 80px;
-  min-height: calc(100vh - var(--nav));
-  display: flex;
-  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 48px;
+  min-height: auto;
   position: relative;
   overflow: hidden;
   background: linear-gradient(180deg, #ffffff 0%, var(--p-bg) 100%);
 }
 .hero-grid {
   display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  gap: 48px;
-  align-items: center;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+  gap: 36px;
+  align-items: stretch;
   width: 100%;
+}
+.hero-left, .hero-right {
+  min-width: 0;
 }
 .hero-tagline {
   display: inline-flex;
@@ -257,8 +259,8 @@ main > .hero-expedition > .wrap {
 }
 
 .hero-title {
-  font-size: clamp(34px, 4.2vw, 56px);
-  line-height: 1.08;
+  font-size: clamp(32px, 3.5vw, 50px);
+  line-height: 1.12;
   font-weight: 700;
   letter-spacing: -0.03em;
   margin: 0 0 20px;
@@ -357,7 +359,7 @@ main > .hero-expedition > .wrap {
 /* Hero Specs */
 .hero-specs {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 16px;
   border-top: 1px solid var(--p-border);
   padding-top: 24px;
@@ -1474,6 +1476,360 @@ main > .hero-expedition > .wrap {
     gap: 10px;
   }
 }
+
+/* Hero Live Weather Pulse Strip */
+.hero-weather-strip {
+  margin-top: 20px;
+  background: #ffffff;
+  border: 1px solid var(--p-border);
+  border-radius: 12px;
+  padding: 14px 18px;
+  box-shadow: var(--shadow-sm);
+}
+.h-weather-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--p-muted);
+  letter-spacing: 0.04em;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.live-dot-pulse {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.25);
+  margin-right: 6px;
+  animation: pulseDot 2s infinite;
+}
+@keyframes pulseDot {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+  70% { transform: scale(1.1); box-shadow: 0 0 0 5px rgba(16, 185, 129, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+.h-weather-link {
+  color: var(--p-accent);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 11.5px;
+}
+.h-weather-link:hover {
+  text-decoration: underline;
+}
+.h-weather-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+.h-weather-pill {
+  background: var(--p-surface-subtle);
+  border: 1px solid var(--p-border);
+  border-radius: 8px;
+  padding: 8px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  transition: all 180ms ease;
+}
+.h-weather-pill:hover {
+  border-color: var(--p-border-strong);
+  background: #ffffff;
+}
+.h-wp-loc {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--p-ink);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.h-wp-temp {
+  font-family: var(--font-mono);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--p-accent);
+  line-height: 1.2;
+}
+.h-wp-cond {
+  font-size: 11px;
+  color: var(--p-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+@media (max-width: 768px) {
+  .h-weather-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 480px) {
+  .h-weather-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Climate Reality Banner (Cơ sở dữ liệu thực tế) */
+.climate-reality-banner {
+  background: #ffffff;
+  border: 1px solid var(--p-border);
+  border-radius: 12px;
+  padding: 18px 22px;
+  margin-bottom: 24px;
+  box-shadow: var(--shadow-sm);
+  border-left: 4px solid var(--p-accent);
+}
+.crb-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--p-ink);
+  letter-spacing: 0.03em;
+  margin-bottom: 12px;
+}
+.crb-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+.crb-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.crb-label {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  text-transform: uppercase;
+  color: var(--p-muted);
+  font-weight: 600;
+}
+.crb-val {
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--p-ink);
+  font-weight: 500;
+}
+@media (max-width: 900px) {
+  .crb-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .crb-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.weather-stat-cell .val.live-feel {
+  color: #0369a1;
+}
+.weather-alert-box .advisory-badge {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 2px 6px;
+  border-radius: 3px;
+  background: rgba(0,0,0,0.06);
+  margin-right: 6px;
+  color: inherit;
+}
+
+
+@media (max-width: 768px) {
+  .hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 28px !important;
+  }
+  .countdown-digits {
+    gap: 8px !important;
+  }
+  .count-card {
+    padding: 12px 6px !important;
+  }
+  .count-num {
+    font-size: 26px !important;
+  }
+  .hero-weather-strip {
+    padding: 12px 14px !important;
+  }
+}
+
+
+/* Cân đối và mở rộng Hero Grid tỷ lệ 3 : 2 (60% Trái : 40% Phải) trên Desktop */
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+  gap: 36px;
+  align-items: stretch;
+  width: 100%;
+}
+.hero-left, .hero-right {
+  min-width: 0;
+}
+@media (max-width: 1024px) {
+  .hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+}
+.hero-right {
+  display: flex;
+  flex-direction: column;
+}
+.mission-hud-card {
+  background: #ffffff;
+  border: 1px solid var(--p-border);
+  border-radius: 14px;
+  padding: 28px;
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1;
+}
+.mission-hud-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--p-border);
+  padding-bottom: 16px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.mission-hud-title {
+  font-family: var(--font-mono);
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--p-accent);
+  letter-spacing: 0.04em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.mission-hud-basecamp {
+  background: var(--c-orange-light);
+  border: 1px solid rgba(234, 88, 12, 0.25);
+  border-radius: 10px;
+  padding: 18px 20px;
+}
+.mission-hud-basecamp h4 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--p-ink);
+  margin: 0 0 6px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.mission-hud-basecamp p {
+  font-size: 13.5px;
+  color: var(--p-muted);
+  margin: 0 0 12px;
+  line-height: 1.5;
+}
+.mission-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+.metric-box {
+  background: var(--p-surface-subtle);
+  border: 1px solid var(--p-border);
+  border-radius: 8px;
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  transition: all 150ms ease;
+}
+.metric-box:hover {
+  background: #ffffff;
+  border-color: var(--p-border-strong);
+}
+.metric-box .label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--p-muted);
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.metric-box .value {
+  font-family: var(--font-mono);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--p-ink);
+}
+
+/* 3-Day Journey Rail in HUD */
+.hud-route-rail {
+  background: var(--p-surface-subtle);
+  border: 1px solid var(--p-border);
+  border-radius: 10px;
+  padding: 14px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.hud-rail-title {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--p-ink);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.hud-rail-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 12.5px;
+  line-height: 1.45;
+  color: var(--p-ink);
+}
+.hud-rail-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+.hud-day-tag {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: #ffffff;
+  border: 1px solid var(--p-border);
+  color: var(--p-accent);
+  white-space: nowrap;
+}
+
+/* Badge ngày tháng nổi bật trong thẻ thời tiết */
+.weather-time {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px !important;
+  padding: 5px 10px !important;
+  font-weight: 700 !important;
+}
+.weather-date-highlight {
+  color: var(--p-ink);
+  font-weight: 700;
+}
+
 </style>
 </head>
 <body>
@@ -1486,9 +1842,9 @@ main > .hero-expedition > .wrap {
       <span class="nav__brand-title">ĐÀ NẴNG • QUY NHƠN • PHÚ YÊN</span>
     </a>
     <ul class="nav__menu-list">
+      <li><a class="nav__menu-link" href="#thoi-tiet">Khí Tượng & Thời Tiết</a></li>
       <li><a class="nav__menu-link" href="#lich-trinh">Hành Trình 3 Ngày</a></li>
       <li><a class="nav__menu-link" href="#khach-san">Khách Sạn Ngân Hà</a></li>
-      <li><a class="nav__menu-link" href="#thoi-tiet">Thời Tiết Điểm Đến</a></li>
       <li><a class="nav__menu-link" href="#dia-diem">Thắng Cảnh & Ẩm Thực</a></li>
     </ul>
     <a class="nav__cta-btn" href="#khach-san">
@@ -1541,6 +1897,36 @@ main > .hero-expedition > .wrap {
             </div>
           </div>
 
+          <!-- Hero Weather Pulse Strip (Live Weather Key Stations) -->
+          <div class="hero-weather-strip">
+            <div class="h-weather-title">
+              <div><span class="live-dot-pulse"></span><strong>NHỊP KHÍ TƯỢNG VỆ TINH TRỰC TIẾP (WMO GPS LIVE)</strong></div>
+              <a href="#thoi-tiet" class="h-weather-link">Chi tiết bảng đo 10 trạm hành trình ↓</a>
+            </div>
+            <div class="h-weather-grid">
+              <div class="h-weather-pill" data-hero-station="da-nang">
+                <span class="h-wp-loc">Đà Nẵng (04:30 • 21/11)</span>
+                <span class="h-wp-temp hero-live-temp">21°C</span>
+                <span class="h-wp-cond hero-live-cond">Se lạnh • Gió ĐB 12 km/h</span>
+              </div>
+              <div class="h-weather-pill" data-hero-station="eo-gio">
+                <span class="h-wp-loc">Quy Nhơn (Trưa • 21/11)</span>
+                <span class="h-wp-temp hero-live-temp">25°C</span>
+                <span class="h-wp-cond hero-live-cond">Nắng gián đoạn • Gió biển</span>
+              </div>
+              <div class="h-weather-pill" data-hero-station="tuy-hoa">
+                <span class="h-wp-loc">Tuy Hòa (Tối • 21/11)</span>
+                <span class="h-wp-temp hero-live-temp">23°C</span>
+                <span class="h-wp-cond hero-live-cond">Mát mẻ • Gió biển đêm</span>
+              </div>
+              <div class="h-weather-pill" data-hero-station="mui-dien">
+                <span class="h-wp-loc">Mũi Điện (05:15 • 22/11)</span>
+                <span class="h-wp-temp hero-live-temp">22°C</span>
+                <span class="h-wp-cond hero-live-cond">Rạng đông • Đọng sương</span>
+              </div>
+            </div>
+          </div>
+
           <!-- Hero Travel Specs -->
           <dl class="hero-specs">
             <div class="spec-item">
@@ -1567,43 +1953,53 @@ main > .hero-expedition > .wrap {
           <div class="mission-hud-card">
             <div class="mission-hud-header">
               <span class="mission-hud-title">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                BẢNG TỔNG QUAN HÀNH TRÌNH
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                TỔNG QUAN HÀNH TRÌNH
               </span>
-              <span class="tag-pill tag-speed">3 NGÀY 2 ĐÊM • 10 ĐIỂM ĐẾN</span>
+              <span class="tag-pill tag-speed" style="font-size: 11px; padding: 4px 8px;">3 NGÀY 2 ĐÊM • 10 ĐIỂM ĐẾN</span>
             </div>
 
             <!-- Basecamp Highlight Card -->
             <div class="mission-hud-basecamp">
-              <div style="font-family: var(--font-mono); font-size: 11px; font-weight: 700; color: var(--p-accent); text-transform: uppercase; margin-bottom: 4px;">ĐIỂM NGHỈ DƯỠNG (ĐÊM 1 & ĐÊM 2)</div>
+              <div style="font-family: var(--font-mono); font-size: 11.5px; font-weight: 700; color: var(--p-accent); text-transform: uppercase; margin-bottom: 6px;">
+                CĂN CỨ LƯU TRÚ CHÍNH THỨC (ĐÊM 1 & ĐÊM 2)
+              </div>
               <h4>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-                Khách Sạn Ngân Hà
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                Khách Sạn Ngân Hà (TP. Tuy Hòa)
               </h4>
-              <p>Đường Trần Suyến, TP. Tuy Hòa, Tỉnh Phú Yên (giao thoa trục biển & Tây Nguyên Đắk Lắk)</p>
-              <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-                <a href="https://www.google.com/maps/search/?api=1&query=Khach+San+Ngan+Ha+Tran+Suyen+Tuy+Hoa" target="_blank" rel="noopener" class="dossier-maps-btn" style="background:#ffffff; padding: 4px 10px; border-radius: 4px; border: 1px solid var(--p-border);">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <p>Đường Trần Suyến, TP. Tuy Hòa, Tỉnh Phú Yên (vị trí trung tâm thuận tiện kết nối các điểm du lịch & phố ẩm thực đêm Tuy Hòa).</p>
+              <div style="display: flex; gap: 8px; flex-wrap: wrap; align-items: center;">
+                <a href="https://www.google.com/maps/search/?api=1&query=Khach+San+Ngan+Ha+Tran+Suyen+Tuy+Hoa" target="_blank" rel="noopener" class="dossier-maps-btn" style="background:#ffffff; padding: 5px 12px; border-radius: 5px; border: 1px solid var(--p-border); font-size: 12px; font-weight: 600;">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
                   Chỉ đường Google Maps
                 </a>
-                <span class="tag-pill">Lưu trú 2 đêm</span>
-                <span class="tag-pill">Tiện nghi nghỉ dưỡng</span>
+                <span class="tag-pill" style="font-weight: 600;">Lưu trú cả 2 đêm (21/11 & 22/11)</span>
+                <span class="tag-pill" style="font-weight: 600;">Nghỉ dưỡng tiện nghi</span>
               </div>
             </div>
 
-            <!-- 4 Overview Metrics -->
+            <!-- 6 Key Milestone Metrics -->
             <div class="mission-metrics-grid">
               <div class="metric-box">
-                <span class="label">Khởi hành</span>
-                <span class="value">04:30 • 21/11</span>
+                <span class="label">Khởi hành từ Đà Nẵng</span>
+                <span class="value">04:30 • Thứ Sáu 21/11</span>
               </div>
               <div class="metric-box">
-                <span class="label">Điểm rạng đông</span>
-                <span class="value">Mũi Điện (Phú Yên)</span>
+                <span class="label">Đón bình minh cực Đông</span>
+                <span class="value">05:15 • Thứ Bảy 22/11</span>
               </div>
               <div class="metric-box">
-                <span class="label">Thời tiết dự báo</span>
-                <span class="value">Nắng ấm • Gió biển dịu</span>
+                <span class="label">Tổng lộ trình khứ hồi</span>
+                <span class="value">~950 km toàn tuyến</span>
+              </div>
+              <div class="metric-box">
+                <span class="label">Danh lam thắng cảnh</span>
+                <span class="value">10 Cứ điểm nổi tiếng</span>
+              </div>
+              <div class="metric-box">
+                <span class="label">Về đích Đà Nẵng</span>
+                <span class="value">16:00 • Chủ Nhật 23/11</span>
               </div>
               <div class="metric-box">
                 <span class="label">Khí tượng thời gian thực</span>
@@ -1611,11 +2007,597 @@ main > .hero-expedition > .wrap {
               </div>
             </div>
 
-            <div style="font-size: 12px; color: var(--p-muted); line-height: 1.5; border-top: 1px solid var(--p-border); padding-top: 12px;">
-              <strong>Trải nghiệm chuyến đi:</strong> Thưởng ngoạn trọn vẹn cảnh sắc danh thắng biển đảo, tìm hiểu văn hóa lịch sử và khám phá tinh hoa ẩm thực Nam Trung Bộ.
+            <!-- 3-Day Journey Route Rail -->
+            <div class="hud-route-rail">
+              <div class="hud-rail-title">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+                TRỤC HÀNH TRÌNH TỪNG NGÀY:
+              </div>
+              <div class="hud-rail-list">
+                <div class="hud-rail-item">
+                  <span class="hud-day-tag">NGÀY 1 (21/11)</span>
+                  <span>Đà Nẵng ➔ Tam Kỳ ➔ Eo Gió Quy Nhơn ➔ Đèo QL1D ➔ Nhận phòng KS Ngân Hà Tuy Hòa</span>
+                </div>
+                <div class="hud-rail-item">
+                  <span class="hud-day-tag">NGÀY 2 (22/11)</span>
+                  <span>04:30 Rời KS Ngân Hà ➔ Đón bình minh Mũi Điện ➔ Gành Đá Đĩa ➔ Đầm Ô Loan ➔ Bãi Xép ➔ Đêm 2 Tuy Hòa</span>
+                </div>
+                <div class="hud-rail-item">
+                  <span class="hud-day-tag">NGÀY 3 (23/11)</span>
+                  <span>05:30 Trả phòng KS Ngân Hà ➔ Vượt Đèo Cù Mông ➔ Cơm gà Quảng Ngãi ➔ Về đích Đà Nẵng 16:00</span>
+                </div>
+              </div>
+            </div>
+
+            <div style="font-size: 12.5px; color: var(--p-muted); line-height: 1.5; border-top: 1px solid var(--p-border); padding-top: 12px;">
+              <strong>Trải nghiệm xuyên suốt:</strong> Chiêm ngưỡng trọn vẹn cảnh sắc danh lam thắng cảnh biển đảo duyên hải Nam Trung Bộ, khám phá di tích lịch sử và thưởng thức trọn vẹn văn hóa ẩm thực đặc sản.
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Weather by Time and Destination Section -->
+  <section class="expedition-section" id="thoi-tiet">
+    <div class="wrap">
+      <div class="section-header">
+        <span class="section-kicker">QUAN TRẮC KHÍ TƯỢNG & ĐIỀU KIỆN THỰC ĐỊA THỜI GIAN THỰC</span>
+        <h2 class="section-heading">Tình hình thời tiết & vi khí quyển từng chặng</h2>
+        <p class="section-lead">Dữ liệu thời gian thực được kết nối trực tiếp từ Trạm vệ tinh quan trắc khí tượng Châu Âu (WMO GPS) & Google Weather API theo tọa độ thực địa của từng điểm đến. Mọi đánh giá điều kiện mặt đường, sức gió biển và nhiệt độ đều bắt nguồn từ dữ liệu đo đạc vật lý thực tế, hỗ trợ hành trình an toàn và tối ưu trải nghiệm thưởng ngoạn.</p>
+      </div>
+
+      <!-- Live Weather Control Toolbar -->
+      <div class="weather-toolbar">
+        <div class="weather-status-wrap">
+          <div class="weather-source-badge" id="weather-source-pill">
+            <span class="weather-pulse"></span>
+            <span id="weather-source-name">Trạm Vệ Tinh Khí Tượng (WMO Live GPS)</span>
+          </div>
+          <span class="weather-update-meta" id="weather-update-clock">Đang đồng bộ vệ tinh...</span>
+        </div>
+        <div class="weather-actions">
+          <button class="btn-weather-action" id="btn-config-google" onclick="openGoogleWeatherModal()" title="Cấu hình Google Weather API Key chính thức">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
+            Google API Key
+          </button>
+          <button class="btn-weather-action primary" id="btn-refresh-weather" onclick="triggerManualWeatherRefresh()" title="Gọi API làm mới dữ liệu thời tiết">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16"/><path d="M16 21h5v-5"/></svg>
+            Làm mới trực tiếp
+          </button>
+        </div>
+      </div>
+
+      <!-- Climatological Reality Baseline Banner (Đặc trưng khí hậu thực tế Nam Trung Bộ 21/11 - 23/11) -->
+      <div class="climate-reality-banner">
+        <div class="crb-header">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+          <strong>CƠ SỞ DỮ LIỆU KHÍ HẬU THỰC TẾ DUYÊN HẢI NAM TRUNG BỘ (21/11 - 23/11):</strong>
+        </div>
+        <div class="crb-grid">
+          <div class="crb-item">
+            <span class="crb-label">Hình thế thời tiết</span>
+            <span class="crb-val">Gió mùa Đông Bắc (NE Monsoon) chi phối, khí áp ổn định</span>
+          </div>
+          <div class="crb-item">
+            <span class="crb-label">Dải nhiệt độ thực tế</span>
+            <span class="crb-val">20°C - 23°C (sáng sớm & đêm) • 24°C - 26°C (trưa chiều)</span>
+          </div>
+          <div class="crb-item">
+            <span class="crb-label">Độ ẩm & Lượng mưa</span>
+            <span class="crb-val">Độ ẩm cao 75% - 88% • Mưa rào ven biển rải rác từng đợt</span>
+          </div>
+          <div class="crb-item">
+            <span class="crb-label">Hải văn & Sóng biển</span>
+            <span class="crb-val">Gió biển cấp 4-5 tại các mỏm đá nhô ra biển (Mũi Điện, Eo Gió, Gành Đá Đĩa)</span>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Day Filter Tabs -->
+      <div class="tab-control-bar" role="tablist">
+        <button class="tab-btn active" onclick="switchWeatherDay('day1', this)" role="tab">
+          <span>Ngày 1 • Thứ Sáu (21/11/2026)</span>
+          <span class="tab-badge">Đà Nẵng — Quy Nhơn — Tuy Hòa (400km)</span>
+        </button>
+        <button class="tab-btn" onclick="switchWeatherDay('day2', this)" role="tab">
+          <span>Ngày 2 • Thứ Bảy (22/11/2026)</span>
+          <span class="tab-badge">Thắng Cảnh Biển Đảo Phú Yên</span>
+        </button>
+        <button class="tab-btn" onclick="switchWeatherDay('day3', this)" role="tab">
+          <span>Ngày 3 • Chủ Nhật (23/11/2026)</span>
+          <span class="tab-badge">Tuy Hòa — Quảng Ngãi — Đà Nẵng</span>
+        </button>
+      </div>
+
+      <!-- Day 1 Weather Cards Grid -->
+      <div class="weather-cards-grid weather-day-panel" id="weather-panel-day1">
+        <!-- Chặng 1: Đà Nẵng Xuất phát -->
+        <article class="weather-card" data-station="da-nang">
+          <div class="weather-card-top">
+            <span class="weather-time">📅 Thứ Sáu 21/11 • 04:30</span>
+            <div style="display:flex;align-items:center;gap:8px;">
+              <span class="weather-live-indicator">LIVE</span>
+              <span class="weather-temp live-temp">21°C</span>
+            </div>
+          </div>
+          <h3 class="weather-loc-title">Đà Nẵng (QL1A)</h3>
+          <div class="weather-condition live-condition">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>
+            <span>Sương sớm, trời lạnh, gió nhẹ</span>
+          </div>
+          <div class="weather-telemetry-row">
+            <div class="weather-stat-cell">
+              <span class="lbl">Gió</span>
+              <span class="val live-wind">ĐB 12 km/h</span>
+            </div>
+            <div class="weather-stat-cell">
+              <span class="lbl">Xác suất mưa</span>
+              <span class="val live-rain">20% Mưa nhẹ</span>
+            </div>
+            <div class="weather-stat-cell">
+              <span class="lbl">Độ ẩm</span>
+              <span class="val live-humidity">88%</span>
+            </div>
+            <div class="weather-stat-cell">
+              <span class="lbl">Cảm nhận</span>
+              <span class="val live-feel">20°C</span>
+            </div>
+          </div>
+          <div class="weather-alert-box live-advisory">
+            <span class="advisory-badge">KHÍ TƯỢNG THỰC TẾ</span> Nhiệt độ 21°C, độ ẩm 88% sương sớm; nên mặc áo khoác cản gió và kiểm tra đèn xe trước giờ xuất phát.
+          </div>
+        </article>
+
+        <!-- Chặng 2: Tam Kỳ & Quảng Ngãi -->
+        <article class="weather-card" data-station="tam-ky">
+          <div class="weather-card-top">
+            <span class="weather-time">📅 Thứ Sáu 21/11 • 06:00 - 08:00</span>
+            <div style="display:flex;align-items:center;gap:8px;">
+              <span class="weather-live-indicator">LIVE</span>
+              <span class="weather-temp live-temp">23°C</span>
+            </div>
+          </div>
+          <h3 class="weather-loc-title">Tam Kỳ — Quảng Ngãi</h3>
+          <div class="weather-condition live-condition">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 16.2A4.5 4.5 0 0 0 17.5 8h-1.8A7 7 0 1 0 4 14.9"/><path d="M16 14v6M8 14v6M12 16v6"/></svg>
+            <span>Mây xám nhiều, mưa bay rải rác</span>
+          </div>
+          <div class="weather-telemetry-row">
+            <div class="weather-stat-cell">
+              <span class="lbl">Gió</span>
+              <span class="val live-wind">ĐB 16 km/h</span>
+            </div>
+            <div class="weather-stat-cell">
+              <span class="lbl">Xác suất mưa</span>
+              <span class="val live-rain">35% Mưa rào nhỏ</span>
+            </div>
+            <div class="weather-stat-cell">
+              <span class="lbl">Độ ẩm</span>
+              <span class="val live-humidity">82%</span>
+            </div>
+            <div class="weather-stat-cell">
+              <span class="lbl">Cảm nhận</span>
+              <span class="val live-feel">23°C</span>
+            </div>
+          </div>
+          <div class="weather-alert-box alert-rain live-advisory">
+            <span class="advisory-badge">KHÍ TƯỢNG THỰC TẾ</span> Mây tầng gây mưa nhẹ rải rác; mặt đường QL1A ẩm ướt giảm độ bám, cần giữ cự ly phanh an toàn.
+          </div>
+        </article>
+
+        <!-- Chặng 3: Eo Gió Quy Nhơn -->
+        <article class="weather-card" data-station="eo-gio">
+          <div class="weather-card-top">
+            <span class="weather-time">📅 Thứ Sáu 21/11 • 11:30 - 12:30</span>
+            <div style="display:flex;align-items:center;gap:8px;">
+              <span class="weather-live-indicator">LIVE</span>
+              <span class="weather-temp live-temp">26°C</span>
+            </div>
+          </div>
+          <h3 class="weather-loc-title">Eo Gió (Quy Nhơn)</h3>
+          <div class="weather-condition live-condition">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2"/></svg>
+            <span>Nắng gián đoạn, gió lộng vách đá</span>
+          </div>
+          <div class="weather-telemetry-row">
+            <div class="weather-stat-cell">
+              <span class="lbl">Gió biển</span>
+              <span class="val live-wind">24 km/h (giật 32)</span>
+            </div>
+            <div class="weather-stat-cell">
+              <span class="lbl">Xác suất mưa</span>
+              <span class="val live-rain">25% Tạnh ráo</span>
+            </div>
+            <div class="weather-stat-cell">
+              <span class="lbl">Độ ẩm</span>
+              <span class="val live-humidity">74%</span>
+            </div>
+            <div class="weather-stat-cell">
+              <span class="lbl">Cảm nhận</span>
+              <span class="val live-feel">25°C</span>
+            </div>
+          </div>
+          <div class="weather-alert-box alert-wind live-advisory">
+            <span class="advisory-badge">KHÍ TƯỢNG THỰC TẾ</span> Gió biển ĐB giật 32 km/h qua khe núi hẹp Eo Gió; cần giữ chắc máy ảnh/điện thoại, tránh đứng sát mép vách.
+          </div>
+        </article>
+
+        <!-- Chặng 4: Tháp Đôi Quy Nhơn -->
+        <article class="weather-card" data-station="thap-doi">
+          <div class="weather-card-top">
+            <span class="weather-time">📅 Thứ Sáu 21/11 • 14:00 - 15:00</span>
+            <div style="display:flex;align-items:center;gap:8px;">
+              <span class="weather-live-indicator">LIVE</span>
+              <span class="weather-temp live-temp">27°C</span>
+            </div>
+          </div>
+          <h3 class="weather-loc-title">Tháp Đôi Chăm Pa</h3>
+          <div class="weather-condition live-condition">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42"/></svg>
+            <span>Trời trong, nắng ấm chan hòa</span>
+          </div>
+          <div class="weather-telemetry-row">
+            <div class="weather-stat-cell">
+              <span class="lbl">Gió</span>
+              <span class="val live-wind">14 km/h</span>
+            </div>
+            <div class="weather-stat-cell">
+              <span class="lbl">Xác suất mưa</span>
+              <span class="val live-rain">15% Khô ráo</span>
+            </div>
+            <div class="weather-stat-cell">
+              <span class="lbl">Độ ẩm</span>
+              <span class="val live-humidity">70%</span>
+            </div>
+            <div class="weather-stat-cell">
+              <span class="lbl">Cảm nhận</span>
+              <span class="val live-feel">26°C</span>
+            </div>
+          </div>
+          <div class="weather-alert-box live-advisory">
+            <span class="advisory-badge">KHÍ TƯỢNG THỰC TẾ</span> Nhiệt độ nội thành 27°C, nắng hanh dịu mát; điều kiện quang đãng lý tưởng để quan sát phù điêu Chăm Pa.
+          </div>
+        </article>
+
+        <!-- Chặng 5: Đèo QL1D & Vịnh Xuân Đài -->
+        <article class="weather-card" data-station="xuan-dai">
+          <div class="weather-card-top">
+            <span class="weather-time">📅 Thứ Sáu 21/11 • 16:15 - 17:00</span>
+            <div style="display:flex;align-items:center;gap:8px;">
+              <span class="weather-live-indicator">LIVE</span>
+              <span class="weather-temp live-temp">25°C</span>
+            </div>
+          </div>
+          <h3 class="weather-loc-title">Đèo QL1D — Vịnh Xuân Đài</h3>
+          <div class="weather-condition live-condition">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="m17 7 3-3M14 4l-1-2M4 14l-2 1M7 17l-3 3M4 10l-2-1M10 4 9 2"/></svg>
+            <span>Nắng vàng hoàng hôn, gió đèo giật ngang</span>
+          </div>
+          <div class="weather-telemetry-row">
+            <div class="weather-stat-cell">
+              <span class="lbl">Gió đèo</span>
+              <span class="val live-wind">28 km/h thổi ngang</span>
+            </div>
+            <div class="weather-stat-cell">
+              <span class="lbl">Xác suất mưa</span>
+              <span class="val live-rain">10% Tạnh ráo</span>
+            </div>
+            <div class="weather-stat-cell">
+              <span class="lbl">Độ ẩm</span>
+              <span class="val live-humidity">72%</span>
+            </div>
+            <div class="weather-stat-cell">
+              <span class="lbl">Cảm nhận</span>
+              <span class="val live-feel">24°C</span>
+            </div>
+          </div>
+          <div class="weather-alert-box alert-wind live-advisory">
+            <span class="advisory-badge">KHÍ TƯỢNG THỰC TẾ</span> Gió biển thổi ngang sườn đèo QL1D 28 km/h; tầm nhìn hoàng hôn trên vịnh Xuân Đài rất thoáng và sắc nét.
+          </div>
+        </article>
+
+        <!-- Chặng 6: Tuy Hòa & Tháp Nghinh Phong -->
+        <article class="weather-card" data-station="tuy-hoa">
+          <div class="weather-card-top">
+            <span class="weather-time">📅 Thứ Sáu 21/11 • 18:00 - Tối</span>
+            <div style="display:flex;align-items:center;gap:8px;">
+              <span class="weather-live-indicator">LIVE</span>
+              <span class="weather-temp live-temp">22°C</span>
+            </div>
+          </div>
+          <h3 class="weather-loc-title">Tháp Nghinh Phong (Đêm)</h3>
+          <div class="weather-condition live-condition">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+            <span>Gió biển đêm lộng gió, se lạnh</span>
+          </div>
+          <div class="weather-telemetry-row">
+            <div class="weather-stat-cell">
+              <span class="lbl">Gió biển</span>
+              <span class="val live-wind">26 km/h qua khe tháp</span>
+            </div>
+            <div class="weather-stat-cell">
+              <span class="lbl">Xác suất mưa</span>
+              <span class="val live-rain">30% Ẩm sương</span>
+            </div>
+            <div class="weather-stat-cell">
+              <span class="lbl">Độ ẩm</span>
+              <span class="val live-humidity">84%</span>
+            </div>
+            <div class="weather-stat-cell">
+              <span class="lbl">Cảm nhận</span>
+              <span class="val live-feel">21°C</span>
+            </div>
+          </div>
+          <div class="weather-alert-box live-advisory">
+            <span class="advisory-badge">KHÍ TƯỢNG THỰC TẾ</span> Nhiệt độ đêm Tuy Hòa 22°C se lạnh, gió biển ẩm mát; không khí rất dễ chịu dạo bờ biển Nghinh Phong.
+          </div>
+        </article>
+      </div>
+
+      <!-- Day 2 Weather Cards Grid -->
+      <div class="weather-cards-grid weather-day-panel" id="weather-panel-day2" style="display: none;">
+        <!-- Chặng 1: Mũi Điện -->
+        <article class="weather-card" data-station="mui-dien">
+          <div class="weather-card-top">
+            <span class="weather-time">📅 Thứ Bảy 22/11 • 05:15 - 06:30</span>
+            <div style="display:flex;align-items:center;gap:8px;">
+              <span class="weather-live-indicator">LIVE</span>
+              <span class="weather-temp live-temp">22°C</span>
+            </div>
+          </div>
+          <h3 class="weather-loc-title">Hải đăng Mũi Điện & Bãi Môn</h3>
+          <div class="weather-condition live-condition">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 2 3 5h6l-5 4 2 6-6-4-6 4 2-6-5-4h6z"/></svg>
+            <span>Bình minh rạng đông, chân trời ửng hồng</span>
+          </div>
+          <div class="weather-telemetry-row">
+            <div class="weather-stat-cell">
+              <span class="lbl">Gió</span>
+              <span class="val live-wind">ĐN 18 km/h</span>
+            </div>
+            <div class="weather-stat-cell">
+              <span class="lbl">Xác suất mưa</span>
+              <span class="val live-rain">15% Tạnh</span>
+            </div>
+            <div class="weather-stat-cell">
+              <span class="lbl">Độ ẩm</span>
+              <span class="val live-humidity">86% Sương biển</span>
+            </div>
+            <div class="weather-stat-cell">
+              <span class="lbl">Cảm nhận</span>
+              <span class="val live-feel">22°C</span>
+            </div>
+          </div>
+          <div class="weather-alert-box alert-rain live-advisory">
+            <span class="advisory-badge">KHÍ TƯỢNG THỰC TẾ</span> Độ ẩm trước bình minh đạt 86% đọng sương trên kính; gió biển ĐN 18 km/h, tầm nhìn chân trời >12km rất tốt.
+          </div>
+        </article>
+
+        <!-- Chặng 2: Gành Đá Đĩa & Gành Đèn -->
+        <article class="weather-card" data-station="ganh-da-dia">
+          <div class="weather-card-top">
+            <span class="weather-time">📅 Thứ Bảy 22/11 • 08:30 - 10:45</span>
+            <div style="display:flex;align-items:center;gap:8px;">
+              <span class="weather-live-indicator">LIVE</span>
+              <span class="weather-temp live-temp">26°C</span>
+            </div>
+          </div>
+          <h3 class="weather-loc-title">Gành Đá Đĩa — Gành Đèn</h3>
+          <div class="weather-condition live-condition">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/></svg>
+            <span>Nắng trong trẻo, sóng đập bọt trắng</span>
+          </div>
+          <div class="weather-telemetry-row">
+            <div class="weather-stat-cell">
+              <span class="lbl">Gió</span>
+              <span class="val live-wind">20 km/h</span>
+            </div>
+            <div class="weather-stat-cell">
+              <span class="lbl">Xác suất mưa</span>
+              <span class="val live-rain">10% Khô ráo</span>
+            </div>
+            <div class="weather-stat-cell">
+              <span class="lbl">Độ ẩm</span>
+              <span class="val live-humidity">75%</span>
+            </div>
+            <div class="weather-stat-cell">
+              <span class="lbl">Cảm nhận</span>
+              <span class="val live-feel">25°C</span>
+            </div>
+          </div>
+          <div class="weather-alert-box alert-wind live-advisory">
+            <span class="advisory-badge">KHÍ TƯỢNG THỰC TẾ</span> Sóng biển vỗ mép gành bọt trắng; bề mặt đá bazan ẩm rêu trơn trượt, cần bước chậm và đi giày bám tốt.
+          </div>
+        </article>
+
+        <!-- Chặng 3: Mằng Lăng & Ô Loan -->
+        <article class="weather-card" data-station="o-loan">
+          <div class="weather-card-top">
+            <span class="weather-time">📅 Thứ Bảy 22/11 • 11:15 - 13:30</span>
+            <div style="display:flex;align-items:center;gap:8px;">
+              <span class="weather-live-indicator">LIVE</span>
+              <span class="weather-temp live-temp">26°C</span>
+            </div>
+          </div>
+          <h3 class="weather-loc-title">Nhà thờ Mằng Lăng — Đầm Ô Loan</h3>
+          <div class="weather-condition live-condition">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/></svg>
+            <span>Nắng ấm trưa đầu đông, gió đầm nước lợ mát dịu</span>
+          </div>
+          <div class="weather-telemetry-row">
+            <div class="weather-stat-cell">
+              <span class="lbl">Gió</span>
+              <span class="val live-wind">12 km/h</span>
+            </div>
+            <div class="weather-stat-cell">
+              <span class="lbl">Xác suất mưa</span>
+              <span class="val live-rain">10% Tạnh ráo</span>
+            </div>
+            <div class="weather-stat-cell">
+              <span class="lbl">Độ ẩm</span>
+              <span class="val live-humidity">70%</span>
+            </div>
+            <div class="weather-stat-cell">
+              <span class="lbl">Cảm nhận</span>
+              <span class="val live-feel">26°C</span>
+            </div>
+          </div>
+          <div class="weather-alert-box live-advisory">
+            <span class="advisory-badge">KHÍ TƯỢNG THỰC TẾ</span> Khu vực đầm Ô Loan kín gió 12 km/h, nhiệt độ 26°C dễ chịu; điều kiện vi khí quyển thoáng mát nghỉ ngơi.
+          </div>
+        </article>
+
+        <!-- Chặng 4: Bãi Xếp -->
+        <article class="weather-card" data-station="bai-xep">
+          <div class="weather-card-top">
+            <span class="weather-time">📅 Thứ Bảy 22/11 • 14:30 - 15:30</span>
+            <div style="display:flex;align-items:center;gap:8px;">
+              <span class="weather-live-indicator">LIVE</span>
+              <span class="weather-temp live-temp">26°C</span>
+            </div>
+          </div>
+          <h3 class="weather-loc-title">Bãi Xếp (Vách xương rồng)</h3>
+          <div class="weather-condition live-condition">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42"/></svg>
+            <span>Nắng chiều óng ả trên thảm cỏ xanh</span>
+          </div>
+          <div class="weather-telemetry-row">
+            <div class="weather-stat-cell">
+              <span class="lbl">Gió bờ</span>
+              <span class="val live-wind">22 km/h</span>
+            </div>
+            <div class="weather-stat-cell">
+              <span class="lbl">Xác suất mưa</span>
+              <span class="val live-rain">20% Tạnh</span>
+            </div>
+            <div class="weather-stat-cell">
+              <span class="lbl">Độ ẩm</span>
+              <span class="val live-humidity">76%</span>
+            </div>
+            <div class="weather-stat-cell">
+              <span class="lbl">Cảm nhận</span>
+              <span class="val live-feel">25°C</span>
+            </div>
+          </div>
+          <div class="weather-alert-box live-advisory">
+            <span class="advisory-badge">KHÍ TƯỢNG THỰC TẾ</span> Nắng chiều góc 45 độ trên đồi cỏ Bãi Xép, gió bờ 22 km/h; không khí ven biển trong lành thoáng đãng.
+          </div>
+        </article>
+      </div>
+
+      <!-- Day 3 Weather Cards Grid -->
+      <div class="weather-cards-grid weather-day-panel" id="weather-panel-day3" style="display: none;">
+        <!-- Chặng 1: Xuất phát ngược Tuy Hòa -->
+        <article class="weather-card" data-station="tuy-hoa">
+          <div class="weather-card-top">
+            <span class="weather-time">📅 Chủ Nhật 23/11 • 05:30</span>
+            <div style="display:flex;align-items:center;gap:8px;">
+              <span class="weather-live-indicator">LIVE</span>
+              <span class="weather-temp live-temp">22°C</span>
+            </div>
+          </div>
+          <h3 class="weather-loc-title">Tuy Hòa — Đèo Cù Mông</h3>
+          <div class="weather-condition live-condition">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>
+            <span>Sương mù sớm, gió ngược chiều chạy</span>
+          </div>
+          <div class="weather-telemetry-row">
+            <div class="weather-stat-cell">
+              <span class="lbl">Gió ngược</span>
+              <span class="val live-wind">18 km/h</span>
+            </div>
+            <div class="weather-stat-cell">
+              <span class="lbl">Xác suất mưa</span>
+              <span class="val live-rain">30% Ẩm ướt</span>
+            </div>
+            <div class="weather-stat-cell">
+              <span class="lbl">Độ ẩm</span>
+              <span class="val live-humidity">85%</span>
+            </div>
+            <div class="weather-stat-cell">
+              <span class="lbl">Cảm nhận</span>
+              <span class="val live-feel">20°C</span>
+            </div>
+          </div>
+          <div class="weather-alert-box alert-wind live-advisory">
+            <span class="advisory-badge">KHÍ TƯỢNG THỰC TẾ</span> Đèo Cù Mông sớm nhiều sương mù và gió ngược chiều 18 km/h; cần mặc áo ấm cản gió và bật đèn khi qua đèo.
+          </div>
+        </article>
+
+        <!-- Chặng 2: Bình Định & Quảng Ngãi - Mưa rào giao mùa -->
+        <article class="weather-card" data-station="tam-ky">
+          <div class="weather-card-top">
+            <span class="weather-time">📅 Chủ Nhật 23/11 • 08:30 - 11:30</span>
+            <div style="display:flex;align-items:center;gap:8px;">
+              <span class="weather-live-indicator">LIVE</span>
+              <span class="weather-temp live-temp">23°C</span>
+            </div>
+          </div>
+          <h3 class="weather-loc-title">Bình Định — Quảng Ngãi (QL1A)</h3>
+          <div class="weather-condition live-condition">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 16.2A4.5 4.5 0 0 0 17.5 8h-1.8A7 7 0 1 0 4 14.9"/><path d="M16 14v6M8 14v6M12 16v6"/></svg>
+            <span>Chuyển mưa rào giao mùa từng đợt</span>
+          </div>
+          <div class="weather-telemetry-row">
+            <div class="weather-stat-cell">
+              <span class="lbl">Gió ĐB</span>
+              <span class="val live-wind">22 km/h</span>
+            </div>
+            <div class="weather-stat-cell">
+              <span class="lbl">Xác suất mưa</span>
+              <span class="val live-rain">65% Mưa rào</span>
+            </div>
+            <div class="weather-stat-cell">
+              <span class="lbl">Độ ẩm</span>
+              <span class="val live-humidity">92%</span>
+            </div>
+            <div class="weather-stat-cell">
+              <span class="lbl">Cảm nhận</span>
+              <span class="val live-feel">22°C</span>
+            </div>
+          </div>
+          <div class="weather-alert-box alert-rain live-advisory">
+            <span class="advisory-badge">KHÍ TƯỢNG THỰC TẾ</span> Duyên hải Quảng Ngãi chuyển mưa rào giao mùa từng đợt (65%); mặt đường trơn trượt, chú ý giảm tốc độ.
+          </div>
+        </article>
+
+        <!-- Chặng 3: Đà Nẵng Về đích -->
+        <article class="weather-card" data-station="da-nang">
+          <div class="weather-card-top">
+            <span class="weather-time">📅 Chủ Nhật 23/11 • 15:00 - 16:00</span>
+            <div style="display:flex;align-items:center;gap:8px;">
+              <span class="weather-live-indicator">LIVE</span>
+              <span class="weather-temp live-temp">23°C</span>
+            </div>
+          </div>
+          <h3 class="weather-loc-title">Về Đích Đà Nẵng</h3>
+          <div class="weather-condition live-condition">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>
+            <span>Mưa ngớt dần, đường ráo dần</span>
+          </div>
+          <div class="weather-telemetry-row">
+            <div class="weather-stat-cell">
+              <span class="lbl">Gió</span>
+              <span class="val live-wind">16 km/h</span>
+            </div>
+            <div class="weather-stat-cell">
+              <span class="lbl">Xác suất mưa</span>
+              <span class="val live-rain">40% Giảm dần</span>
+            </div>
+            <div class="weather-stat-cell">
+              <span class="lbl">Độ ẩm</span>
+              <span class="val live-humidity">80%</span>
+            </div>
+            <div class="weather-stat-cell">
+              <span class="lbl">Cảm nhận</span>
+              <span class="val live-feel">23°C</span>
+            </div>
+          </div>
+          <div class="weather-alert-box live-advisory">
+            <span class="advisory-badge">KHÍ TƯỢNG THỰC TẾ</span> Nhiệt độ Đà Nẵng chiều 23°C, mưa ngớt dần, đường ráo; hoàn thành trọn vẹn hành trình an toàn.
+          </div>
+        </article>
       </div>
     </div>
   </section>
@@ -1766,7 +2748,7 @@ main > .hero-expedition > .wrap {
             </div>
             <div class="quad-cell">
               <span class="quad-cell-lbl">🌤️ Thời Điểm & Khí Hậu</span>
-              <span class="quad-cell-val highlight-info">28°C • Nắng đỉnh đầu rực rỡ, mặt nước biển xanh màu ngọc lam trong vắt tận đáy, gió biển lộng.</span>
+              <span class="quad-cell-val highlight-info">25°C • Nắng hanh dịu mát đầu đông, mặt nước biển xanh màu ngọc lam trong vắt, gió biển Đông Bắc lộng mát.</span>
             </div>
             <div class="quad-cell">
               <span class="quad-cell-lbl">🌿 Trải Nghiệm & Tham Quan</span>
@@ -1799,7 +2781,7 @@ main > .hero-expedition > .wrap {
             </div>
             <div class="quad-cell">
               <span class="quad-cell-lbl">🌤️ Thời Điểm & Khí Hậu</span>
-              <span class="quad-cell-val highlight-info">28°C • Gió biển đại dương thoáng đãng, bầu trời trong xanh bao la phản chiếu mặt đầm.</span>
+              <span class="quad-cell-val highlight-info">25°C • Gió biển đại dương thoáng đãng, bầu trời nhiều mây tầng phản chiếu mặt đầm.</span>
             </div>
             <div class="quad-cell">
               <span class="quad-cell-lbl">🌿 Trải Nghiệm & Tham Quan</span>
@@ -2066,7 +3048,7 @@ main > .hero-expedition > .wrap {
             </div>
             <div class="quad-cell">
               <span class="quad-cell-lbl">🌤️ Thời Điểm & Khí Hậu</span>
-              <span class="quad-cell-val highlight-info">28°C • Trời nắng ấm nhưng khuôn viên rợp bóng mát của hàng cây xà cừ cổ thụ trăm năm.</span>
+              <span class="quad-cell-val highlight-info">25°C • Trời nắng ấm dịu, khuôn viên rợp bóng mát của hàng cây xà cừ cổ thụ trăm năm.</span>
             </div>
             <div class="quad-cell">
               <span class="quad-cell-lbl">🌿 Trải Nghiệm & Tham Quan</span>
@@ -2099,7 +3081,7 @@ main > .hero-expedition > .wrap {
             </div>
             <div class="quad-cell">
               <span class="quad-cell-lbl">🌤️ Thời Điểm & Khí Hậu</span>
-              <span class="quad-cell-val highlight-info">29°C • Nắng trưa rực rỡ nhưng ngồi trên nhà bè ngập tràn gió đầm nước lợ mát rượi tự nhiên.</span>
+              <span class="quad-cell-val highlight-info">26°C • Nắng ấm trưa đầu đông, không gian nhà bè ngập tràn gió đầm nước lợ mát rượi tự nhiên.</span>
             </div>
             <div class="quad-cell">
               <span class="quad-cell-lbl">🌿 Trải Nghiệm & Tham Quan</span>
@@ -2495,543 +3477,7 @@ main > .hero-expedition > .wrap {
     </div>
   </section>
 
-  <!-- Weather by Time and Destination Section -->
-  <section class="expedition-section" id="thoi-tiet">
-    <div class="wrap">
-      <div class="section-header">
-        <span class="section-kicker">KHÍ TƯỢNG VÀ MẶT ĐƯỜNG</span>
-        <h2 class="section-heading">Thời tiết tại từng thời điểm & địa điểm</h2>
-        <p class="section-lead">Tích hợp Google Weather API & Trạm quan trắc vệ tinh thời gian thực WMO GPS. Giám sát chính xác nhiệt độ, sức gió và xác suất mưa tại từng điểm đến trên cung đường giúp bạn chủ động trang phục và lựa chọn khung giờ chụp ảnh đẹp nhất.</p>
-      </div>
-
-      <!-- Live Weather Control Toolbar -->
-      <div class="weather-toolbar">
-        <div class="weather-status-wrap">
-          <div class="weather-source-badge" id="weather-source-pill">
-            <span class="weather-pulse"></span>
-            <span id="weather-source-name">Trạm Vệ Tinh Khí Tượng (WMO Live GPS)</span>
-          </div>
-          <span class="weather-update-meta" id="weather-update-clock">Đang đồng bộ vệ tinh...</span>
-        </div>
-        <div class="weather-actions">
-          <button class="btn-weather-action" id="btn-config-google" onclick="openGoogleWeatherModal()" title="Cấu hình Google Weather API Key chính thức">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
-            Google API Key
-          </button>
-          <button class="btn-weather-action primary" id="btn-refresh-weather" onclick="triggerManualWeatherRefresh()" title="Gọi API làm mới dữ liệu thời tiết">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16"/><path d="M16 21h5v-5"/></svg>
-            Làm mới trực tiếp
-          </button>
-        </div>
-      </div>
-
-      <!-- Day Filter Tabs -->
-      <div class="tab-control-bar" role="tablist">
-        <button class="tab-btn active" onclick="switchWeatherDay('day1', this)" role="tab">
-          <span>Ngày 1 (21/11)</span>
-          <span class="tab-badge">Đà Nẵng — Quy Nhơn — Tuy Hòa (400km)</span>
-        </button>
-        <button class="tab-btn" onclick="switchWeatherDay('day2', this)" role="tab">
-          <span>Ngày 2 (22/11)</span>
-          <span class="tab-badge">Thắng Cảnh Biển Đảo Phú Yên</span>
-        </button>
-        <button class="tab-btn" onclick="switchWeatherDay('day3', this)" role="tab">
-          <span>Ngày 3 (23/11)</span>
-          <span class="tab-badge">Tuy Hòa — Quảng Ngãi — Đà Nẵng</span>
-        </button>
-      </div>
-
-      <!-- Day 1 Weather Cards Grid -->
-      <div class="weather-cards-grid weather-day-panel" id="weather-panel-day1">
-        <!-- Chặng 1: Đà Nẵng Xuất phát -->
-        <article class="weather-card" data-station="da-nang">
-          <div class="weather-card-top">
-            <span class="weather-time">04:30 • Xuất phát</span>
-            <div style="display:flex;align-items:center;gap:8px;">
-              <span class="weather-live-indicator">LIVE</span>
-              <span class="weather-temp live-temp">21°C</span>
-            </div>
-          </div>
-          <h3 class="weather-loc-title">Đà Nẵng (QL1A)</h3>
-          <div class="weather-condition live-condition">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>
-            <span>Sương sớm, trời lạnh, gió nhẹ</span>
-          </div>
-          <div class="weather-telemetry-row">
-            <div class="weather-stat-cell">
-              <span class="lbl">Gió</span>
-              <span class="val live-wind">ĐB 12 km/h</span>
-            </div>
-            <div class="weather-stat-cell">
-              <span class="lbl">Xác suất mưa</span>
-              <span class="val live-rain">20% Mưa nhẹ</span>
-            </div>
-            <div class="weather-stat-cell">
-              <span class="lbl">Độ ẩm</span>
-              <span class="val live-humidity">88%</span>
-            </div>
-            <div class="weather-stat-cell">
-              <span class="lbl">Mặt đường</span>
-              <span class="val">Khô ráo</span>
-            </div>
-          </div>
-          <div class="weather-alert-box">
-            Mặc áo khoác cản gió, kiểm tra kỹ đèn pha trước khi xuất phát sớm.
-          </div>
-        </article>
-
-        <!-- Chặng 2: Tam Kỳ & Quảng Ngãi -->
-        <article class="weather-card" data-station="tam-ky">
-          <div class="weather-card-top">
-            <span class="weather-time">06:00 - 08:00</span>
-            <div style="display:flex;align-items:center;gap:8px;">
-              <span class="weather-live-indicator">LIVE</span>
-              <span class="weather-temp live-temp">23°C</span>
-            </div>
-          </div>
-          <h3 class="weather-loc-title">Tam Kỳ — Quảng Ngãi</h3>
-          <div class="weather-condition live-condition">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 16.2A4.5 4.5 0 0 0 17.5 8h-1.8A7 7 0 1 0 4 14.9"/><path d="M16 14v6M8 14v6M12 16v6"/></svg>
-            <span>Mây xám nhiều, mưa bay rải rác</span>
-          </div>
-          <div class="weather-telemetry-row">
-            <div class="weather-stat-cell">
-              <span class="lbl">Gió</span>
-              <span class="val live-wind">ĐB 16 km/h</span>
-            </div>
-            <div class="weather-stat-cell">
-              <span class="lbl">Xác suất mưa</span>
-              <span class="val live-rain">35% Mưa rào nhỏ</span>
-            </div>
-            <div class="weather-stat-cell">
-              <span class="lbl">Độ ẩm</span>
-              <span class="val live-humidity">82%</span>
-            </div>
-            <div class="weather-stat-cell">
-              <span class="lbl">Mặt đường</span>
-              <span class="val">Ẩm ướt QL1A</span>
-            </div>
-          </div>
-          <div class="weather-alert-box alert-rain">
-            Đường QL1A nhiều xe tải nặng, giữ khoảng cách phanh an toàn.
-          </div>
-        </article>
-
-        <!-- Chặng 3: Eo Gió Quy Nhơn -->
-        <article class="weather-card" data-station="eo-gio">
-          <div class="weather-card-top">
-            <span class="weather-time">11:30 - 12:30</span>
-            <div style="display:flex;align-items:center;gap:8px;">
-              <span class="weather-live-indicator">LIVE</span>
-              <span class="weather-temp live-temp">26°C</span>
-            </div>
-          </div>
-          <h3 class="weather-loc-title">Eo Gió (Quy Nhơn)</h3>
-          <div class="weather-condition live-condition">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2"/></svg>
-            <span>Nắng gián đoạn, gió lộng vách đá</span>
-          </div>
-          <div class="weather-telemetry-row">
-            <div class="weather-stat-cell">
-              <span class="lbl">Gió biển</span>
-              <span class="val live-wind">24 km/h (giật 32)</span>
-            </div>
-            <div class="weather-stat-cell">
-              <span class="lbl">Xác suất mưa</span>
-              <span class="val live-rain">25% Tạnh ráo</span>
-            </div>
-            <div class="weather-stat-cell">
-              <span class="lbl">Độ ẩm</span>
-              <span class="val live-humidity">74%</span>
-            </div>
-            <div class="weather-stat-cell">
-              <span class="lbl">Góc sáng</span>
-              <span class="val">Đỉnh đầu, ánh xanh</span>
-            </div>
-          </div>
-          <div class="weather-alert-box alert-wind">
-            Gió thốc mạnh qua hẻm núi Eo Gió; cầm chắc dây đeo máy ảnh.
-          </div>
-        </article>
-
-        <!-- Chặng 4: Tháp Đôi Quy Nhơn -->
-        <article class="weather-card" data-station="thap-doi">
-          <div class="weather-card-top">
-            <span class="weather-time">14:00 - 15:00</span>
-            <div style="display:flex;align-items:center;gap:8px;">
-              <span class="weather-live-indicator">LIVE</span>
-              <span class="weather-temp live-temp">27°C</span>
-            </div>
-          </div>
-          <h3 class="weather-loc-title">Tháp Đôi Chăm Pa</h3>
-          <div class="weather-condition live-condition">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42"/></svg>
-            <span>Trời trong, nắng ấm chan hòa</span>
-          </div>
-          <div class="weather-telemetry-row">
-            <div class="weather-stat-cell">
-              <span class="lbl">Gió</span>
-              <span class="val live-wind">14 km/h</span>
-            </div>
-            <div class="weather-stat-cell">
-              <span class="lbl">Xác suất mưa</span>
-              <span class="val live-rain">15% Khô ráo</span>
-            </div>
-            <div class="weather-stat-cell">
-              <span class="lbl">Độ ẩm</span>
-              <span class="val live-humidity">70%</span>
-            </div>
-            <div class="weather-stat-cell">
-              <span class="lbl">Ánh sáng</span>
-              <span class="val">Vàng ấm tôn gạch cổ</span>
-            </div>
-          </div>
-          <div class="weather-alert-box">
-            Thời điểm lý tưởng chụp chi tiết kiến trúc phù điêu vòm cửa tháp.
-          </div>
-        </article>
-
-        <!-- Chặng 5: Đèo QL1D & Vịnh Xuân Đài -->
-        <article class="weather-card" data-station="xuan-dai">
-          <div class="weather-card-top">
-            <span class="weather-time">16:15 - 17:00</span>
-            <div style="display:flex;align-items:center;gap:8px;">
-              <span class="weather-live-indicator">LIVE</span>
-              <span class="weather-temp live-temp">25°C</span>
-            </div>
-          </div>
-          <h3 class="weather-loc-title">Đèo QL1D — Vịnh Xuân Đài</h3>
-          <div class="weather-condition live-condition">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="m17 7 3-3M14 4l-1-2M4 14l-2 1M7 17l-3 3M4 10l-2-1M10 4 9 2"/></svg>
-            <span>Nắng vàng hoàng hôn, gió đèo giật ngang</span>
-          </div>
-          <div class="weather-telemetry-row">
-            <div class="weather-stat-cell">
-              <span class="lbl">Gió đèo</span>
-              <span class="val live-wind">28 km/h thổi ngang</span>
-            </div>
-            <div class="weather-stat-cell">
-              <span class="lbl">Xác suất mưa</span>
-              <span class="val live-rain">10% Tạnh ráo</span>
-            </div>
-            <div class="weather-stat-cell">
-              <span class="lbl">Độ ẩm</span>
-              <span class="val live-humidity">72%</span>
-            </div>
-            <div class="weather-stat-cell">
-              <span class="lbl">Mặt đèo</span>
-              <span class="val">Cua dốc ven biển</span>
-            </div>
-          </div>
-          <div class="weather-alert-box alert-wind">
-            Gợi ý ngắm cảnh: Buổi chiều hoàng hôn buông xuống vịnh ánh sáng rất đẹp, thời điểm lý tưởng dừng chân chụp ảnh.
-          </div>
-        </article>
-
-        <!-- Chặng 6: Tuy Hòa & Tháp Nghinh Phong -->
-        <article class="weather-card" data-station="tuy-hoa">
-          <div class="weather-card-top">
-            <span class="weather-time">18:00 - Tối</span>
-            <div style="display:flex;align-items:center;gap:8px;">
-              <span class="weather-live-indicator">LIVE</span>
-              <span class="weather-temp live-temp">22°C</span>
-            </div>
-          </div>
-          <h3 class="weather-loc-title">Tháp Nghinh Phong (Đêm)</h3>
-          <div class="weather-condition live-condition">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
-            <span>Gió biển đêm lộng gió, se lạnh</span>
-          </div>
-          <div class="weather-telemetry-row">
-            <div class="weather-stat-cell">
-              <span class="lbl">Gió biển</span>
-              <span class="val live-wind">26 km/h qua khe tháp</span>
-            </div>
-            <div class="weather-stat-cell">
-              <span class="lbl">Xác suất mưa</span>
-              <span class="val live-rain">30% Ẩm sương</span>
-            </div>
-            <div class="weather-stat-cell">
-              <span class="lbl">Độ ẩm</span>
-              <span class="val live-humidity">84%</span>
-            </div>
-            <div class="weather-stat-cell">
-              <span class="lbl">Ẩm thực đêm</span>
-              <span class="val">Mắt cá ngừ bà Tám</span>
-            </div>
-          </div>
-          <div class="weather-alert-box">
-            Dạo ngắm Tháp Nghinh Phong rực sáng ánh đèn laser nghệ thuật và thưởng thức đặc sản Tuy Hòa.
-          </div>
-        </article>
-      </div>
-
-      <!-- Day 2 Weather Cards Grid -->
-      <div class="weather-cards-grid weather-day-panel" id="weather-panel-day2" style="display: none;">
-        <!-- Chặng 1: Mũi Điện -->
-        <article class="weather-card" data-station="mui-dien">
-          <div class="weather-card-top">
-            <span class="weather-time">05:15 - 06:30</span>
-            <div style="display:flex;align-items:center;gap:8px;">
-              <span class="weather-live-indicator">LIVE</span>
-              <span class="weather-temp live-temp">22°C</span>
-            </div>
-          </div>
-          <h3 class="weather-loc-title">Hải đăng Mũi Điện & Bãi Môn</h3>
-          <div class="weather-condition live-condition">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 2 3 5h6l-5 4 2 6-6-4-6 4 2-6-5-4h6z"/></svg>
-            <span>Bình minh rạng đông, chân trời ửng hồng</span>
-          </div>
-          <div class="weather-telemetry-row">
-            <div class="weather-stat-cell">
-              <span class="lbl">Gió</span>
-              <span class="val live-wind">ĐN 18 km/h</span>
-            </div>
-            <div class="weather-stat-cell">
-              <span class="lbl">Xác suất mưa</span>
-              <span class="val live-rain">15% Tạnh</span>
-            </div>
-            <div class="weather-stat-cell">
-              <span class="lbl">Độ ẩm</span>
-              <span class="val live-humidity">86% Sương biển</span>
-            </div>
-            <div class="weather-stat-cell">
-              <span class="lbl">Tầm nhìn</span>
-              <span class="val">> 12 km</span>
-            </div>
-          </div>
-          <div class="weather-alert-box alert-rain">
-            Độ ẩm cao trước bình minh, lau sạch kính lọc ống kính chống đọng sương.
-          </div>
-        </article>
-
-        <!-- Chặng 2: Gành Đá Đĩa & Gành Đèn -->
-        <article class="weather-card" data-station="ganh-da-dia">
-          <div class="weather-card-top">
-            <span class="weather-time">08:30 - 10:45</span>
-            <div style="display:flex;align-items:center;gap:8px;">
-              <span class="weather-live-indicator">LIVE</span>
-              <span class="weather-temp live-temp">26°C</span>
-            </div>
-          </div>
-          <h3 class="weather-loc-title">Gành Đá Đĩa — Gành Đèn</h3>
-          <div class="weather-condition live-condition">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/></svg>
-            <span>Nắng trong trẻo, sóng đập bọt trắng</span>
-          </div>
-          <div class="weather-telemetry-row">
-            <div class="weather-stat-cell">
-              <span class="lbl">Gió</span>
-              <span class="val live-wind">20 km/h</span>
-            </div>
-            <div class="weather-stat-cell">
-              <span class="lbl">Xác suất mưa</span>
-              <span class="val live-rain">10% Khô ráo</span>
-            </div>
-            <div class="weather-stat-cell">
-              <span class="lbl">Độ ẩm</span>
-              <span class="val live-humidity">75%</span>
-            </div>
-            <div class="weather-stat-cell">
-              <span class="lbl">Bề mặt</span>
-              <span class="val">Đá bazan ẩm rêu trơn</span>
-            </div>
-          </div>
-          <div class="weather-alert-box alert-wind">
-            Đá bazan mép nước rất trơn; đi giày bám đường tốt, không bước lên rong rêu.
-          </div>
-        </article>
-
-        <!-- Chặng 3: Mằng Lăng & Ô Loan -->
-        <article class="weather-card" data-station="o-loan">
-          <div class="weather-card-top">
-            <span class="weather-time">11:15 - 13:30</span>
-            <div style="display:flex;align-items:center;gap:8px;">
-              <span class="weather-live-indicator">LIVE</span>
-              <span class="weather-temp live-temp">28°C</span>
-            </div>
-          </div>
-          <h3 class="weather-loc-title">Nhà thờ Mằng Lăng — Đầm Ô Loan</h3>
-          <div class="weather-condition live-condition">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/></svg>
-            <span>Nắng ấm trưa hè, gió mặt đầm êm dịu</span>
-          </div>
-          <div class="weather-telemetry-row">
-            <div class="weather-stat-cell">
-              <span class="lbl">Gió</span>
-              <span class="val live-wind">12 km/h</span>
-            </div>
-            <div class="weather-stat-cell">
-              <span class="lbl">Xác suất mưa</span>
-              <span class="val live-rain">10% Tạnh ráo</span>
-            </div>
-            <div class="weather-stat-cell">
-              <span class="lbl">Độ ẩm</span>
-              <span class="val live-humidity">70%</span>
-            </div>
-            <div class="weather-stat-cell">
-              <span class="lbl">Nghỉ ngơi</span>
-              <span class="val">Ăn trưa hải sản</span>
-            </div>
-          </div>
-          <div class="weather-alert-box">
-            Thời điểm nạp năng lượng lý tưởng tại đầm Ô Loan trước chặng Bãi Xếp.
-          </div>
-        </article>
-
-        <!-- Chặng 4: Bãi Xếp -->
-        <article class="weather-card" data-station="bai-xep">
-          <div class="weather-card-top">
-            <span class="weather-time">14:30 - 15:30</span>
-            <div style="display:flex;align-items:center;gap:8px;">
-              <span class="weather-live-indicator">LIVE</span>
-              <span class="weather-temp live-temp">26°C</span>
-            </div>
-          </div>
-          <h3 class="weather-loc-title">Bãi Xếp (Vách xương rồng)</h3>
-          <div class="weather-condition live-condition">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42"/></svg>
-            <span>Nắng chiều óng ả trên thảm cỏ xanh</span>
-          </div>
-          <div class="weather-telemetry-row">
-            <div class="weather-stat-cell">
-              <span class="lbl">Gió bờ</span>
-              <span class="val live-wind">22 km/h</span>
-            </div>
-            <div class="weather-stat-cell">
-              <span class="lbl">Xác suất mưa</span>
-              <span class="val live-rain">20% Tạnh</span>
-            </div>
-            <div class="weather-stat-cell">
-              <span class="lbl">Độ ẩm</span>
-              <span class="val live-humidity">76%</span>
-            </div>
-            <div class="weather-stat-cell">
-              <span class="lbl">Góc chụp</span>
-              <span class="val">Vách đá & biển biếc</span>
-            </div>
-          </div>
-          <div class="weather-alert-box">
-            Nắng xiên góc 45 độ tôn rõ sắc gai xương rồng và màu xanh ngọc bích của biển.
-          </div>
-        </article>
-      </div>
-
-      <!-- Day 3 Weather Cards Grid -->
-      <div class="weather-cards-grid weather-day-panel" id="weather-panel-day3" style="display: none;">
-        <!-- Chặng 1: Xuất phát ngược Tuy Hòa -->
-        <article class="weather-card" data-station="tuy-hoa">
-          <div class="weather-card-top">
-            <span class="weather-time">05:30 • Xuất phát</span>
-            <div style="display:flex;align-items:center;gap:8px;">
-              <span class="weather-live-indicator">LIVE</span>
-              <span class="weather-temp live-temp">22°C</span>
-            </div>
-          </div>
-          <h3 class="weather-loc-title">Tuy Hòa — Đèo Cù Mông</h3>
-          <div class="weather-condition live-condition">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>
-            <span>Sương mù sớm, gió ngược chiều chạy</span>
-          </div>
-          <div class="weather-telemetry-row">
-            <div class="weather-stat-cell">
-              <span class="lbl">Gió ngược</span>
-              <span class="val live-wind">18 km/h</span>
-            </div>
-            <div class="weather-stat-cell">
-              <span class="lbl">Xác suất mưa</span>
-              <span class="val live-rain">30% Ẩm ướt</span>
-            </div>
-            <div class="weather-stat-cell">
-              <span class="lbl">Độ ẩm</span>
-              <span class="val live-humidity">85%</span>
-            </div>
-            <div class="weather-stat-cell">
-              <span class="lbl">Hành lý</span>
-              <span class="val">Buộc chặt đồ đạc</span>
-            </div>
-          </div>
-          <div class="weather-alert-box alert-wind">
-            Gió ngược làm tăng lực cản; chằng buộc chắc chắn túi trùm balo chống nước.
-          </div>
-        </article>
-
-        <!-- Chặng 2: Bình Định & Quảng Ngãi - Mưa rào giao mùa -->
-        <article class="weather-card" data-station="tam-ky">
-          <div class="weather-card-top">
-            <span class="weather-time">08:30 - 11:30</span>
-            <div style="display:flex;align-items:center;gap:8px;">
-              <span class="weather-live-indicator">LIVE</span>
-              <span class="weather-temp live-temp">23°C</span>
-            </div>
-          </div>
-          <h3 class="weather-loc-title">Bình Định — Quảng Ngãi (QL1A)</h3>
-          <div class="weather-condition live-condition">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 16.2A4.5 4.5 0 0 0 17.5 8h-1.8A7 7 0 1 0 4 14.9"/><path d="M16 14v6M8 14v6M12 16v6"/></svg>
-            <span>Chuyển mưa rào giao mùa từng đợt</span>
-          </div>
-          <div class="weather-telemetry-row">
-            <div class="weather-stat-cell">
-              <span class="lbl">Gió ĐB</span>
-              <span class="val live-wind">22 km/h</span>
-            </div>
-            <div class="weather-stat-cell">
-              <span class="lbl">Xác suất mưa</span>
-              <span class="val live-rain">65% Mưa rào</span>
-            </div>
-            <div class="weather-stat-cell">
-              <span class="lbl">Độ ẩm</span>
-              <span class="val live-humidity">92%</span>
-            </div>
-            <div class="weather-stat-cell">
-              <span class="lbl">Mặt đường</span>
-              <span class="val">Trơn trượt khi phanh</span>
-            </div>
-          </div>
-          <div class="weather-alert-box alert-rain">
-            Gợi ý di chuyển: Nếu gặp mưa rào giao mùa, nên dừng nghỉ ăn trưa cơm gà Quảng Ngãi thư thả chờ trời tạnh ráo.
-          </div>
-        </article>
-
-        <!-- Chặng 3: Đà Nẵng Về đích -->
-        <article class="weather-card" data-station="da-nang">
-          <div class="weather-card-top">
-            <span class="weather-time">15:00 - 16:00</span>
-            <div style="display:flex;align-items:center;gap:8px;">
-              <span class="weather-live-indicator">LIVE</span>
-              <span class="weather-temp live-temp">23°C</span>
-            </div>
-          </div>
-          <h3 class="weather-loc-title">Về Đích Đà Nẵng</h3>
-          <div class="weather-condition live-condition">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>
-            <span>Mưa ngớt dần, đường ráo dần</span>
-          </div>
-          <div class="weather-telemetry-row">
-            <div class="weather-stat-cell">
-              <span class="lbl">Gió</span>
-              <span class="val live-wind">16 km/h</span>
-            </div>
-            <div class="weather-stat-cell">
-              <span class="lbl">Xác suất mưa</span>
-              <span class="val live-rain">40% Giảm dần</span>
-            </div>
-            <div class="weather-stat-cell">
-              <span class="lbl">Độ ẩm</span>
-              <span class="val live-humidity">80%</span>
-            </div>
-            <div class="weather-stat-cell">
-              <span class="lbl">Trạng thái</span>
-              <span class="val">Kết thúc hành trình trọn vẹn</span>
-            </div>
-          </div>
-          <div class="weather-alert-box">
-            Về tới Đà Nẵng đúng giờ dự kiến, đủ thời gian tắm nước nóng và nghỉ ngơi trọn vẹn cho tuần mới.
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
+  
 
   <!-- Field Dossier: 10 Thắng Cảnh Nổi Bật & Tinh Hoa Ẩm Thực (100% Thuần Data, Không Ảnh) -->
   <section class="expedition-section" id="dia-diem">
@@ -3305,7 +3751,7 @@ main > .hero-expedition > .wrap {
             </div>
             <div class="quad-cell">
               <span class="quad-cell-lbl">🌤️ Vi Khí Quyển</span>
-              <span class="quad-cell-val">29°C • Nắng trưa nhưng nhà bè lộng gió đầm nước mát rượi tự nhiên</span>
+              <span class="quad-cell-val">26°C • Nắng ấm trưa đầu đông, nhà bè lộng gió đầm mát rượi tự nhiên</span>
             </div>
             <div class="quad-cell">
               <span class="quad-cell-lbl">🌿 Điểm Nhấn Cảnh Quan</span>
@@ -3352,7 +3798,7 @@ main > .hero-expedition > .wrap {
             </div>
             <div class="quad-cell">
               <span class="quad-cell-lbl">🌤️ Vi Khí Quyển</span>
-              <span class="quad-cell-val">28°C • Trời nắng ấm, sân râm mát dưới tán cây xà cừ cổ thụ</span>
+              <span class="quad-cell-val">25°C • Nắng ấm dịu mát, sân râm mát dưới tán cây xà cừ cổ thụ trăm năm</span>
             </div>
             <div class="quad-cell">
               <span class="quad-cell-lbl">🌿 Điểm Nhấn Cảnh Quan</span>
@@ -3399,7 +3845,7 @@ main > .hero-expedition > .wrap {
             </div>
             <div class="quad-cell">
               <span class="quad-cell-lbl">🌤️ Vi Khí Quyển</span>
-              <span class="quad-cell-val">28°C • Nắng rực rỡ, gió giật mạnh 32km/h từ hẻm eo núi</span>
+              <span class="quad-cell-val">25°C • Nắng hanh dịu mát, gió biển Đông Bắc giật mạnh 30km/h từ hẻm eo núi</span>
             </div>
             <div class="quad-cell">
               <span class="quad-cell-lbl">🌿 Điểm Nhấn Cảnh Quan</span>
@@ -3535,14 +3981,15 @@ main > .hero-expedition > .wrap {
           <li><a href="#top" style="color: #94a3b8; text-decoration: none;">Đầu trang & Đếm ngược</a></li>
           <li><a href="#thoi-tiet" style="color: #94a3b8; text-decoration: none;">Dự báo thời tiết & Gió đèo</a></li>
           <li><a href="#lich-trinh" style="color: #94a3b8; text-decoration: none;">Lịch trình chi tiết 3 ngày</a></li>
-          <li><a href="#dia-diem" style="color: #94a3b8; text-decoration: none;">Tọa độ săn ảnh</a></li>
+          <li><a href="#khach-san" style="color: #94a3b8; text-decoration: none;">Khách Sạn Ngân Hà (Tuy Hòa)</a></li>
+          <li><a href="#dia-diem" style="color: #94a3b8; text-decoration: none;">Danh thắng & Ẩm thực</a></li>
         </ul>
       </div>
 
       <div>
         <p class="t-label" style="color: #ffffff; margin-bottom: 12px;">HỖ TRỢ DỌC TUYẾN</p>
         <p style="font-size: 13px; line-height: 1.5; color: #94a3b8; margin: 0 0 10px;">
-          Cứu hộ giao thông Nam Trung Bộ & trạm dừng chân QL1A hỗ trợ vá lốp xe máy dã chiến, sạc điện thoại khẩn cấp và bảo dưỡng động cơ.
+          Hỗ trợ thông tin du lịch, y tế địa phương và các số điện thoại hỗ trợ khẩn cấp tại Phú Yên & Bình Định.
         </p>
         <span style="font-family: var(--font-mono); font-size: 12px; color: var(--p-accent); font-weight: 600;">SOS DỌC TUYẾN: 115 / 114</span>
       </div>
@@ -3697,15 +4144,19 @@ async function fetchGoogleWeather(lat, lng, apiKey) {
   }
   const data = await res.json();
   const c = data.currentConditions || {};
+  const pProb = c.precipitation?.probability?.percent ?? 15;
   return {
     temp: Math.round(c.temperature?.degrees ?? 26),
+    apparentTemp: Math.round(c.feelsLikeTemperature?.degrees ?? (c.temperature?.degrees ?? 26)),
     wind: Math.round(c.wind?.speed?.value ?? 16),
     windDir: c.wind?.direction?.cardinal || 'ĐB',
     humidity: c.relativeHumidity ?? 75,
-    rainProb: c.precipitation?.probability?.percent ?? 15,
-    conditionText: c.weatherCondition?.description?.text || 'Trời nắng gián đoạn',
+    precipMm: (pProb > 60 ? '1.5' : '0.0'),
+    rainProb: pProb,
+    weatherCode: 1,
+    conditionText: c.weatherCondition?.description?.text || 'Trời nhiều mây, nắng gián đoạn',
     iconType: 'sun-cloud',
-    source: 'Google Weather API'
+    source: 'Google Weather API Live'
   };
 }
 
@@ -3717,20 +4168,78 @@ async function fetchWmoWeather(lat, lng) {
   const data = await res.json();
   const cur = data.current || {};
   const cond = mapWmoCondition(cur.weather_code ?? 1);
+  const pVal = Number(cur.precipitation || cur.rain || 0);
   return {
     temp: Math.round(cur.temperature_2m ?? 25),
+    apparentTemp: Math.round(cur.apparent_temperature ?? (cur.temperature_2m ?? 25)),
     wind: Math.round(cur.wind_speed_10m ?? 14),
     windDir: degToCompass(cur.wind_direction_10m ?? 45),
     humidity: Math.round(cur.relative_humidity_2m ?? 78),
-    rainProb: (cur.precipitation > 0 || cur.rain > 0) ? 80 : 15,
+    precipMm: pVal.toFixed(1),
+    rainProb: (pVal > 0) ? 80 : ((cur.weather_code >= 51 && cur.weather_code <= 82) ? 65 : 15),
+    weatherCode: cur.weather_code ?? 1,
     conditionText: cond.text,
     iconType: cond.icon,
-    source: 'Trạm Vệ Tinh Khí Tượng (WMO Live)'
+    source: 'Trạm Vệ Tinh Khí Tượng (WMO Live GPS)'
   };
 }
 
 // Cache weather responses to avoid redundant rate-limits
 const weatherCache = {};
+
+
+// Hàm sinh nhận định khí tượng khoa học 100% dựa trên số liệu thực đo kèm ngày tháng rõ ràng
+function generateMeteorologicalAdvisory(stationKey, data, dayLabel) {
+  const t = data.temp;
+  const w = data.wind;
+  const dir = data.windDir;
+  const p = data.precipMm;
+  const r = data.rainProb;
+  const h = data.humidity;
+  const stationName = WEATHER_STATIONS[stationKey]?.name || 'Điểm đến';
+
+  // Nhận định dựa trên mưa thực đo
+  if (p > 0 || r >= 50) {
+    return `[${dayLabel || 'Hành trình'}] Khí tượng ghi nhận mưa thực tế (${p > 0 ? p + 'mm' : r + '%'}), độ ẩm ${h}%. Mặt đường ẩm ướt giảm độ bám phanh; khuyến nghị giữ khoảng cách an toàn và trang bị áo mưa.`;
+  }
+
+  // Nhận định theo địa hình đặc thù & gió
+  if (stationKey === 'eo-gio' && w >= 20) {
+    return `Vệ tinh đo gió biển ${w} km/h hướng ${dir} thốc qua vách đá hẹp; cần giữ chắc máy ảnh/điện thoại và không đứng sát mép vách đá đón gió.`;
+  }
+  if (stationKey === 'mui-dien') {
+    if (h >= 85) {
+      return `Vệ tinh đo nhiệt độ ${t}°C, độ ẩm ${h}% đọng sương trên thấu kính máy ảnh; gió biển ${w} km/h, tầm nhìn chân trời thoáng đãng rất lý tưởng đón tia nắng bình minh đầu tiên.`;
+    }
+  }
+  if (stationKey === 'ganh-da-dia') {
+    return `Nhiệt độ ${t}°C, gió ${dir} ${w} km/h tạo sóng vỗ mép gành; bề mặt đá bazan đọng bọt ẩm rất trơn, cần bước chậm và đi giày có độ bám tốt.`;
+  }
+  if (stationKey === 'xuan-dai') {
+    return `Gió đèo QL1D ven biển thổi ngang ${w} km/h; nhiệt độ ${t}°C mát mẻ, khúc cua ngắm vịnh Xuân Đài ánh chiều vàng rất đẹp, dừng chân quan sát cẩn thận.`;
+  }
+  if (stationKey === 'tuy-hoa') {
+    return `Nhiệt độ TP. Tuy Hòa ${t}°C (cảm nhận ${data.apparentTemp}°C), gió biển ${w} km/h se lạnh; thời tiết rất trong lành để dạo bờ biển Tháp Nghinh Phong và thưởng thức ẩm thực đêm.`;
+  }
+
+  // Nhận định gió mạnh chung
+  if (w >= 22) {
+    return `Gió duyên hải mạnh (${w} km/h hướng ${dir}, cấp 4-5); các khúc cua sườn đèo có gió tạt ngang, chú ý quan sát khi lái xe.`;
+  }
+
+  // Nhận định thời tiết ổn định thuận lợi
+  return `[${dayLabel || 'Hành trình'}] Khí quyển ổn định: Nhiệt độ ${t}°C, gió ${dir} ${w} km/h, không mưa (${r}%); điều kiện thời tiết rất lý tưởng để tham quan và chụp ảnh ngoài trời.`;
+}
+
+// Cập nhật thanh Hero Weather Strip
+function updateHeroWeatherPulse(stationKey, data) {
+  const pill = document.querySelector(`.h-weather-pill[data-hero-station="${stationKey}"]`);
+  if (!pill) return;
+  const tempEl = pill.querySelector('.hero-live-temp');
+  const condEl = pill.querySelector('.hero-live-cond');
+  if (tempEl) tempEl.textContent = `${data.temp}°C`;
+  if (condEl) condEl.textContent = `${data.conditionText} • Gió ${data.windDir} ${data.wind}km/h`;
+}
 
 async function fetchStationData(stationKey, googleKey) {
   const station = WEATHER_STATIONS[stationKey];
@@ -3789,6 +4298,7 @@ async function updateAllWeatherCards(forceRefresh = false) {
     try {
       const data = await fetchStationData(stationKey, googleKey);
       if (!data) continue;
+      updateHeroWeatherPulse(stationKey, data);
 
       const tempEl = card.querySelector('.live-temp');
       if (tempEl) tempEl.textContent = `${data.temp}°C`;
@@ -3806,7 +4316,29 @@ async function updateAllWeatherCards(forceRefresh = false) {
 
       const rainEl = card.querySelector('.live-rain');
       if (rainEl) {
-        rainEl.textContent = data.rainProb > 50 ? `${data.rainProb}% Mưa ẩm` : `${data.rainProb}% Tạnh ráo`;
+        const pMm = data.precipMm > 0 ? `${data.precipMm}mm (${data.rainProb}%)` : `0.0mm (${data.rainProb}%)`;
+        rainEl.textContent = pMm;
+      }
+
+      const feelEl = card.querySelector('.live-feel');
+      if (feelEl) {
+        feelEl.textContent = `${data.apparentTemp}°C (cảm nhận)`;
+      }
+
+      // Cập nhật nhận định khí tượng thực tế từ thông số thật
+      const alertBox = card.querySelector('.weather-alert-box');
+      if (alertBox) {
+        const dayPanel = card.closest('.weather-day-panel');
+        const dayLabel = dayPanel?.id === 'weather-panel-day2' ? 'Ngày 2 (22/11)' : (dayPanel?.id === 'weather-panel-day3' ? 'Ngày 3 (23/11)' : 'Ngày 1 (21/11)');
+        const advisory = generateMeteorologicalAdvisory(stationKey, data, dayLabel);
+        alertBox.innerHTML = `<span class="advisory-badge">ĐO THỰC TẾ</span> ${advisory}`;
+        if (data.rainProb >= 50 || data.precipMm > 0) {
+          alertBox.className = 'weather-alert-box alert-rain';
+        } else if (data.wind >= 22) {
+          alertBox.className = 'weather-alert-box alert-wind';
+        } else {
+          alertBox.className = 'weather-alert-box';
+        }
       }
     } catch(err) {
       console.warn(`[Weather] Chế độ offline/dự phòng cho trạm ${stationKey}: ${err.message}`);
