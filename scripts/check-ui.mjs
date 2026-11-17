@@ -104,6 +104,15 @@ async function runCheck() {
   await page.click('#lich-trinh .tab-control-bar button:nth-child(1)'); // Quay về day 1
   console.log(`   Số thẻ hành trình: Ngày 1 (${day1Cards.length}) • Ngày 2 (${day2Cards.length}) • Ngày 3 (${day3Cards.length})`);
 
+  // Kiểm tra 20 chặng dừng trong lịch trình đều có trạm live-itin-weather
+  const liveItinElements = await page.$$('.live-itin-weather');
+  console.log(`   Kiểm tra telemetry lịch trình: ${liveItinElements.length}/20 chặng dừng được gắn trạm live telemetry`);
+  if (liveItinElements.length !== 20) {
+    errors.push(`Số chặng dừng gắn live-itin-weather là ${liveItinElements.length} (yêu cầu đủ 20 chặng)!`);
+  } else {
+    console.log('   ✓ ĐẠT: Toàn bộ 20 chặng dừng trong lịch trình đã liên kết 100% với trạm khí tượng vệ tinh!');
+  }
+
   // 5. Kiểm tra Căn Cứ Khách Sạn Ngân Hà (#khach-san)
   console.log('5. Kiểm tra Căn Cứ Lưu Trú: Khách Sạn Ngân Hà (#khach-san):');
   await page.locator('#khach-san').scrollIntoViewIfNeeded();
@@ -118,8 +127,15 @@ async function runCheck() {
   // 6. Kiểm tra Danh Lam Thắng Cảnh (#dia-diem) & Kiểm tra 0 thẻ <img>
   console.log('6. Kiểm tra Danh Lam Thắng Cảnh (#dia-diem) & Kiểm tra thuần dữ liệu:');
   const dossierCards = await page.$$('#dia-diem .dossier-card');
+  const liveDossierEls = await page.$$('.live-dossier-weather');
+  console.log(`   Hồ sơ điểm đến: ${dossierCards.length}/10 cứ điểm (gắn trạm đo vệ tinh: ${liveDossierEls.length}/10)`);
+  if (liveDossierEls.length !== 10) {
+    errors.push(`Số cứ điểm gắn live-dossier-weather là ${liveDossierEls.length} (yêu cầu đủ 10 cứ điểm)!`);
+  } else {
+    console.log('   ✓ ĐẠT: Toàn bộ 10 hồ sơ cứ điểm thắng cảnh đã liên kết 100% với trạm khí tượng vệ tinh!');
+  }
+
   const imgCount = await page.$$eval('img', imgs => imgs.length);
-  console.log(`   Hồ sơ điểm đến: ${dossierCards.length}/10 cứ điểm`);
   console.log(`   Tổng số thẻ <img> trên toàn website: ${imgCount} (Yêu cầu thuần dữ liệu không ảnh: ${imgCount === 0 ? '✓ ĐẠT' : '✗ CÒN ẢNH'})`);
   if (imgCount > 0) {
     errors.push(`Vẫn còn ${imgCount} thẻ <img> trong mã nguồn!`);
